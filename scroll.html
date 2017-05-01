@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Holly Li</title>
+
+    <meta name="description" content="Holly's personal experiment">
+    <meta name="keywords" content="Shelly Tan,web design,designer, University of Pennsylvania, Wharton">
+    <meta name="author" content="Holly Li">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway">
+    <link href="css/bootstrap.css" rel="stylesheet"> -->
+
+
+  </head>
+
+  <!-- <header>
+      <div class="header-wrapper container">
+          <a href="index.html"><img src="imgs/diamond-logo.png" alt="Shelly Tan's logo" title="Why hello there, hovering traveller"></a>
+
+          <nav>
+              <a href="portfolio.html">Portfolio</a>
+              <a href="gif-a-day.html">Random</a>
+              <a href="about.html">About</a>
+              <a href="contact.html">Contact</a>
+          </nav>
+      </div>
+
+    </header> -->
+
+<body>
+
+    <div class="container1" id="background2">
+      <div class="spacer"></div>
+      <div class="boop">
+          <div class="georgia" id="header">By day, I </div>
+        </div>
+
+
+          <div class="beep" id="sliders">
+              <div class="slide" id="code-slide"><a href="html/thimble.html">BUILD.</a></div>
+              <div class="slide" id="design-slide"><a href="html/photography.html">TRAVEL.</a></div>
+        </div>
+      </div>
+
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- <script type='text/javascript' src='js/screensize.js'></script> -->
+<script type='text/javascript' src='js/simpleslider.js'></script>
+<script type='text/javascript' src='js/slider.js'></script>
+
+
+<script>
+$(document).on('click', function(e) {
+
+  // make background black
+  $("#background2").removeClass('container1');
+  $("#background2").addClass('container1COLOR');
+
+  // change text and how it looks
+  $(".georgia").html('By night I');
+  $( ".georgia" ).css({
+    'color': 'white',
+    'margin-left': '-4vw'
+  });
+
+
+  $("#sliders").html("<div class='slide' id='code-slide'><a href='html/portfolio.html'>DESIGN.</a></div><div class='slide' id='design-slide'><a href='html/me.html'>THINK.</a></div>").simpleSlider({navigation: false, interval: 3000});
+  $("#sliders a").css({
+    'color':'white',
+    'background-image': 'linear-gradient(to right, rgba(255,255,255,0) 50%, grey 50%)',
+    'padding-left': '-3vw'
+  });
+  // });
+
+});
+
+// $(document).on('keyup', function(e) {
+//   $("#background2").removeClass('container1COLOR');
+//   $("#background2").addClass('container1');
+//   $(".georgia").html('By day I');
+//   $( ".georgia" ).css({
+//     'color': 'black',
+//     'margin-left': '0.7vw'
+//   });
+//
+//   $("#sliders").html("<div class='slide' id='code-slide'><a href='html/thimble.html'>BUILD.</a></div><div class='slide' id='design-slide'><a href='html/photography.html'>TRAVEL</a></div>").css({'color':'white'}).simpleSlider({navigation: false, interval: 2000});
+//
+// });
+</script>
+
+
+</body>
+
+<!-- <footer>
+    <div class="footer-wrapper container">
+            <div class="social-media-icons">
+                <a href="https://twitter.com/Tan_Shelly" target="_blank"><i class="fa fa-twitter"></i></a>
+
+                <a href="https://github.com/ShellyTan" target="_blank"><i class="fa fa-github"></i></a>
+
+                <a href="http://www.behance.net/shellytan" target="_blank"><img src="imgs/behance-logo.png" style="width:30px;" /></a>
+
+                <a href="https://www.linkedin.com/pub/shelly-tan/2b/a1b/842/" target="_blank"><i class="fa fa-linkedin"></i></a>
+            </div></br>
+            <p class="copyright">© 2015 Shelly Tan</p>
+    </div>
+</footer> -->
+
+</html>

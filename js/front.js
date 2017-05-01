@@ -37,6 +37,7 @@ $(document).ready(function(){
 		.to("#loaderpath", 0.8, {drawSVG:"100% 100%", ease:Power3.easeOut});
 
 		$('.navbar-toggle').on('click', function(e){
+			alert('clicked');
 
 			e.preventDefault();
 			$('body').toggleClass('menuOpen');

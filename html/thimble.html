@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Holly Li Thimble</title>
+
+	<link rel="stylesheet" type="text/css" href="../css/thimble.css">
+
+	<link href='http://fonts.googleapis.com/css?family=Asap:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Signika+Negative:300,400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<div class="entire_page" id="page">
+  <div class="top">
+    <div class="header1 fadeAndScale" id="thimble_header"> THIMBLE </div>
+		<div class="underheader1 fadeAndScale"> Wear the clothes <br /> you&apos;ve always wanted to.</div>
+
+		<div>
+			<img class= "bounceInDown sewingmachine" id="sewing" src="../assets/branding/blacksewing.png"/>
+		</div>
+
+    <div class="diagonal_right">
+			<div class="box1" id="box1"></div>
+    </div>
+
+		<div class="diagonal_left_degree">
+			<div class="box3" id="box3"></div>
+    </div>
+		<!-- <div class="diagonal_left_degree">
+			<div class="box2" id="box2" style="display: none;"></div>
+		</div> -->
+
+
+
+    <!-- <img class="black_sketch bounceInDown" src="../assets/branding/thimble_sketch2.png"/> -->
+
+
+
+
+
+
+  </div>
+</div>
+
+
+
+<!--
+    <div class="beige_container">
+    	<div class="explanation_home"> Thimble discovers <br />hidden fashion
+				design <br />talent & connects <br />them to you.</div>
+      <img class="whiteimage" src="../assets/white_template.png"/>
+    </div>
+  </div>
+
+<div class="bottom">
+    <div class="photosExp">
+    	<div class="overlay_font"> GET FIT. </div>
+    </div>
+    <div class="photosExp">
+      <div class="explanation2"> Wear clothes that <br /> finally fit you perfectly. </div>
+      <img class="tape_measure" src="../assets/tape_measure.jpg" />
+    </div>
+</div>
+</div> -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.2/velocity.min.js"></script>
+
+<script>
+$(document).on('click', function() {
+	$('#box1').removeClass('diagonal_right');
+$('#box1').addClass('diagonal_left');
+// $('div.sewingmachine').replaceWith("<img src='../assets/branding/thimble2_model.png'></img>");
+
+$('#box3').removeClass('diagonal_left_degree');
+$('#box3').addClass('diagonal_left');
+
+$( ".header1" ).css({
+	'font-family': 'butler_stencilblack',
+	'text-transform': 'lowercase',
+	'letter-spacing': '0.005em',
+	'font-size': '6vw'
+});
+
+$('#sewing').removeClass('bounceInDown');
+$('#sewing').addClass('bounceOutUp');
+
+$( ".underheader1" ).css({
+	'font-family': 'glacial_indifferenceregular',
+	'letter-spacing': '0.1em',
+	'font-size': '2vw',
+	'line-height': '2.2vw'
+});
+
+// $(".diagonal_left_degree").html("<div class='box2' id='box2'></div>");
+// $("#page").append("<div class='diagonal_left_degree'><div class='box2'></div></div>");
+
+
+// $(".sewingmachine").after("<div class='SlideInUp'><img src='../assets/branding/thimble2_model.jpg' class='photo'></img></div>");
+$("#page").append("<div class='slideInUp'><div class='box2'></div></div>");
+// $("#page").append("<img src='../assets/branding/thimble2_model.jpg' class='photo'></img>");
+
+//
+// $(".underheader1").after("<div class='slideInUp'><img src='../assets/branding/thimble2_model.jpg' class='photo'></img></div>");
+
+
+
+
+  }
+)
+
+// $('#thimble_header').removeClass('header1');
+// $('#thimble_header').addClass('header2');
+
+
+
+</script>
+</body>
+</html>

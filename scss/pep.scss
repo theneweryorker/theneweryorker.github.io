@@ -1,0 +1,15 @@
+
+$pep-container-color: #f3eee6;
+$pep-color: #f5b188;
+
+.demo{
+  background: $pep-container-color;
+  width: 500px;
+  height: 300px;
+}
+
+
+  .pep{
+    background: $pep-color;
+    height: 100px; width: 100px;
+  }

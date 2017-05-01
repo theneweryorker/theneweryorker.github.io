@@ -1,0 +1,30 @@
+{
+  "name": "horwheel",
+  "version": "1.0.1",
+  "description": "Scroll horizontally with mouse wheel",
+  "author": "Guille Paz <guille87paz@gmail.com>",
+  "scripts": {
+    "build": "node browserify.js",
+    "dist": "npm run build && uglifyjs ./dist/horwheel.js -m -o ./dist/horwheel.min.js --source-map ./dist/horwheel.min.js.map",
+    "test": "npm run build && istanbul cover _mocha",
+    "lint": "eslint index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "13.2.0",
+    "eslint": "3.13.0",
+    "eslint-config-airbnb-base": "11.0.1",
+    "eslint-plugin-import": "2.2.0",
+    "istanbul": "0.4.5",
+    "mocha": "3.2.0",
+    "uglifyjs": "2.4.10"
+  },
+  "keywords": [
+    "wheel",
+    "mousewheel",
+    "horizontal",
+    "scroll"
+  ],
+  "license": "MIT",
+  "main": "index.js"
+}

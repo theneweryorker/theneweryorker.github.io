@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Holly Li</title>
+    <link rel="stylesheet" type="text/css" href="../css/me.css">
+    <link rel="stylesheet" type="text/css" href="../css/gifs.css">
+
+    <link href="//fonts.googleapis.com/css?family=VT323" rel="stylesheet" type="text/css"/>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="../js/t.js"></script>
+    <script type="text/javascript">
+
+      $(function(){
+
+       $('pre').t({
+          caret:'<span style="color:red;">&para;</span>',
+          speed:25,
+          delay:1,
+          speed_vary: true,
+          mistype: true,
+          blink: false,
+
+
+          typing:function(e,t,l,c){
+
+            if(/\u200c/.test(c)){
+             $(e).t('pause');
+            }
+
+            if(c=='\u200d'){
+             $(e).find('del').animate({_:1},{duration:5e2,complete:function(){$(this).addClass('blue');}});
+            }
+
+          }
+      }).click(function(){
+        $(this).t('pause',false);
+        // alert('pressed key');
+        // $('pre').setTimeout(function(){$('pre').t('pause',false);}, 1000);
+      });
+        // $(this).setTimeout(function(){$(this).t('pause',false);}, 1000);});
+
+
+      // $(document).on('click','#add-time-btn',function(){
+      //
+      //   $('pre').t('add','&gt; '+(new Date()).getTime()+'\n');
+      //
+      // });
+      // $(document).keypress(function(){
+      //   alert('pressed key');
+      //   $('pre').setTimeout(function(){$(this).t('pause',false);}, 1000);});
+      //
+      //
+      //
+      //
+      });
+      </script>
+
+
+</head>
+
+
+<body>
+
+  <div id="show-gif"></div>
+  <section>
+
+    <pre>
+
+
+    Hello. <ins>1.0</ins>
+    My name is Holly Li.<ins>1.0</ins>
+    I'm from the middle of no where: Athens, Ohio. (Press a, then click here!)&#x200c;
+    <!-- <em>( or click here to read on)</em>.&#x200c; -->
+
+    I go to school at the University of Pennsylvania, where I study management
+    (Press b, then click here)&#x200c;
+
+    I'm always <u>really</u> <del class="k">hungry<ins>0.60</ins></del><del class="k">full<ins>0.60</ins></del>...<ins>0.60</ins>indecisive.</u>
+
+    Check out stuff I do: <a href="file:///Users/holly/Desktop/tada/html/portfolio.html" class="btn">&gt;</a><ins>2.0</ins>
+    or listen to what I'm listening to: <button id="music_button" onclick="document.getElementById('audio').play()">DOOOOOO ITTT</button>
+
+
+    <audio id="audio" src="../assets/mia.mp3" type="audio/mpeg" loop></audio>
+
+    </pre><br/><br/>
+
+  </section>
+  <script src="../js/hotdog.js"></script>
+
+
+
+
+</body>

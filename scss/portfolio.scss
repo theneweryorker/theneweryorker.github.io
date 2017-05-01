@@ -1,0 +1,256 @@
+/* Core */
+@import 'globals';
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background: #fff; }
+
+body {
+  font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0 20px;
+  color: #6e6e6e; }
+
+
+  $darkgreen: #006838;
+
+/* Clearfix */
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table; }
+
+.cf:after {
+  clear: both; }
+
+/* Forms */
+.form-control {
+  display: block;
+  width: 940px;
+  height: 40px;
+  // padding: 5px 15px;
+  font-size: 16px;
+  line-height: 26px;
+  color: inherit;
+  background: #fff;
+  // border: 2px solid #e5e5e5;
+  border-radius: 4px;
+display: flex;
+justify-content: space-between;}
+
+.form-control:focus {
+  outline: 0;
+  border-color: red; }
+
+/* Sections */
+section {
+  margin: 60px auto;
+  padding-top: 0;
+  max-width: 940px; }
+
+section h4 {
+  margin: 30px 0 15px 0;
+  font-weight: 900;
+  font-size: 80px;
+  color: #3e3e3e; }
+
+/* Section titles */
+.section-title {
+  color: #3e3e3e;
+  font-size: 7vw;
+  color: black;
+  font-family: franklin_gothic_fsdemi;
+  // font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  margin: 40px 0;
+  letter-spacing: 0.3px;
+  // text-transform: uppercase;
+  text-align: center; }
+
+
+/* Controls */
+
+
+input[type="radio"] {
+    display:none;
+}
+
+
+
+.radio_button{
+  flex: 1.5;
+  border: 3px solid;
+  color: black;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  label{
+    font-family: glacial_indifferencebold;
+    font-size: 1.1vw;
+    letter-spacing: 0.1em;
+  }
+}
+
+
+.spacer{
+  flex:0.3;
+}
+
+
+.controls {
+  margin: 30px -10px; }
+
+.control {
+  position: relative;
+  float: left;
+  width: 25%;
+  padding: 0 10px; }
+
+@media (max-width: 600px) {
+  .control {
+    float: none;
+    width: auto;
+    margin: 0 0 15px 0; }
+
+  .control.layout {
+    margin: 0; } }
+.control-field {
+  position: relative;
+  // padding-left: 40px;
+  z-index: 1; }
+
+/* Grid */
+.grid {
+  position: relative;
+  max-width: 960px;
+  margin: 0 -10px;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-transition: height 0.2s ease-out;
+  -moz-transition: height 0.2s ease-out;
+  -ms-transition: height 0.2s ease-out;
+  transition: height 0.2s ease-out; }
+
+.item {
+  position: absolute;
+  line-height: 100px;
+  margin: 10px;
+  z-index: 1; }
+
+  .item.h1{
+    height: 220px;
+    line-height: 220px;
+  }
+
+.item.h2 {
+  height: 400px;
+  line-height: 400px; }
+
+
+.item.h3 {
+height: 500px;
+line-height: 500px; }
+
+.item.h4{
+  height: 640px;
+  line-height: 480px;
+}
+
+.item.h5{
+  height: 200px;
+  line-height: 200px;
+}
+
+.item.h6{
+  height: 940px;
+  line-height: 940px;
+}
+
+.item.h7{
+  height: 460px;
+  line-height: 460px;
+}
+
+.item.special{
+  height: 430px;
+  line-height: 430px;
+}
+
+
+  .item.w1{
+    width: 300px;
+  }
+
+  .item.w2{
+    width: 400px;
+  }
+
+  .item.w3{
+    width: 460px;
+  }
+
+.item.w4{
+  width: 620px;
+}
+
+.item-content {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+
+.card {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 300;
+  // background-color: rgba(255, 255, 255, 0.9);
+  border: 3px solid;
+  color: black;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out; }
+
+  .card_colored{
+    @extend .card;
+    background-color: #f3eee6;
+    border: 3px solid black;
+  }
+
+  .card_black{
+    @extend .card;
+    background-color: black;
+    border: 4px solid black;
+
+  }
+
+
+.item.red .card {
+  color: #f94a7a; }
+
+.item.green .card {
+  color: #2ac06d; }
+
+.item.blue .card {
+  color: #4A9FF9; }
+
+/*# sourceMappingURL=portfolio.css.map */

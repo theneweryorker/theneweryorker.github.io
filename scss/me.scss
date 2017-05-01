@@ -1,0 +1,44 @@
+// .now-playing{
+//   color: red;
+//
+// }
+
+@import url('https://fonts.googleapis.com/css?family=VT323');
+@import 'globals';
+
+
+*{
+margin:0;
+padding:0;
+outline:0;
+border:0;
+cursor:default;
+font-family:vt323,monospace;
+font-size:25px;
+line-height:25px;
+// text-shadow:-1px 0px 2px #eee;
+text-shadow: none;
+}
+
+
+section{
+  color:black;
+position:absolute;
+top:15%;
+left:25%;
+width:800px;
+margin-left:-200px;
+overflow: auto;
+}
+
+
+pre{padding:5px;width:1200px;opacity:.9; margin: 0 auto;}
+
+
+del{text-decoration:none;}
+
+
+.blue{background:blue;color:white;}
+
+.btn,button{padding:5px;background:black;color:white;}
+.btn{text-decoration:none;}

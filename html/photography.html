@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Photography</title>
+
+	<link rel="stylesheet" type="text/css" href="../css/photography.css">
+  <link rel="stylesheet" type="text/css" href="../css/navigation.css">
+
+	<!-- Use this style sheet to access built-in fadeInLeftShort, etc. -->
+  <link rel="stylesheet" href="../css/animations.css">
+
+</head>
+
+<header>
+	<div class="navigation dotstyle dotstyle-fillup">
+		<ul>
+			<li><a href="#china" id="first">a</a></li>
+			<li><a href="#india">b</a></li>
+			<li><a href="#morocco">c</a></li>
+			<li><a href="#europe">d</a></li>
+		</ul>
+	</div>
+</header>
+
+  <body>
+
+    <div id="wrapper" class="wrapper-scroll">
+        <div class="content">
+            <div class="section animatedParent par" id="china" style="padding-left:19.5vw;">
+              <h1 class="animated fadeInLeftShort"> China </h1>
+							<h2 class="animated fadeInLeftShort"> BEIJING // HONG KONG // YUNNAN </h1>
+
+
+              <div class="article">
+                <img class="photoTALL" src="../assets/photography/china1.jpg">
+              </div>
+              <div class="article">
+                <img class="photoTALL" src="../assets/photography/china2.JPG">
+              </div>
+              <div class="article">
+                <img class="photoTALL" src="../assets/photography/china3.JPG" style="width: 250px; padding-right: 20px;">
+              </div>
+              <div class="article">
+                <img class="photo" src="../assets/photography/china4.JPG" style="padding-right: 130px;">
+              </div>
+              <div class="article">
+                <img class="photoTALL" src="../assets/photography/china5.JPG">
+              </div>
+              <div class="article">
+                <img class="photoTALL" src="../assets/photography/china6.JPG">
+              </div>
+          </div>
+
+          <div class="section animatedParent par" id="india">
+            <h1 class="animated fadeInLeftShort"> India </h1>
+						<h2 class="animated fadeInLeftShort"> MUMBAI // JAIPUR </h1>
+
+
+              <div class="article">
+                <img class="photo" src="../assets/photography/india1.jpg">
+              </div>
+              <div class="article">
+                <img class="photo" src="../assets/photography/india2.JPG">
+              </div>
+              <div class="article">
+                <img class="photo" src="../assets/photography/india3.JPG">
+              </div>
+              <div class="article">
+                <img class="photo" src="../assets/photography/india4.JPG">
+              </div>
+              <div class="article">
+                <img class="photo" src="../assets/photography/india5.JPG">
+              </div>
+          </div>
+
+          <div class="section animatedParent par" id="morocco">
+              <h1 class="animated fadeInLeftShort">Morocco</h1>
+							<h2 class="animated fadeInLeftShort"> MARRAKECH // FES // RABAT // CASABLANCA // CHEFCHAOUEN </h1>
+
+
+            <div class="article">
+              <img class="photo" src="../assets/photography/morocco3.JPG">
+            </div>
+            <div class="article">
+              <img class="photo" src="../assets/photography/morocco6.JPG" style="margin-bottom: 20px;width: 250px; height: 1000px;">
+            </div>
+              <div class="article">
+                <img class="photo" src="../assets/photography/morocco.jpg">
+              </div>
+              <div class="article">
+                <img class="photo" src="../assets/photography/morocco2.JPG">
+              </div>
+
+              <div class="article">
+                <img class="photoTALL" src="../assets/photography/morocco4.JPG">
+              </div>
+              <div class="article">
+                <img class="photoTALL" src="../assets/photography/morocco5.JPG">
+              </div>
+              <div class="article">
+                <img class="photo" src="../assets/photography/morocco7.JPG">
+              </div>
+              <div class="article">
+                <img class="photo" src="../assets/photography/morocco8.JPG">
+              </div>
+          </div>
+
+          <div class="section animatedParent par" id="europe">
+            <h1 class="animated fadeInLeftShort"> Europe </h1>
+						<h2 class="animated fadeInLeftShort"> LONDON // PARIS // EDINBURGH </h1>
+
+
+            <div class="article">
+              <img class="photo" src="../assets/photography/spain2.jpg">
+            </div>
+            <div class="article">
+              <img class="photoTALL" src="../assets/photography/spain3.jpg" style="padding-bottom: 150px;">
+            </div>
+            <div class="article">
+              <img class="photoTALL" src="../assets/photography/europe1.jpg">
+            </div>
+            <div class="article">
+              <img class="photo" src="../assets/photography/musicperformers.jpg">
+            </div>
+              <div class="article">
+                <img class="photo" src="../assets/photography/artmuseum.JPG">
+              </div>
+              <div class="article">
+                <img class="photo" src="../assets/photography/banksy.JPG">
+              </div>
+
+
+              <div class="article">
+                <img class="photo" src="../assets/photography/skateboarder.jpg">
+              </div>
+              <div class="article">
+                <img class="photo" src="../assets/photography/spain.jpg">
+              </div>
+
+          </div>
+
+        </div>
+
+
+      <!-- <div class="dots">
+        <nav>
+            <ul>
+                <li><a href="#servicios"> Servicios </a> </li>
+                <li><a href="#galeria"> Galeria </a> </li>
+                <li><a href="#contacto">Contacta  nos </a> </li>
+            </ul>
+        </nav>
+      </div> -->
+
+      </div>
+
+
+
+  	<script src="https://code.jquery.com/jquery.js"></script>
+    <script>
+      var horwheel = require('horwheel'),
+      view = document.getElementById('wrapper');
+      horwheel(view);
+    </script>
+
+    <!-- this is our reveal animations on scroll jQuery plugin. Make sure you have corresponding CSS stylesheet (animations) linked in header-->
+    <script type='text/javascript' src='../js/css3-animate-it.js'></script>
+		<!-- this plugin makes the dots fill in; also other built in dot options -->
+		<script type='text/javascript' src='../js/dots.js'></script>
+		<!-- plugin to slow reveal photos on load -->
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+		<!-- initializing scrollreveal -->
+    <script>
+	    window.sr = ScrollReveal({ origin: top}, {distance: '10px'}, {delay: 10});
+	    sr.reveal('.article', {duration: 2000}, 30);
+    </script>
+
+		<!-- script to get dots to fill in as you scroll -->
+		<script>
+
+		$(document).ready(function($){
+			var parPosition = [];
+			$('.par').each(function() {
+					parPosition.push($(this).offset().left);
+			});
+
+			// MAKE FIRST ONE START OUT AS FILLED
+			$('#first').addClass('active');
+
+			$('a').click(function(){
+				$('html, body').animate({
+					scrollLeft: $( $.attr(this, 'href') ).offset().left
+				}, 500);
+				return false;
+			});
+
+			$(document).on('scroll', function() {
+					var position = $(document).scrollLeft(),
+							index;
+
+					for (var i=0; i<parPosition.length; i++) {
+							if (position <= parPosition[i]) {
+									index = i;
+									break;
+							}
+					}
+
+					// FILLS IN COLOR AS WE SCROLL
+					$('.navigation ul li a').removeClass('active');
+					$('.navigation ul li a:eq('+index+')').addClass('active');
+			});
+
+				$('.navigation ul li a').click(function () {
+				$('.navigation ul li a').removeClass('active');
+			$(this).addClass('active');
+		});
+		});
+	</script>
+
+  </body>
+
+</html>

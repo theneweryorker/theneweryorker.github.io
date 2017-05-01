@@ -1,0 +1,255 @@
+body {
+  height: 1000px;
+  // overflow: hidden;
+}
+
+html {
+  min-height: 100%;
+}
+
+
+@import 'globals';
+
+// FONTS
+// FONTS
+// FONTS
+// FONTS
+
+.georgia_font{
+  font-family : Georgia;
+  font-size : 2vw;
+  line-height : 2vw;
+  text-align: center;
+  color : black;
+}
+
+.bold_georgia_font{
+  @extend .georgia_font;
+  font-size : 45px;
+  line-height : 50px;
+  font-weight: 700;
+  color : white;
+}
+
+// .womby_font{
+//   font-family : wombyregular;
+//   font-size : 5vw;
+//   line-height : 5vh;
+//   letter-spacing : 0.9vw;
+//   color : black;
+//   text-align: center;
+// }
+
+// THE NITTY GRITS
+// THE NITTY GRITS
+// THE NITTY GRITS
+// THE NITTY GRITS
+
+
+.entire_page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: inherit;
+}
+
+.top{
+  flex: 1;
+  // height: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header1{
+  z-index: 1000;
+  flex: 0.5;
+  padding-bottom: 5vh;
+  padding-top: 10vh;
+  font-family : wombyregular;
+  font-size : 5vw;
+  line-height : 5vh;
+  letter-spacing : 0.9vw;
+  color : black;
+  text-align: center;
+  -webkit-transition: all 1.1s ease;
+-moz-transition: all 1.1s ease;
+-ms-transition: all 1.1s ease;
+transition: all 1.1s ease;
+
+}
+
+
+
+
+
+.underheader1{
+  // @extend .georgia_font;
+  font-family : Georgia;
+  font-size : 2vw;
+  line-height : 2vw;
+  text-align: center;
+  color : black;
+  padding: 2vh;
+  z-index: 1000;
+  flex: 0.5;
+  -webkit-transition: all 1.1s ease;
+-moz-transition: all 1.1s ease;
+-ms-transition: all 1.1s ease;
+transition: all 1.1s ease;
+}
+
+.box1{
+      height: 1000px;
+      width: 800px;
+      position: absolute;
+      background: $caramel;
+      bottom:0%;
+      right: 0%;
+      z-index: -2000;
+      margin-right: -60em;
+      margin-bottom: -60em;
+
+    }
+
+.box2{
+      height: 800px;
+      width: 800px;
+      position: absolute;
+      background: $peach;
+      bottom:0%;
+      left: 0%;
+      z-index: -1000;
+      // margin-left: -2em;
+      margin-left: -25em;
+      margin-bottom: -40em;
+      // @include rotate(-40deg);
+    }
+
+.box3{
+  height: 1200px;
+  width: 800px;
+  position: absolute;
+  background: $military-green;
+  top:0%;
+  right: 0%;
+  z-index: -2000;
+  margin-left: -60em;
+  margin-top: -70em;
+}
+    .photo{
+      max-height: 500px;
+      // position: absolute;
+      margin-top: -20em;
+      z-index: 2000;
+      -webkit-transition: all .8s ease;
+    -moz-transition: all .8s ease;
+    -ms-transition: all .8s ease;
+    transition: all .8s ease;
+      // margin-left: -30em;
+    }
+
+
+
+.explanation_home{
+  @extend .bold_georgia_font;
+  top: 0;
+  right: 0;
+  padding-top: 10vh;
+  padding-left: 4vw;
+  text-align: left;
+}
+
+.whiteimage{
+  // @include rotate(20deg);
+  position: absolute;
+  // right: -45vw;
+  // top: 1vh;
+ //  -webkit-animation: rotateInUpRight 1.5s; /* Safari 4+ */
+ // -moz-animation: rotateInUpRight 1.5s; /* Fx 5+ */
+ // animation: rotateInUpRight 1.5s; /* IE 10+, Fx 19+ */
+ max-height: 600px;
+ background-color: $light-beige;
+ position: absolute;
+ bottom:0%;
+ right: 0%;
+ z-index: -1000;
+ margin-right: -60em;
+ margin-bottom: -80em;
+
+}
+
+.black_sketch{
+  position: absolute;
+  z-index: -1000;
+  max-height: 400px;
+  // @include rotate(-40deg);
+  margin-left: -40em;
+}
+
+.sewingmachine{
+  height: 400px;
+  // width: 600px;
+  max-width: 600px;
+  z-index: 2000;
+  // margin-top: 14em;
+
+
+}
+
+
+
+
+
+.photosExp{
+  /*float: right;*/
+  position: relative;
+}
+.photosExp2{
+  position: relative;
+}
+.bottom{
+  display: flex;
+  padding: 4vw;
+}
+.image_touch{
+  position: absolute;
+  height: 400px;
+}
+.overlay_font{
+    font-family : wombyregular;
+    font-size : 80px;
+    line-height : 64.26px;
+    letter-spacing : 10.56px;
+    color : #231F20;
+    color : rgb(35, 31, 32);
+      padding-top: 5vh;
+      position: absolute;
+    right: -70vw;
+    top: 10vh;
+}
+
+.explanation2{
+  font-family : Georgia;
+   font-size : 25px;
+   line-height : 26px;
+   text-align: center;
+   color : #231F20;
+   color : rgb(35, 31, 32);
+   padding: 7vh;
+   position: absolute;
+   right: -77vw;
+   top:27vh;
+   text-align: left;
+  }
+
+  .tape_measure{
+    position: absolute;
+  right: -93vw;
+  top: 15vh;
+  max-height: 300px;
+  -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Chrome, Safari, Opera */
+    transform: rotate(20deg);
+    padding-top:30vh;
+
+  }

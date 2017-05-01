@@ -1,0 +1,79 @@
+@import 'globals';
+
+body {
+     margin: 0;
+     padding: 0;
+ }
+
+ h1 {
+     font-family: butlerextrabold;
+     font-size: 5em;
+    //  letter-spacing: 0.005em;
+     margin: .3em 0;
+     text-align: center;
+     margin-left: -10%;
+     margin-top: -1.8%;
+ }
+
+ h2{
+   font-family: glacial_indifferenceregular;
+   font-size: 0.9em;
+   color: grey;
+   letter-spacing: 3px;
+   text-align: center;
+    margin-left: -10%;
+    padding-bottom: 1%;
+    margin-top: -3%;
+
+
+ }
+
+
+ .wrapper-scroll {
+     -webkit-overflow-scrolling: touch;
+     overflow-scrolling: touch;
+     overflow: auto;
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     width: 8000px;
+
+    //  MAKE SURE THE WRAPPER-SCROLL is long enough--
+    // if content disappears, it's because wrapper is too short
+ }
+
+ .content {
+     width: 9000px;
+     padding-top: 1%;
+}
+
+.section {
+   float: left;
+   overflow: hidden;
+   width: 850px;
+   padding-left: 19.5vw;
+   padding-right: 21vw;
+
+}
+
+.photo{
+    max-height: 250px;
+  }
+
+.photoTALL{
+  max-width: 250px;
+  margin-bottom: 20px;
+}
+
+
+.article {
+   float: left;
+   width: 15em;
+   height: 15em;
+   margin: .5em;
+   overflow: hidden;
+   border: 2px solid $barely-grey;
+   border-radius: 2px;
+}

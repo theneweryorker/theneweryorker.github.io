@@ -2129,11 +2129,12 @@ p.intro .dot {
 
 .contact .phone, .contact .mail {
   color: #1c1b20;
-  font-weight: 500; }
+  font-weight: 500;
+  font-size: 2rem; }
 
 @media (min-width: 1600px) {
   .contact .phone, .contact .mail {
-    font-size: 1.4rem;
+    font-size: 2rem;
     margin-top: 6px; } }
 .contact .addresse {
   font-size: 1.1rem;
@@ -2283,7 +2284,8 @@ span.msk span {
 
 @media (min-width: 767px) {
   .briefLink {
-    margin-left: 40px; } }
+    margin-left: 40px;
+    font-family: "glacial_indifferencebold"; } }
 @media (min-width: 1200px) {
   .briefLink {
     margin-left: 0px; } }

@@ -153,11 +153,11 @@ body.menuHover .loader .icon {
     //     transform: translate(-20px, -50%); } }
     @media (min-width: 766px) {
       .menuOpen .navbar-toggle .icon {
-        -webkit-transform: translate(50%, 0px);
-        -moz-transform: translate(50%, 0px);
-        -ms-transform: translate(50%, 0px);
-        -o-transform: translate(50%, 0px);
-        transform: translate(50%, 0px); } }
+        -webkit-transform: translate(50%, -1px);
+        -moz-transform: translate(50%, -1px);
+        -ms-transform: translate(50%, -1px);
+        -o-transform: translate(50%, -1px);
+        transform: translate(50%, -1px); } }
   @media (min-width: 767px) {
     .navbar-toggle:hover .line:nth-child(1) {
       width: 20px; }
@@ -520,8 +520,9 @@ body.menuHover .loader .icon {
         vertical-align: middle;
         position: relative;
         font-family: "glacial_indifferencebold";
-        font-size: 2.1rem;
+        font-size: 3rem;
         line-height: 1.1;
+        letter-spacing: 0.1em;
         font-weight: 900;
         text-decoration: none !important;
         color: inherit; }
@@ -530,7 +531,7 @@ body.menuHover .loader .icon {
             font-size: 2.4rem; } }
         @media (min-width: 767px) {
           #menu .menu-container .menu-nav li a {
-            font-size: 2.3rem; } }
+            font-size: 3rem; } }
         @media (min-width: 1600px) {
           #menu .menu-container .menu-nav li a {
             font-size: 3.8rem; } }
@@ -652,3 +653,9 @@ body.menuHover .loader .icon {
     @media (min-width: 767px) {
       .menuOpen .menuColor {
         opacity: 0.95; } }
+
+
+@media (min-width: 767px) {
+.briefLink {
+  margin-left: 40px;
+  font-family: "glacial_indifferencebold"; } }

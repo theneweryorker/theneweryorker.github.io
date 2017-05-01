@@ -109,13 +109,26 @@ body.menuHover .loader .icon {
   //     -ms-transform: translateX(20px);
   //     -o-transform: translateX(20px);
   //     transform: translateX(20px); } }
+
+  @media (min-width: 767px) {
+    .menuOpen #portfolio_nav{
+      -webkit-transform: translate(10px, 50px);
+      -moz-transform: translate(10px, 50px);
+      -ms-transform: translate(10px, 50px);
+      -o-transform: translate(10px, 50px);
+      transform: translate(10px, 50px); }
+    }
+
   @media (min-width: 767px) {
     .menuOpen .navbar-toggle {
       -webkit-transform: translateX(10px);
       -moz-transform: translateX(10px);
       -ms-transform: translateX(10px);
       -o-transform: translateX(10px);
-      transform: translateX(10px); } }
+      transform: translateX(10px); }
+    }
+
+
   .loaded .navbar-toggle {
     pointer-events: all; }
   .navbar-toggle .icon {
@@ -140,11 +153,11 @@ body.menuHover .loader .icon {
     //     transform: translate(-20px, -50%); } }
     @media (min-width: 766px) {
       .menuOpen .navbar-toggle .icon {
-        -webkit-transform: translate(50%, -1px);
-        -moz-transform: translate(50%, -1px);
-        -ms-transform: translate(50%, -1px);
-        -o-transform: translate(50%, -1px);
-        transform: translate(50%, -1px); } }
+        -webkit-transform: translate(50%, 0px);
+        -moz-transform: translate(50%, 0px);
+        -ms-transform: translate(50%, 0px);
+        -o-transform: translate(50%, 0px);
+        transform: translate(50%, 0px); } }
   @media (min-width: 767px) {
     .navbar-toggle:hover .line:nth-child(1) {
       width: 20px; }

@@ -259,11 +259,11 @@
 section {
   color: black;
   position: absolute;
-  top: 15%;
+  top: 20%;
   left: 25%;
   width: 800px;
   margin-left: -200px;
-  overflow: auto; }
+  overflow: visible; }
 
 pre {
   padding: 5px;

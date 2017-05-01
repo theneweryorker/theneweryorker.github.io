@@ -286,7 +286,8 @@ h2 {
   overflow: hidden;
   width: 850px;
   padding-left: 19.5vw;
-  padding-right: 21vw; }
+  padding-right: 21vw;
+  z-index: -1000; }
 
 .photo {
   max-height: 250px; }

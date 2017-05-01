@@ -6,11 +6,15 @@
 
 	<link rel="stylesheet" type="text/css" href="../css/photography.css">
   <link rel="stylesheet" type="text/css" href="../css/navigation.css">
+	<link rel="stylesheet" type="text/css" href="../css/front_menu.css">
+
 
 	<!-- Use this style sheet to access built-in fadeInLeftShort, etc. -->
   <link rel="stylesheet" href="../css/animations.css">
 
 </head>
+<body class="loaded">
+
 
 <header>
 	<div class="navigation dotstyle dotstyle-fillup">
@@ -21,9 +25,34 @@
 			<li><a href="#europe">d</a></li>
 		</ul>
 	</div>
+
+	<a class="navbar-toggle" href="#">
+		<i class="icon">
+			<span class="line"></span>
+			<span class="line"></span>
+			<span class="line"></span>
+		</i>
+		<span class="txt"><span>M</span><span>E</span><span>N</span><span>U</span></span>
+	</a>
 </header>
 
   <body>
+
+		<div id="menu">
+			<div class="menu-container">
+					<ul class="menu-nav">
+						<li class="nav-item"><a class="page-port-link" href="/html/portfolio.html"><span class="msk"><span>PORTFOLIO</span></span></a></li>
+						<li class="nav-item"><a class="page-photo-link" href="/html/photography.html"><span class="msk"><span>PHOTOGRAPHY</span></span></a></li>
+						<li class="nav-item"><a class="page-me-link" href="/html/me.html"><span class="msk"><span>ABOUT ME</span></span></a></li>
+					</ul>
+					<div class="contact">
+						<address class="address"><a rel="external" target="_blank">4041 Sansom Street, Philadelphia, PA</a></address><br/>
+						<a rel="external" class="phone"> 740 591 1701</a><br/>
+						<a rel="external" class="mail">hrli@wharton.upenn.edu</a>
+					</div>
+				</div>
+			</div>
+
 
     <div id="wrapper" class="wrapper-scroll">
         <div class="content">
@@ -152,8 +181,16 @@
             </ul>
         </nav>
       </div> -->
+			<div class="borders">
+		  	<div class="top"></div>
+		  	<div class="bottom"></div>
+		  	<div class="left"></div>
+		  	<div class="right"></div>
+	  	</div>
+			<div class="menuColor"></div>
 
       </div>
+
 
 
 
@@ -176,6 +213,11 @@
 	    sr.reveal('.article', {duration: 2000}, 30);
     </script>
 
+		<script src="../js/menu_otherpages.js"></script>
+		<!-- <script src="../js/TweenLite.js"></script> -->
+
+
+
 		<!-- script to get dots to fill in as you scroll -->
 		<script>
 
@@ -190,6 +232,8 @@
 
 			$('a').click(function(){
 				$('html, body').animate({
+				// $('html').animate({
+
 					scrollLeft: $( $.attr(this, 'href') ).offset().left
 				}, 500);
 				return false;

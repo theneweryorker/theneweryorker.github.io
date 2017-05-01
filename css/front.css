@@ -1117,29 +1117,6 @@ header.header .list-socials {
   position: relative;
   z-index: 10; }
 
-#menu .switch-lang {
-  margin: 40px 0px;
-  opacity: 0;
-  -webkit-transform: translateY(50px);
-  -moz-transform: translateY(50px);
-  -ms-transform: translateY(50px);
-  -o-transform: translateY(50px);
-  transform: translateY(50px);
-  -webkit-transition: -webkit-transform 600ms cubic-bezier(1, 0, 0, 1) 0ms, opacity 400ms linear 0ms;
-  -moz-transition: -moz-transform 600ms cubic-bezier(1, 0, 0, 1) 0ms, opacity 400ms linear 0ms;
-  transition: transform 600ms cubic-bezier(1, 0, 0, 1) 0ms, opacity 400ms linear 0ms; }
-
-.menuOpen #menu .switch-lang {
-  opacity: 1;
-  -webkit-transform: translateY(0px);
-  -moz-transform: translateY(0px);
-  -ms-transform: translateY(0px);
-  -o-transform: translateY(0px);
-  transform: translateY(0px);
-  -webkit-transition: -webkit-transform 600ms cubic-bezier(1, 0, 0, 1) 200ms, opacity 400ms linear 350ms;
-  -moz-transition: -moz-transform 600ms cubic-bezier(1, 0, 0, 1) 200ms, opacity 400ms linear 350ms;
-  transition: transform 600ms cubic-bezier(1, 0, 0, 1) 200ms, opacity 400ms linear 350ms; }
-
 #menu .list-socials {
   margin-bottom: 40px;
   opacity: 0;
@@ -1545,9 +1522,6 @@ html {
 
 body {
   height: 100%;
-  font-size: 1.3rem;
-  font-family: "glacial_indifferencebold";
-  color: #1c1b20;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
@@ -2149,7 +2123,8 @@ p.intro .dot {
 
 .contact > * {
   display: inline-block;
-  font-family: "glacial_indifferencebold"; }
+  font-family: "glacial_indifferencebold";
+  color: black; }
 
 .contact .phone, .contact .mail {
   color: #1c1b20;

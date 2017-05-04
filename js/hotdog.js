@@ -20,9 +20,9 @@
 
 			var keycodes = {
 
-				65:{'key':'a','src':'https://zarkafa.files.wordpress.com/2014/03/david-szakaly-organik-gif-1.gif?w=510'},
-				66:{'key':'b','src':'http://assets.lookbookspro.com/bernstein-andriulli/gs_55fc75a9-a3b4-40cf-ae20-4a3f0a771fd0.gif'},
-				67:{'key':'c','src':'https://media.giphy.com/media/3o7TKUMk1IysRprsis/giphy.gif'},
+				65:{'key':'a','src':'../assets/windows/desktop1-04.png'},
+				66:{'key':'b','src':'../assets/windows/desktop2-04.png'},
+				67:{'key':'c','src':'../assets/windows/desktop3.gif'},
 				68:{'key':'d','src':'http://bsnscb.com/data/out/86/40146011-gif-wallpapers.gif'},
 				69:{'key':'e','src':'http://blog.europeana.eu/wp-content/uploads/2016/10/280-GIF.gif'},
 				70:{'key':'f','src':'https://media.giphy.com/media/jzD2YI7EUGbN6/giphy.gif'},
@@ -98,7 +98,7 @@
 					$list.prepend(pressing[keycode].el);
 					$('body').addClass('gif-on');
 					$display.css('background-image','url('+imgPath+keycodes[keycode].src+')').show();
-					
+
 				}
 
 			}

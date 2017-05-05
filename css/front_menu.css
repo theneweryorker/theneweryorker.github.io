@@ -535,7 +535,7 @@ body.menuOpen .page-container {
   left: 0px;
   right: 80px;
   height: 100%;
-  z-index: 500;
+  z-index: 1000;
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -577,7 +577,6 @@ body.menuOpen .page-container {
 
 @media (min-width: 767px) {
   #menu {
-    left: 55px;
     right: 20%;
     -webkit-box-orient: horizontal;
     -moz-box-orient: horizontal;

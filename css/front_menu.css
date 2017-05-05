@@ -356,8 +356,7 @@ body.menuOpen .page-container {
   pointer-events: none;
   -webkit-transition: -webkit-transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
   -moz-transition: -moz-transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
-  transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
-  background: white; }
+  transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms; }
 
 @media (min-width: 767px) {
   .navbar-toggle {

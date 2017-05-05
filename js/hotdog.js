@@ -23,7 +23,7 @@
 				65:{'key':'a','src':'../assets/windows/desktop1-04.png'},
 				66:{'key':'b','src':'../assets/windows/desktop2-04.png'},
 				67:{'key':'c','src':'../assets/windows/desktop3.gif'},
-				68:{'key':'d','src':'http://bsnscb.com/data/out/86/40146011-gif-wallpapers.gif'},
+				68:{'key':'d','src':'../assets/windows/desktop4.png'},
 				69:{'key':'e','src':'http://blog.europeana.eu/wp-content/uploads/2016/10/280-GIF.gif'},
 				70:{'key':'f','src':'https://media.giphy.com/media/jzD2YI7EUGbN6/giphy.gif'},
 				71:{'key':'g','src':'https://s-media-cache-ak0.pinimg.com/originals/c4/04/fc/c404fc12d55b16c3770d34a5af274f81.gif'},

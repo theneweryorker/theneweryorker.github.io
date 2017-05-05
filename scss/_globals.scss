@@ -86,6 +86,15 @@
 
 }
 
+@font-face {
+    font-family: 'Caslon Old Face';
+    src: url('../font/caslon_old_face_heavy_regular_1-webfont.woff2') format('woff2'),
+         url('../font/caslon_old_face_heavy_regular_1-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 //MIXINS
 //MIXINS
 //MIXINS
@@ -149,6 +158,24 @@ $background_colors: $navy, $bubblegum, $military-green, $pep-color, $black, $puc
 // and in each class we specify duration, fill, etc.
 //
 // Then we have to BUILD each animation-- keyframes, etc.
+
+.quickfade{
+  -webkit-animation-name: quickfade;
+  animation-name: quickfade;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes quickfade {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+    }
+  }
 
 
 
@@ -431,5 +458,32 @@ $background_colors: $navy, $bubblegum, $military-green, $pep-color, $black, $puc
   @keyframes dash {
     to {
       stroke-dashoffset: 0;
+    }
+  }
+
+  .rotateInUpRight_wqhs {
+    -webkit-animation-name: rotateInUpRight_wqhs;
+    animation-name: rotateInUpRight_wqhs;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+
+  @keyframes rotateInUpRight_wqhs {
+    0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate3d(0, 0, 1, -90deg);
+    transform: rotate3d(0, 0, 1, -90deg);
+    opacity: 0;
+    }
+    100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+    opacity: 1;
+
     }
   }

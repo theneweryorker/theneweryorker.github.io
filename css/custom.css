@@ -429,6 +429,14 @@
   position: relative;
   padding-top: 3%; }
 
+.branding .sl-slide blockquote cite {
+  font-size: 8px;
+  padding-top: 10px;
+  display: inline-block;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 4px; }
+
 /* Custom background colors for slides in first demo */
 /* First Slide */
 .branding .bg-1 .sl-slide-inner,

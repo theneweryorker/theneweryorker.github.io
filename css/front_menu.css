@@ -357,11 +357,7 @@ body.menuOpen .page-container {
   -webkit-transition: -webkit-transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
   -moz-transition: -moz-transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
   transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
-  background: white;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px; }
+  background: white; }
 
 @media (min-width: 767px) {
   .navbar-toggle {

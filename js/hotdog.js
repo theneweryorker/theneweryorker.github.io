@@ -24,7 +24,7 @@
 				66:{'key':'b','src':'../assets/windows/desktop2-04.png'},
 				67:{'key':'c','src':'../assets/windows/desktop3.gif'},
 				68:{'key':'d','src':'../assets/windows/desktop4.png'},
-				69:{'key':'e','src':'../assets/windows/installation.gif'},
+				69:{'key':'e','src':'../assets/windows/install.gif'},
 				70:{'key':'f','src':'https://media.giphy.com/media/jzD2YI7EUGbN6/giphy.gif'},
 				71:{'key':'g','src':'https://s-media-cache-ak0.pinimg.com/originals/c4/04/fc/c404fc12d55b16c3770d34a5af274f81.gif'},
 				72:{'key':'h','src':'https://s-media-cache-ak0.pinimg.com/originals/f3/96/68/f3966861ae11e14f3f51ddbd62b37e4c.gif'},

@@ -175,7 +175,7 @@ $(document).ready(function(){
 
 		tlVision.from(".vision .block-content p.intro + p", 0.8, {y:60, opacity:0, ease:Power3.easeOut}, "-=1")
 		tlVision.from(".vision .block-content a", 0.8, {y:60, opacity:0, ease:Power3.easeOut}, "-=0.8")
-		TweenLite.set(".vision .skills-container", {y: '-25%'});
+		TweenLite.set(".vision .skills-container", {y: '40%'});
 
 		//y:25%
 

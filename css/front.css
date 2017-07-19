@@ -2816,8 +2816,8 @@ span.msk span {
 @media (min-width: 480px) {
   .page-home section.vision .skills-container {
     padding: 60px 15vw;
-    margin-right: 5vw;
-    margin-left: 5vw;
+    margin-right: -5vw;
+    margin-left: 30vw;
     /*margin-right: -15vw;*/
      } }
 /*@media (min-width: 767px) {

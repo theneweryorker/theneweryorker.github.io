@@ -1847,7 +1847,9 @@ body.loading .loader {
 -ms-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
 transform: rotate(-90deg);
-margin-left: -40px;
+margin-left: -10em;
+top: 30vh;
+
 }
 
 .page > section.intro h1 {

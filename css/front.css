@@ -379,7 +379,7 @@
   position: relative; }
 
 .page-home section.vision .skills-container {
-  padding: 30px 40px;
+  padding: 10px 40px;
   /*padding: 60px 40px;*/
   background: #575C48;
   color: #F6E201;
@@ -2816,8 +2816,10 @@ span.msk span {
 @media (min-width: 480px) {
   .page-home section.vision .skills-container {
     padding: 60px 15vw;
-    margin-right: 10vw;
-    margin-left: 10vw; } }
+    margin-right: 5vw;
+    margin-left: 5vw;
+    /*margin-right: -15vw;*/
+     } }
 /*@media (min-width: 767px) {
   .page-home section.vision .skills-container {
     margin-top: 3%; } }

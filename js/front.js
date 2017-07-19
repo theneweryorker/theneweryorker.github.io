@@ -175,11 +175,11 @@ $(document).ready(function(){
 
 		tlVision.from(".vision .block-content p.intro + p", 0.8, {y:60, opacity:0, ease:Power3.easeOut}, "-=1")
 		tlVision.from(".vision .block-content a", 0.8, {y:60, opacity:0, ease:Power3.easeOut}, "-=0.8")
-		TweenLite.set(".vision .skills-container", {y: '0%'});
+		TweenLite.set(".vision .skills-container", {x: '25%'});
 
 		//y:25%
 
-		var prllxVisionSills = TweenLite.to(".vision .skills-container", 1, { y: '-25%', ease: Linear.easeNone, paused: true });
+		var prllxVisionSills = TweenLite.to(".vision .skills-container", 1, { x: '-25%', ease: Linear.easeNone, paused: true });
 
 
 		//ANIMATIONS CREATIVITY

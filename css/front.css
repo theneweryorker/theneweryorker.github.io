@@ -2817,7 +2817,7 @@ span.msk span {
     padding: 60px 15vw;
     margin-right: -15vw;
     margin-left: -15vw; } }
-@media (min-width: 767px) {
+/*@media (min-width: 767px) {
   .page-home section.vision .skills-container {
     margin-top: 3%; } }
 @media (min-width: 992px) {
@@ -2828,7 +2828,7 @@ span.msk span {
   .page-home section.vision .skills-container {
     margin-left: 40%;
     padding: 82.5px;
-    margin-right: -165px; } }
+    margin-right: -165px; } }*/
 .page-home section.vision .skills-container .row > *:nth-child(n+2) {
   margin-top: 40px; }
 

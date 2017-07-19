@@ -1840,6 +1840,11 @@ body.loading .loader {
   -moz-transition: -moz-transform 1000ms cubic-bezier(1, 0, 0, 1) 0ms, padding 500ms cubic-bezier(1, 0, 0, 1) 0ms;
   transition: transform 1000ms cubic-bezier(1, 0, 0, 1) 0ms, padding 500ms cubic-bezier(1, 0, 0, 1) 0ms; }
 
+
+#turn{
+  writing-mode: tb-rl;
+}
+
 .page > section.intro h1 {
   margin-bottom: 60px; }
 

@@ -2236,8 +2236,8 @@ span.msk span {
   padding: 0px 20px; }
 
 .link {
-  position: absolute;
-  /*position: relative;*/
+  /*position: absolute;*/
+  position: relative;
 
   display: inline-block;
   font-family: "glacial_indifferencebold";
@@ -2286,6 +2286,7 @@ span.msk span {
 .link:after, .link:before {
   content: '';
   position: absolute;
+  float:right;
   bottom: 0%;
   left: 0px;
   right: 0px;

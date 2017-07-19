@@ -379,7 +379,8 @@
   position: relative; }
 
 .page-home section.vision .skills-container {
-  padding: 60px 40px;
+  padding: 30px 40px;
+  /*padding: 60px 40px;*/
   background: #575C48;
   color: #F6E201;
   margin-right: -40px;

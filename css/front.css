@@ -1855,7 +1855,9 @@ margin-top: -10vh;
 
 #design_is{
   padding-top: 5em;
-  margin-left: -1.5em;
+  position: absolute;
+  float: left;
+  /*margin-left: -1.5em;*/
   width: 15em;
 }
 

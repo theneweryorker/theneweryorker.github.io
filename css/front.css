@@ -1848,7 +1848,8 @@ body.loading .loader {
 -ms-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
 transform: rotate(-90deg);
-margin-left: -4em;
+position: relative;
+float: left;
 margin-top: -10vh;
 
 }
@@ -1857,6 +1858,9 @@ margin-top: -10vh;
   padding-top: 5em;
   /*margin-left: -1.5em;*/
   width: 15em;
+  position: absolute;
+  float: left;
+  padding-bottom: 3em;
 
 }
 

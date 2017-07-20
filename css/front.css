@@ -2827,8 +2827,8 @@ span.msk span {
 @media (min-width: 480px) {
   .page-home section.vision .skills-container {
     padding: 60px 15vw;
-    margin-right: -5vw;
-    margin-left: 30vw;
+    margin-right: -15vw;
+    margin-left: -15vw;
     /*margin-right: -15vw;*/
      } }
 @media (min-width: 767px) {
@@ -2900,11 +2900,11 @@ span.msk span {
   transform: translate3D(0px, 0px, 0px); }
 
 .page-home section.vision .skills-container.animated .skills {
-  -webkit-transform: translateY(40px);
-  -moz-transform: translateY(40px);
-  -ms-transform: translateY(40px);
-  -o-transform: translateY(40px);
-  transform: translateY(40px); }
+  -webkit-transform: translateX(-40px);
+  -moz-transform: translateX(-40px);
+  -ms-transform: translateX(-40px);
+  -o-transform: translateX(-40px);
+  transform: translateX(-40px); }
 
 .page-home section.vision .skills-container.animated.visible:after {
   width: 0%;

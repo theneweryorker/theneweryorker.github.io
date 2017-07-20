@@ -1857,6 +1857,8 @@ margin-top: -10vh;
   padding-top: 5em;
   /*margin-left: -1.5em;*/
   width: 15em;
+  position: absolute;
+  float: right;
 }
 
 .page > section.intro h1 {

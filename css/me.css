@@ -325,4 +325,6 @@ del {
 .btn {
   text-decoration: none; }
 
-/*# sourceMappingURL=me.css.map */
+body{
+cursor: url("../assets/cursor.png"), auto !important;
+}

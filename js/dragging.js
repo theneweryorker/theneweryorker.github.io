@@ -8,14 +8,11 @@ PIXI.loader
   .add("../assets/SUN.png")
   .load(setup);
 
-
-var TextureCache = PIXI.utils.TextureCache
-
 //This `setup` function will run when the image has loaded
 function setup() {
-  var texture = TextureCache["..assets/SUN.png"];
 
-  console.log(texture);
+  var texture = PIXI.utils.TextureCache["../assets/SUN.png"];
+
   //Create the `cat` sprite from the texture
   var cat = new PIXI.Sprite(texture);
 

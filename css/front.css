@@ -1565,7 +1565,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
-  min-height: 100vh; }
+  min-height: 100vh;
+  cursor: url(../assets/cursor.png), auto !important; }
 
 body.loading {
   overflow: hidden; }

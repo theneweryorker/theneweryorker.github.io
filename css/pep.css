@@ -15,6 +15,17 @@ body{
 cursor: url('../assets/cursor.png'), auto;
 }
 
+.wrapper {
+          display: grid;
+          grid-gap: 1vw;
+          /*grid-template-columns: 300px 500px 300px;*/
+          grid-template-columns: 22vw 52vw 22vw;
+
+          background-color: #fff;
+          color: #444;
+      }
+
+
 .a {
             grid-column: 1 / span 2;
         }

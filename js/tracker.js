@@ -45,8 +45,8 @@ $(function() {
     }
   });
   path.smooth();
-  console.log(paper.view);
-  paper.view.draw();
+  // console.log(paper.view);
+  // paper.view.draw();
   // Click tracking
   $(window).on('mousedown touchstart', function(e) {
     path.fullySelected = false;

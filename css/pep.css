@@ -1,10 +1,9 @@
-.demo {
+/*.demo {
   background: #f3eee6;
   width: 500px;
   height: 300px;
-  /*cursor: url('../assets/cursor.png'), auto;*/
 
-}
+}*/
 
 .pep {
   background: #f5b188;
@@ -15,5 +14,24 @@
 body{
 cursor: url('../assets/cursor.png'), auto;
 }
+
+.a {
+            grid-column: 1 / span 2;
+        }
+        .b {
+            grid-column: 3 ;
+            grid-row: 1 / span 100;
+        }
+        .c {
+            grid-column: 1 ;
+            grid-row: 2 / span 50 ;
+            margin-right: -0.25em;
+            border-right: thick solid #ff0000;
+        }
+        .d {
+            grid-column: 2 ;
+            grid-row: 2 ;
+        }
+
 
 /*# sourceMappingURL=pep.css.map */

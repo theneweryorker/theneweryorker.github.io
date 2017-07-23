@@ -10,4 +10,8 @@
   width: 100px;
 }
 
+body{
+cursor: url("../assets/cursor.png"), auto !important;
+}
+
 /*# sourceMappingURL=pep.css.map */

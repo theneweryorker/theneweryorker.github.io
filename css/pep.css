@@ -2,7 +2,7 @@
   background: #f3eee6;
   width: 500px;
   height: 300px;
-  cursor: url('../assets/cursor.png'), pointer;
+  cursor: url('../assets/cursor.png'), auto;
 
 }
 
@@ -13,7 +13,7 @@
 }
 
 body{
-cursor: url('../assets/cursor.png'), pointer;
+cursor: url('../assets/cursor.png'), auto;
 }
 
 /*# sourceMappingURL=pep.css.map */

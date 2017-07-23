@@ -9,9 +9,9 @@
 
 <body>
   <!-- <div class='demo basic'> -->
-    <div class='pep'></div>
+    <div class='draggable pep'></div>
     <div>
-      <img src="../assets/raptor.gif">
+      <img src="../assets/raptor.gif" class="draggable">
     </div>
 
 
@@ -20,6 +20,11 @@
   <!-- </div> -->
 
 <script src="https://code.jquery.com/jquery.js"></script>
+<script>
+         $(function() {
+            $( ".draggable" ).draggable();
+         });
+      </script>
 <!-- following runs pep.js -->
 <script src="../bower_components/jquery.pep/src/jquery.pep.js"></script>
 <script>

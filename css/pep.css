@@ -1,14 +1,26 @@
-.demo {
+/*.demo {
   background: #f3eee6;
   width: 500px;
   height: 300px;
 
-}
+}*/
 
-.pep {
+/*.pep {
   background: #f5b188;
   height: 100px;
   width: 100px;
+}*/
+
+@font-face {
+  font-family: 'Caslon Old Face';
+  src: url("../font/caslon_old_face_heavy_regular_1-webfont.woff2") format("woff2"), url("../font/caslon_old_face_heavy_regular_1-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+.content{
+  font-family: 'Caslon Old Face';
+  font-size: 40px;
+  z-index: -1000;
 }
 
 body{
@@ -44,5 +56,8 @@ cursor: url('../assets/cursor.png'), auto;
             grid-row: 2 ;
         }
 
+.draggable{
+  z-index: 1000;
+}
 
 /*# sourceMappingURL=pep.css.map */

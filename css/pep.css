@@ -36,7 +36,7 @@ overlow: hidden;
           display: grid;
           grid-gap: 1vw;
           /*grid-template-columns: 300px 500px 300px;*/
-          grid-template-columns: 10vw 58vw 10vw;
+          grid-template-columns: 5vw 58vw 5vw;
           background-color: #fff;
           color: #444;
       }

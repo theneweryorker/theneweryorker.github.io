@@ -46,6 +46,7 @@ cursor: url('../assets/cursor.png'), auto;
         .b {
             grid-column: 3 ;
             grid-row: 1 / span 100;
+            background-color: red;
         }
         .c {
             grid-column: 1 ;

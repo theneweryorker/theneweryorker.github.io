@@ -290,13 +290,12 @@
     opacity: 1; } }
 #content {
   font-family: 'Caslon Old Face';
-  font-size: 60px; }
+  font-size: 30px; }
 
 .wrapper {
   display: grid;
   grid-gap: 1vw;
-  /*grid-template-columns: 300px 500px 300px;*/
-  grid-template-columns: 5vw 52vw 5vw;
+  grid-template-columns: 100px 500px 100px;
   background-color: #fff;
   color: #444; }
 

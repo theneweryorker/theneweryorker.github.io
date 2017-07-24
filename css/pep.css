@@ -40,6 +40,7 @@ cursor: url('../assets/cursor.png'), auto;
 
 .a {
             grid-column: 2 / span 10;
+            grid-row: 2 / span 50;
         }
         .b {
             grid-column: 3 ;

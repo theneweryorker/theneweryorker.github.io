@@ -51,6 +51,11 @@ html {
   src: url("../font/caslon_old_face_heavy_regular_1-webfont.woff2") format("woff2"), url("../font/caslon_old_face_heavy_regular_1-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
+@font-face {
+  font-family: 'xenos_medium';
+  src: url("../font/xenos_-webfont.woff2") format("woff2"), url("../font/xenos_-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 .quickfade {
   -webkit-animation-name: quickfade;
   animation-name: quickfade;

@@ -288,10 +288,12 @@
     -webkit-transform: rotate3d(0, 0, 1, 0deg);
     transform: rotate3d(0, 0, 1, 0deg);
     opacity: 1; } }
+* {
+  cursor: url("../assets/cursor.png"), auto; }
+
 body {
   margin: 0;
-  padding: 0;
-  cursor: url("../assets/cursor.png"), auto; }
+  padding: 0; }
 
 h1 {
   font-family: butlerextrabold;
@@ -320,8 +322,7 @@ h2 {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 8000px;
-  cursor: url("../assets/cursor.png"), auto; }
+  width: 8000px; }
 
 .content {
   width: 9000px;

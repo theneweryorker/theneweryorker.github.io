@@ -288,40 +288,34 @@
     -webkit-transform: rotate3d(0, 0, 1, 0deg);
     transform: rotate3d(0, 0, 1, 0deg);
     opacity: 1; } }
-#content {
-  font-family: 'Caslon Old Face';
-  font-size: 30px; }
-
 .wrapper {
   display: grid;
-  grid-gap: 1vw;
-  grid-template-columns: 2vw 30vw 2vw;
-  background-color: #fff;
-  color: #444; }
+  grid-template-columns: 10vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw; }
 
-.box {
-  /*background-color: #444;*/
-  border: 2px solid #73AD21;
-  /*color: #fff;*/
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 150%; }
+.logo {
+  grid-column: 5 / span 1;
+  grid-row: 1; }
 
-.a {
-  grid-column: 1 / span 100; }
-
-.b {
-  grid-column: 3;
-  grid-row: 1 / span 100; }
-
-.c {
-  grid-column: 1;
-  grid-row: 2/span 50;
-  margin-right: -0.25em;
-  border-right: thick solid #ff0000; }
-
-.d {
-  grid-column: 2;
+.explanation {
+  grid-column: 3/ span 6;
   grid-row: 2; }
 
-/*# sourceMappingURL=pep.css.map */
+.explanatory_text {
+  font-family: 'glacial_indifferenceregular';
+  font-size: 18px; }
+
+.left {
+  grid-column: 2 / span 1; }
+
+.right {
+  grid-column: 6/ span 1; }
+
+.first {
+  grid-row: 3;
+  padding-top: 50%; }
+
+.second {
+  grid-row: 5;
+  padding-top: 50%; }
+
+/*# sourceMappingURL=template.css.map */

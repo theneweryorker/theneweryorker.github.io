@@ -1,0 +1,133 @@
+@import 'globals';
+
+#header{
+  font-family: 'xenos_medium';
+  font-size: 80px;
+  z-index: -1000;
+}
+
+.wrapper {
+            display: grid;
+            // /*grid-template-columns: 300px 500px 300px;*/
+            // -webkit-column-count: 4; /* Chrome, Safari, Opera */
+            // -moz-column-count: 4; /* Firefox */
+            // column-count: 4;
+            // background-color: #fff;
+            // color: #444;
+            grid-template-columns: 18vw 18vw 18vw 18vw 18vw;
+
+        }
+
+.a1 {
+    grid-column: 1 / span 3;
+    grid-row: 1;
+    margin: 3%;
+    // border-left: 1px solid black;
+}
+
+.b2{
+  grid-column: 2;
+  grid-row:2 ;
+  text-decoration: none;
+  color: black;
+
+  // display: flex;
+  // flex-direction: column;
+}
+
+
+  #posters{
+    margin-top: 45%;
+    margin-left: 5%;
+  // -ms-transform: rotate(13deg); /* IE 9 */
+  //   -webkit-transform: rotate(13deg); /* Safari */
+  //   transform: rotate(13deg);
+  // border-left: 1px solid black;
+
+}
+
+.c2 {
+    grid-column: 3;
+    grid-row: 2;
+    text-decoration: none;
+    color: black;
+
+
+  }
+
+  #tacos{
+    // margin-top: 32%;
+    margin-left: 13%;
+    -ms-transform: rotate(-5deg); /* IE 9 */
+      -webkit-transform: rotate(-5deg); /* Safari */
+      transform: rotate(-5deg);
+
+}
+
+.c4 {
+    grid-column: 3;
+    grid-row: 5;
+    text-decoration: none;
+    color: black;
+
+  }
+
+  #dinos{
+    margin-top: -20%;
+    -ms-transform: rotate(10deg); /* IE 9 */
+      -webkit-transform: rotate(10deg); /* Safari */
+      transform: rotate(10deg);
+    // border-left: 1px solid black;
+
+}
+
+
+.a4{
+  grid-column: 2;
+  grid-row:5;
+  -ms-transform: rotate(-10deg); /* IE 9 */
+    -webkit-transform: rotate(-10deg); /* Safari */
+    transform: rotate(-10deg);
+    margin-left: 20%;
+
+}
+
+.e3{
+  grid-column: 4;
+  grid-row: 2;
+  text-decoration: none;
+  color: black;
+}
+
+#vans{
+  margin-top: 90%;
+  // margin-left: -50%;
+  -ms-transform: rotate(-10deg); /* IE 9 */
+    -webkit-transform: rotate(-10deg); /* Safari */
+    transform: rotate(-10deg);
+
+}
+
+.e2{
+  grid-column: 5;
+  grid-row: 5;
+  text-decoration: none;
+  color:black;
+  padding-bottom: 20%;
+}
+
+#gandalf{
+  margin-left: -50%;
+  padding-top: 50%;
+
+  -ms-transform: rotate(4deg); /* IE 9 */
+    -webkit-transform: rotate(4deg); /* Safari */
+    transform: rotate(4deg);
+
+}
+
+.label{
+  font-family: 'Caslon Old Face';
+  font-size: 20px;
+
+}

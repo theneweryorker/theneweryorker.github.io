@@ -1,0 +1,56 @@
+@import 'globals';
+
+// #header{
+//   font-family: 'xenos_medium';
+//   font-size: 80px;
+//   z-index: -1000;
+// }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 10vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw;
+
+}
+
+.logo{
+  grid-column: 5 / span 1;
+  grid-row: 1;
+}
+
+.explanation{
+  grid-column: 3/ span 6;
+  grid-row: 2;
+}
+
+
+.explanatory_text{
+  font-family: 'glacial_indifferenceregular';
+  font-size: 18px;
+}
+
+.left{
+  grid-column: 2 / span 1;
+}
+
+.right{
+  grid-column: 6/ span 1;
+  // margin-left: 50%;
+}
+
+.first{
+  grid-row: 3;
+  padding-top: 50%;
+}
+
+.second{
+  grid-row: 5;
+  padding-top: 50%;
+}
+
+//HORIZONS//
+// #code:hover{
+// // display: none;
+//     background-image: url('../assets/horizons/horizons_2.png');
+//     max-width: 5vw;
+//
+// }

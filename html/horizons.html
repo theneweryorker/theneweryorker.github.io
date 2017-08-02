@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Holly Li</title>
+    <link rel="stylesheet" type="text/css" href="../css/template.css">
+    <link rel="stylesheet" type="text/css" href="../css/front_menu.css">
+
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- <script src="../js/paper.js"></script>
+    <script src="../js/tracker.js"></script> -->
+</head>
+
+<body class="wrapper loaded">
+
+<header>
+<a class="navbar-toggle" id="portfolio_nav" href="#" style="margin: 3%; margin-left: 90%;">
+  <i class="icon">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+  </i>
+</a>
+</header>
+
+
+
+
+  			<div id="menu">
+  				<div class="menu-container">
+  						<ul class="menu-nav">
+  							<li class="nav-item"><a class="page-photo-link" href="/html/photography.html"><span class="msk"><span>PHOTOGRAPHY</span></span></a></li>
+  							<li class="nav-item"><a class="page-me-link" href="/html/me.html"><span class="msk"><span>ABOUT ME</span></span></a></li>
+  							<li class="nav-item"><a class="page-home-link" href="../index.html"><span class="msk"><span>GO HOME</span></span></a></li>
+  							<li class="nav-item"><a class="page-projects-link" href="/html/branding.html"><span class="msk"><span>PROJECTS</span></span></a></li>
+
+  						</ul>
+  						<div class="contact">
+  							<address class="address"><a rel="external" target="_blank">4041 Sansom Street, Philadelphia, PA</a></address><br/>
+  							<a rel="external" class="phone"> 740 591 1701</a><br/>
+  							<a rel="external" class="mail">hrli@wharton.upenn.edu</a>
+  						</div>
+  					</div>
+  				</div>
+
+  <!-- <div class='demo basic'> -->
+  <!-- <div class="a1" id="header" style="font-size: 50px;">
+    Things I Love.
+  </div> -->
+
+  <img src="../assets/horizons/horizons_logo-17.png" style= "max-height: 160px;" class="logo">
+
+  <div class="explanatory_text explanation">
+    I was asked to redesign the web/positioning for blah blah blah for a tech bootcamp blah blah blah blah. I was asked to redesign the web/positioning for blah blah blah for a tech bootcamp
+    blah blah blah blah. I was asked to redesign the web/positioning for blah blah blah for a tech bootcamp blah blah blah blah.
+  </div>
+
+  <img src="../assets/horizons/horizons_1.png" style= "max-width: 35vw;" id= "code" class="left first hover">
+    <img src="../assets/horizons/horizons_3.png" style= "max-width: 35vw;" class="right first hover">
+
+    <img src="../assets/horizons/horizons_4.png" style= "max-width: 35vw;" class="left second hover">
+      <img src="../assets/horizons/horizons_5.png" style= "max-width: 35vw;" class="right second hover">
+
+
+
+<!--
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script> -->
+<script src="../js/menu_otherpages.js"></script>
+
+
+
+
+<script>
+// $(document).ready(function()
+// {
+//         $(".hover").mouseover(
+//             function()
+//             {
+//               var img = $('img', this);
+//               img.attr('src', img.attr('src').replace('1','2'));
+//               // $(this).attr("src", src.replace("../assets/horizons/horizons_2.png"));
+//               // console.log($(this).attr("src"));
+//             }
+//           )
+// });
+
+
+$(".hover").hover(function() {
+  this.src = this.src.replace('1', '2');
+});
+
+// $(".block").mouseover(function() {
+//     var img = $('img', this); // Cache image object
+//
+//     img.attr('src', img.attr('src').replace('1', '2'));
+//     // Update the image src URL to the new URL
+// });
+
+// $(function() {
+//     $(".hover")
+//         .hover(function() {
+//             var src = $(this).attr("src").match(/[^\.]+/) + "over.gif";
+//             $(this).attr("src", src);
+//         })
+//         .mouseout(function() {
+//             var src = $(this).attr("src").replace("over.gif", ".gif");
+//             $(this).attr("src", src);
+//         });
+// });
+
+// $(function () {
+//     $('.hover').hover(function () {
+//       console.log("hovering");
+//         $(this).find('img').attr('src', function (i, src) {
+//             return src.replace('1.png', '2.png')
+//         })
+//     }, function () {
+//         $(this).find('img').attr('src', function (i, src) {
+//             return src.replace('2.png', '1.png')
+//         })
+//     })
+// })
+</script>
+
+
+<!-- following runs pep.js -->
+<!-- <script>
+$('.demo.basic .pep').pep();
+
+</script> -->
+</body>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Holly Li</title>
+    <link rel="stylesheet" type="text/css" href="../css/homepage.css">
+    <link rel="stylesheet" type="text/css" href="../css/front_menu.css">
+      <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.css">
+
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- <script src="../js/paper.js"></script>
+    <script src="../js/tracker.js"></script> -->
+</head>
+
+<body class="wrapper loaded">
+
+<header>
+<a class="navbar-toggle" id="portfolio_nav" href="#" style="margin: 3%; margin-left: 90%;">
+  <i class="icon">
+    <span class="line"></span>
+    <span class="line"></span>
+    <span class="line"></span>
+  </i>
+</a>
+</header>
+
+
+
+
+  			<div id="menu">
+  				<div class="menu-container">
+  						<ul class="menu-nav">
+  							<li class="nav-item"><a class="page-photo-link" href="/html/photography.html"><span class="msk"><span>PHOTOGRAPHY</span></span></a></li>
+  							<li class="nav-item"><a class="page-me-link" href="/html/me.html"><span class="msk"><span>ABOUT ME</span></span></a></li>
+  							<li class="nav-item"><a class="page-home-link" href="../index.html"><span class="msk"><span>GO HOME</span></span></a></li>
+  							<li class="nav-item"><a class="page-projects-link" href="/html/branding.html"><span class="msk"><span>PROJECTS</span></span></a></li>
+
+  						</ul>
+  						<div class="contact">
+  							<address class="address"><a rel="external" target="_blank">4041 Sansom Street, Philadelphia, PA</a></address><br/>
+  							<a rel="external" class="phone"> 740 591 1701</a><br/>
+  							<a rel="external" class="mail">hrli@wharton.upenn.edu</a>
+  						</div>
+  					</div>
+  				</div>
+
+  <!-- <div class='demo basic'> -->
+  <div class="a" id="header">
+    Hello.
+  </div>
+
+  <div class="b" id="content">
+    My name is Holly Li, and I’m a
+    <!-- <span id="hiddenDiv2">B-school sellout: (n) Someone who can begrudgingly build you an Excel model, but would much rather be finger painting.</span> -->
+    <a class="link"><span class="bschool">b-school </span>
+    sellout</a> at Penn where I study
+    <span class="red">
+      people
+    </span>
+    <div class="more_stickers"></div>
+
+    and
+    <span class="highlight">
+      design
+    </span>
+    ; play the ukulele (but am a bad singer); write with awkward syntax. Here are some things I <a class="link" href="/html/love.html"> love</a> and some things I don’t love. Call me beep me if you want to reach me.
+  </div>
+
+  <div class="d xeno stickers">
+    <!-- add <span class= "stickers">stickers!</span> -->
+    add stickers!
+    <div id="hiddenDiv">Click on these stickers to add more to the page, then drag and place wherever</div>
+
+  </div>
+
+
+    <div class="d">
+      <img src="../assets/raptor.png" class="draggable" style= "max-height: 100px;">
+      <img src="../assets/stars.gif" class="draggable2" style= "max-height: 100px;">
+
+    </div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+<script src="../js/menu_otherpages.js"></script>
+
+
+<script>
+//SCRIPT FOR CLICKING FOR NEW STICKERS
+
+ $(".draggable2").click(function(){
+     $('<img src="../assets/stars.gif" style="max-height: 100px; position: absolute;"">').appendTo($(".more_stickers")).draggable();
+     });
+
+$(".draggable").click(function(){
+     $('<img src="../assets/raptor.png" style="max-height: 100px; position: absolute;"">').appendTo($(".more_stickers")).draggable();
+     });
+
+</script>
+
+<script>
+// SCRIPT FOR STICKERS DIRECTIONS
+
+$(".stickers").mouseenter(function(){
+    $("#hiddenDiv").slideDown();
+}).mouseleave(function(){
+    $("#hiddenDiv").slideUp();
+})
+
+
+$('.bschool').qtip({ // Grab some elements to apply the tooltip to
+    content: {
+        text: 'My common piece of text here'
+    }
+})
+// $(".bschool").mouseenter(function(){
+//     $("#hiddenDiv2").slideDown();
+// }).mouseleave(function(){
+//     $("#hiddenDiv2").slideUp();
+// })
+
+</script>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
+
+<script>
+
+// SCRIPT FOR ADDING GIF ON TOP OF TEXT ON HOVER
+
+$('span').each(
+    function(){
+        var text = $(this).text();
+        var spanText = text.replace('people','<span class="imgText">people</span>');
+        $(this).html(spanText);
+    });
+
+$('.imgText').on(
+    'mouseenter',
+    function(){
+        $('<img src="../assets/raptor.gif" />')
+            .appendTo($(this));
+    });
+
+$('.imgText').on(
+    'mouseleave',
+    function(){
+        $(this).find('img').remove();
+    });
+
+  </script>
+
+<script>
+$(document).ready(function()
+{
+   $('.bschool').qtip({
+      // Simply use an HTML img tag within the HTML string
+      // content: $(this).attr('tooltip'),
+      content: "<span class= 'tool_content'>B-SCHOOL SELLOUT: </span><span class='tool_ital'>(n.)</span><br><span class='tool_ital'>Someone who can begrudgingly build you an Excel model, but would much rather be finger painting.</span>",
+    style: {
+      // classes: 'qtip-rounded qtip-plain',
+      height: "70",
+      width: "300",
+      padding: '50px 15px'
+    }
+});
+});
+</script>
+</body>

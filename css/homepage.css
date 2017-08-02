@@ -289,7 +289,7 @@
     transform: rotate3d(0, 0, 1, 0deg);
     opacity: 1; } }
 * {
-  cursor: url("../assets/cursor.png"), default; }
+  cursor: url("../assets/cursor.png"), !important; }
 
 span {
   position: relative; }

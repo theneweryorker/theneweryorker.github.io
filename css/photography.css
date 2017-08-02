@@ -291,7 +291,7 @@
 body {
   margin: 0;
   padding: 0;
-  cursor: url("../assets/cursor.png"), default; }
+  cursor: url("../assets/cursor.png"), auto; }
 
 h1 {
   font-family: butlerextrabold;
@@ -320,7 +320,8 @@ h2 {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 8000px; }
+  width: 8000px;
+  cursor: url("../assets/cursor.png"), auto; }
 
 .content {
   width: 9000px;

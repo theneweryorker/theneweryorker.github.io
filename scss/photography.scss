@@ -3,7 +3,7 @@
 body {
      margin: 0;
      padding: 0;
-     cursor: url('../assets/cursor.png'), default;
+     cursor: url('../assets/cursor.png'), auto;
 
  }
 
@@ -41,6 +41,8 @@ body {
      left: 0;
      right: 0;
      width: 8000px;
+     cursor: url('../assets/cursor.png'), auto;
+
 
     //  MAKE SURE THE WRAPPER-SCROLL is long enough--
     // if content disappears, it's because wrapper is too short

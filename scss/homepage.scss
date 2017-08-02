@@ -1,11 +1,11 @@
 @import 'globals';
 
 
-body{
-
-	cursor: url('../assets/cursor.png'), default;
-
-}
+// body{
+//
+// 	cursor: url('../assets/cursor.png'), default;
+//
+// }
 span {
     position: relative;
 
@@ -66,9 +66,11 @@ span.imgText img {
             grid-gap: 1vw;
             /*grid-template-columns: 300px 500px 300px;*/
             grid-template-columns: 7vw 72vw 10vw;
-
+            z-index: 1000;
             // background-color: #fff;
             color: #444;
+            cursor: url('../assets/cursor.png'), default;
+
         }
 
 .tool_content{

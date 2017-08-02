@@ -288,6 +288,9 @@
     -webkit-transform: rotate3d(0, 0, 1, 0deg);
     transform: rotate3d(0, 0, 1, 0deg);
     opacity: 1; } }
+* {
+  cursor: url("../assets/cursor.png"), default; }
+
 span {
   position: relative; }
 
@@ -336,8 +339,7 @@ span.imgText img {
   /*grid-template-columns: 300px 500px 300px;*/
   grid-template-columns: 7vw 72vw 10vw;
   z-index: 1000;
-  color: #444;
-  cursor: url("../assets/cursor.png"), default; }
+  color: #444; }
 
 .tool_content {
   font-family: 'xenos_medium';

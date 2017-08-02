@@ -1,11 +1,10 @@
 @import 'globals';
 
 
-// body{
-//
-// 	cursor: url('../assets/cursor.png'), default;
-//
-// }
+*{
+  cursor: url('../assets/cursor.png'), default;
+
+}
 span {
     position: relative;
 
@@ -69,7 +68,6 @@ span.imgText img {
             z-index: 1000;
             // background-color: #fff;
             color: #444;
-            cursor: url('../assets/cursor.png'), default;
 
         }
 

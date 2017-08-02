@@ -290,7 +290,8 @@
     opacity: 1; } }
 body {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  cursor: url("../assets/cursor.png"), default; }
 
 h1 {
   font-family: butlerextrabold;

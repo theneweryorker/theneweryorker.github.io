@@ -295,7 +295,8 @@
 
 .wrapper {
   display: grid;
-  grid-template-columns: 18vw 18vw 18vw 18vw 18vw; }
+  grid-template-columns: 18vw 18vw 18vw 18vw 18vw;
+  cursor: url("../assets/cursor.png"), default; }
 
 .a1 {
   grid-column: 1 / span 3;

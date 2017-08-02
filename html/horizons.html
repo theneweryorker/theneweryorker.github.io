@@ -92,6 +92,10 @@ $(".hover").mouseover(function() {
 
   // (\d+)(?!.*\d)
   this.src = this.src.replace('1', '2');
+})
+
+.mouseout(function(){
+  this.src=this.src.replace('2','1');
 });
 
 // $(".block").mouseover(function() {

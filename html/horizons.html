@@ -56,14 +56,17 @@
     blah blah blah blah. I was asked to redesign the web/positioning for blah blah blah for a tech bootcamp blah blah blah blah.
   </div>
 
-  <img src="../assets/horizons/horizons_1.png" style= "max-width: 35vw;" id= "code" class="left first hover">
+  <img src="../assets/horizons/horizons_1.png" style= "max-width: 35vw;" id= "code" class="left first">
     <img src="../assets/horizons/horizons_3.png" style= "max-width: 35vw;" class="right first">
 
-    <img src="../assets/horizons/horizons_4.png" style= "max-width: 35vw;" class="left second hover">
-      <img src="../assets/horizons/horizons_6.png" style= "max-width: 35vw;" class="right second">
+  <img src="../assets/horizons/horizons_4.png" style= "max-width: 35vw;" class="left second">
+    <img src="../assets/horizons/horizons_6.png" style= "max-width: 35vw;" class="right second">
 
-      <img src="../assets/horizons/horizons_7.png" style= "max-width: 35vw;" class="left third hover">
-        <img src="../assets/horizons/horizons_9.png" style= "max-width: 35vw;" class="right third">
+    <img src="../assets/horizons/horizons_9.png" style= "max-width: 35vw;" class="left third">
+      <img src="../assets/horizons/horizons_11.png" style= "max-width: 35vw;" class="right third" id="build_click">
+
+    <img src="../assets/horizons/horizons_13.png" style= "max-width: 35vw;" class="left fourth">
+      <img src="../assets/horizons/horizons_15.png" style= "max-width: 35vw;" class="right fourth">
 
 <!--
 
@@ -74,23 +77,8 @@
 
 
 <script>
-// $(document).ready(function()
-// {
-//         $(".hover").mouseover(
-//             function()
-//             {
-//               var img = $('img', this);
-//               img.attr('src', img.attr('src').replace('1','2'));
-//               // $(this).attr("src", src.replace("../assets/horizons/horizons_2.png"));
-//               // console.log($(this).attr("src"));
-//             }
-//           )
-// });
 
-
-$(".hover").mouseover(function() {
-
-  // (\d+)(?!.*\d)
+$(".first").mouseover(function() {
   this.src = this.src.replace('1', '2');
 })
 
@@ -98,6 +86,37 @@ $(".hover").mouseover(function() {
   this.src=this.src.replace('2','1');
 });
 
+$(".second").mouseover(function() {
+  this.src = this.src.replace('4', '5');
+})
+
+.mouseout(function(){
+  this.src=this.src.replace('5','4');
+});
+
+$(".third").mouseover(function() {
+  this.src = this.src.replace('9', '10');
+})
+
+.mouseout(function(){
+  this.src=this.src.replace('10','9');
+});
+
+$("#build_click").click(function() {
+  this.src = this.src.replace('11', '12');
+})
+
+.mouseout(function(){
+  this.src=this.src.replace('10','9');
+});
+
+$(".fourth").mouseover(function() {
+  this.src = this.src.replace('13', '14');
+})
+
+.mouseout(function(){
+  this.src=this.src.replace('14','13');
+});
 // $(".block").mouseover(function() {
 //     var img = $('img', this); // Cache image object
 //

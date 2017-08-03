@@ -60,7 +60,7 @@
     <img src="../assets/horizons/horizons_3.png" style= "max-width: 35vw;" class="right first">
 
   <img src="../assets/horizons/horizons_4.png" style= "max-width: 35vw;" class="left second">
-    <img src="../assets/horizons/horizons_6.png" style= "max-width: 35vw;" class="right second">
+    <img src="../assets/horizons/horizons_6.png" style= "max-width: 35vw;" class="right second" id="play_click">
 
     <img src="../assets/horizons/horizons_9.png" style= "max-width: 35vw;" class="left third">
       <img src="../assets/horizons/horizons_11.png" style= "max-width: 35vw;" class="right third" id="build_click">
@@ -78,6 +78,8 @@
 
 <script>
 
+//MY VERY INEFFICIENT WAY OF CHANGING IMAGES ON HOVER BECAUSE I DON'T KNOW REGEX
+
 $(".first").mouseover(function() {
   this.src = this.src.replace('1', '2');
 })
@@ -93,6 +95,10 @@ $(".second").mouseover(function() {
 .mouseout(function(){
   this.src=this.src.replace('5','4');
 });
+
+$("#play_click").click(function() {
+  this.src = this.src.replace('6', '8');
+})
 
 $(".third").mouseover(function() {
   this.src = this.src.replace('9', '10');

@@ -296,7 +296,7 @@
   grid-column: 5 / span 1;
   grid-row: 1; }
 
-.explanation {
+.explanation, .explanation2 {
   grid-column: 3/ span 6;
   grid-row: 2; }
 
@@ -304,11 +304,41 @@
   font-family: 'glacial_indifferenceregular';
   font-size: 18px; }
 
+.explanation2 {
+  grid-row: 5;
+  margin-top: 30%; }
+
+.explanation3 {
+  grid-column: 6 / span 3;
+  grid-row: 7;
+  margin-top: 30%;
+  margin-left: 30%; }
+
+.explanation4 {
+  grid-column: 3/ span 6;
+  grid-row: 9;
+  margin-top: 10%; }
+
+.short {
+  grid-column: 3/span 2; }
+
 .left {
-  grid-column: 2 / span 1; }
+  grid-column: 3 / span 1; }
+
+.middle {
+  grid-column: 4 / span 1; }
+
+.far-right {
+  grid-column: 8 / span 1; }
 
 .right {
-  grid-column: 6/ span 1; }
+  grid-column: 5/ span 1; }
+
+.far_right {
+  grid-column: 6 / span 1; }
+
+.far_left {
+  grid-column: 2 / span 1; }
 
 .first {
   grid-row: 3;
@@ -323,7 +353,19 @@
   padding-top: 50%; }
 
 .fourth {
-  grid-row: 9;
+  grid-row: 11;
+  padding-top: 50%; }
+
+.fifth {
+  grid-row: 13;
+  padding-top: 50%; }
+
+.sixth {
+  grid-row: 15;
+  padding-top: 50%; }
+
+.seventh {
+  grid-row: 17;
   padding-top: 50%; }
 
 /*# sourceMappingURL=template.css.map */

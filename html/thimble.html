@@ -21,13 +21,13 @@
 			<img class= "bounceInDown sewingmachine" id="sewing" src="../assets/branding/blacksewing.png"/>
 		</div>
 
-    <div class="diagonal_right">
+ <div class="slide_right">
 			<div class="box1" id="box1"></div>
     </div>
 
-		<div class="diagonal_left_degree">
+		<!-- <div class="diagonal_left_degree">
 			<div class="box3" id="box3"></div>
-    </div>
+    </div> -->
 		<!-- <div class="diagonal_left_degree">
 			<div class="box2" id="box2" style="display: none;"></div>
 		</div> -->
@@ -72,13 +72,13 @@ $(document).on('click', function() {
 	$('#box1').removeClass('diagonal_right');
 $('#box1').addClass('diagonal_left');
 // $('div.sewingmachine').replaceWith("<img src='../assets/branding/thimble2_model.png'></img>");
-
-$('#box3').removeClass('diagonal_left_degree');
-$('#box3').addClass('diagonal_left');
+//
+// $('#box3').removeClass('diagonal_left_degree');
+// $('#box3').addClass('diagonal_left');
 
 $( ".header1" ).css({
-	'font-family': 'butler_stencilblack',
-	'text-transform': 'lowercase',
+	'font-family': 'butlerregular',
+	'text-transform': 'uppercase',
 	'letter-spacing': '0.005em',
 	'font-size': '6vw'
 });
@@ -93,17 +93,7 @@ $( ".underheader1" ).css({
 	'line-height': '2.2vw'
 });
 
-// $(".diagonal_left_degree").html("<div class='box2' id='box2'></div>");
-// $("#page").append("<div class='diagonal_left_degree'><div class='box2'></div></div>");
-
-
-// $(".sewingmachine").after("<div class='SlideInUp'><img src='../assets/branding/thimble2_model.jpg' class='photo'></img></div>");
 $("#page").append("<div class='slideInUp'><div class='box2'></div></div>");
-// $("#page").append("<img src='../assets/branding/thimble2_model.jpg' class='photo'></img>");
-
-//
-// $(".underheader1").after("<div class='slideInUp'><img src='../assets/branding/thimble2_model.jpg' class='photo'></img></div>");
-
 
 
 

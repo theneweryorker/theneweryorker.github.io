@@ -48,6 +48,14 @@
 
 }
 
+@font-face {
+    font-family: 'butlerregular';
+    src: url('../font/butler_regular-webfont.woff2') format('woff2'),
+         url('../font/butler_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 @font-face {
     font-family: 'glacial_indifferenceregular';
@@ -155,6 +163,8 @@ $wes_earthgreen: #8D9872;
 $wes_brightyellow: #F6E201;
 $green: #1E7842;
 $medium_blue: #3F64AF;
+$thimble_green: #CBC1A1;
+$thimble_pink: #E7BFA7;
 
 
 $background_colors: $navy, $bubblegum, $military-green, $pep-color, $black, $puce;
@@ -371,6 +381,30 @@ $background_colors: $navy, $bubblegum, $military-green, $pep-color, $black, $puc
   opacity: 1;
   z-index: -1000;
 
+  }
+}
+
+.diagonal_right{
+ animation-name: diogonal_right;
+ animation-duration: 2s;
+ animation-fill-mode: forwards;
+ -webkit-animation-name: diagonal_right;
+ -webkit-animation-duration: 2s;
+ -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes slide_right {
+  0% {
+    transform: translateX(100%);
+  }
+  14.28% {
+    transform: translateX(0);
+  }
+  85.71% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }
 

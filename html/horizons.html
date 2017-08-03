@@ -49,48 +49,48 @@
     Things I Love.
   </div> -->
 
-  <img src="../assets/horizons/horizons_logo-17.png" style= "max-height: 160px;" class="logo">
+  <img src="../assets/horizons/horizons_logo-17.png" style= "max-height: 160px;" class="logo bounceInDown">
 
-  <div class="explanatory_text explanation">
+  <div class="explanatory_text explanation fadeAndScale">
     I was asked to help think of ways to redesign a tech bootcamp's branding and web design to be more broadly appealing. I started first with the logo. The name "Horizons" lent itself well
     to all kinds of abstraction ideas, and I had lots of fun playing around with sunset imagery and lettering.
   </div>
 
-  <img src="../assets/horizons/horizons_logo_origin.png" style= "max-width: 35vw; margin-left: -50%;" class="left first">
-  <img src="../assets/horizons/horizons_logo_sketches.png" style= "max-width: 45vw; margin-left: -30%;" class="right first">
+  <img src="../assets/horizons/horizons_logo_origin.png" style= "max-width: 35vw; margin-left: -50%;" class="left first fadeAndScale article">
+  <img src="../assets/horizons/horizons_logo_sketches.png" style= "max-width: 45vw; margin-left: -30%;" class="right first fadeAndScale article">
 
 
-  <div class="short explanatory_text explanation2">
+  <div class="short explanatory_text explanation2 article">
     Tech bootcamps and startups in general love a certain level of esotericness, and therefore need emblems
     that are just abstract enough to make cool, minimalist laptop stickers (because let's be real, that's what they really care about.) For the final logo, I opted for the horizon half-circle featured in all the sketches.
   </div>
-  <img src="../assets/horizons/horizons_logo_final.png" style= "max-width: 50vw; margin-left: 20%; margin-top: 80%; margin-top: -30%;" class="right second">
+  <img src="../assets/horizons/horizons_logo_final.png" style= "max-width: 50vw; margin-left: 20%; margin-top: 80%; margin-top: -30%;" class="right second article">
 
-  <img src="../assets/horizons/horizons_style-19.png" style= "max-width: 35vw; margin-left: -20%;" class="left third">
+  <img src="../assets/horizons/horizons_style-19.png" style= "max-width: 35vw; margin-left: -20%;" class="left third article">
 
-  <div class="explanatory_text explanation3">
+  <div class="explanatory_text explanation3 article">
     In general, I wanted the site to appear as neutral as possible across everything from fonts, colors, even density of content. (Our sites need to seem welcoming to women/POC; it's hard enough for them to get into tech!)
     For colors, I went with a bright yellow, accented with black, grey, and blue.
   </div>
 
-  <div class="explanatory_text explanation4">
+  <div class="explanatory_text explanation4 article">
     Horizons offered a multi-faceted experience for its students, from the actual coding to the community, so I played with the concept of a "spinner" that showcased all four selling-points right off the bat. When a user clicks on the
     verb, they're directed to its respective page.
   </div>
 
 
-   <img src="../assets/horizons/horizons_1.png" style= "max-width: 35vw;" id= "code" class="far_left fourth">
-    <img src="../assets/horizons/horizons_3.png" style= "max-width: 35vw;" class="far_right fourth">
+   <img src="../assets/horizons/horizons_1.png" style= "max-width: 35vw;" id= "code" class="far_left fourth article">
+    <img src="../assets/horizons/horizons_3.png" style= "max-width: 35vw;" class="far_right fourth article">
 
-    <img src="../assets/horizons/horizons_4.png" style= "max-width: 35vw;" id="play" class="far_left fifth">
-      <img src="../assets/horizons/horizons_6.png" style= "max-width: 35vw;" class="far_right fifth" id="play_click">
+    <img src="../assets/horizons/horizons_4.png" style= "max-width: 35vw;" id="play" class="far_left fifth article">
+      <img src="../assets/horizons/horizons_6.png" style= "max-width: 35vw;" class="far_right fifth article" id="play_click">
 
-      <img src="../assets/horizons/horizons_9.png" style= "max-width: 35vw;" id="build" class="far_left sixth">
-        <img src="../assets/horizons/horizons_11.png" style= "max-width: 35vw;" class="far_right sixth" id="build_click">
+      <img src="../assets/horizons/horizons_9.png" style= "max-width: 35vw;" id="build" class="far_left sixth article">
+        <img src="../assets/horizons/horizons_11.png" style= "max-width: 35vw;" class="far_right sixth article" id="build_click">
 
 
-            <img src="../assets/horizons/horizons_13.png" style= "max-width: 35vw;" id= "learn" class="far_left seventh">
-              <img src="../assets/horizons/horizons_15.png" style= "max-width: 35vw;" class="far_right seventh">
+            <img src="../assets/horizons/horizons_13.png" style= "max-width: 35vw;" id= "learn" class="far_left seventh article">
+              <img src="../assets/horizons/horizons_15.png" style= "max-width: 35vw;" class="far_right seventh article">
 
 
 
@@ -175,6 +175,12 @@ $("#learn").mouseover(function() {
 //         })
 //     })
 // })
+</script>
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<!-- initializing scrollreveal -->
+<script>
+  window.sr = ScrollReveal({ origin: top}, {distance: '10px'}, {delay: 10});
+  sr.reveal('.article', {duration: 2000}, 30);
 </script>
 
 

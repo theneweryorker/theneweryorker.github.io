@@ -102,12 +102,14 @@ transition: all 1.1s ease;
       height: 1000px;
       width: 800px;
       position: absolute;
-      background: $caramel;
+      background: $thimble_pink;
       bottom:0%;
       right: 0%;
       z-index: -2000;
       margin-right: -60em;
       margin-bottom: -60em;
+      transform: translateX(100%);
+      animation: slide_right 2s;
 
     }
 
@@ -115,7 +117,7 @@ transition: all 1.1s ease;
       height: 800px;
       width: 800px;
       position: absolute;
-      background: $peach;
+      background: $thimble_green;
       bottom:0%;
       left: 0%;
       z-index: -1000;

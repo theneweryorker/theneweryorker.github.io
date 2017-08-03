@@ -22,6 +22,11 @@
   font-weight: normal;
   font-style: normal; }
 @font-face {
+  font-family: 'butlerregular';
+  src: url("../font/butler_regular-webfont.woff2") format("woff2"), url("../font/butler_regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
   font-family: 'glacial_indifferenceregular';
   src: url("../font/glacialindifference-regular-webfont.woff2") format("woff2"), url("../font/glacialindifference-regular-webfont.woff") format("woff");
   font-weight: normal;
@@ -201,6 +206,23 @@
     -webkit-transform: translate(-400px, -550px) rotate3d(0, 0, 1, -23deg);
     opacity: 1;
     z-index: -1000; } }
+.diagonal_right {
+  animation-name: diogonal_right;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: diagonal_right;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards; }
+
+@keyframes slide_right {
+  0% {
+    transform: translateX(100%); }
+  14.28% {
+    transform: translateX(0); }
+  85.71% {
+    transform: translateX(0); }
+  100% {
+    transform: translateX(100%); } }
 .diagonal_left {
   animation-name: diagonal_left;
   animation-duration: 2s;

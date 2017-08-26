@@ -385,6 +385,13 @@
   z-index: -100;
   margin-top: -2%; }
 
+.letters {
+  -ms-transform: rotate(-35deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-35deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(-35deg); }
+
 .raptor {
   position: relative;
   max-height: 70px;

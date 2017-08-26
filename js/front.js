@@ -127,13 +127,13 @@ $(document).ready(function(){
 		///ANIMATIONS PREAMBULE
 		tlHello = new TimelineLite({ paused: true});
 		tlHello.staggerFrom($("#holly_h > *"), 0.6, {drawSVG:"0%", ease:Power3.easeOut},  0.2, 0.8);
-		tlHello.from("#squiggle_54 > *", 0.6, {drawSVG:"0%", ease:Power3.easeOut},  0.2, 0.8);
+		// tlHello.from("#squiggle_54 > *", 0.6, {drawSVG:"0%", ease:Power3.easeOut},  0.2, 0.8);
 
-		// tlHello.staggerFrom($("#holly_y > *"), 0.6, {drawSVG:"0%", ease:Power3.easeOut},  0.2, "-=0.7");
-		// tlHello.staggerFrom($("#holly_l1 > *"), 0.6, {drawSVG:"0%", ease:Power3.easeOut},  0.4, "-=1.2");
-		// tlHello.staggerFrom($("#holly_l2 > *"), 0.6, {drawSVG:"0%", ease:Power3.easeOut},  0.4, "-=1");
-		// tlHello.staggerFrom($("#holly_o > *"), 1.2, {drawSVG:"0%", ease:Power3.easeOut},  0.2, "-=1.2");
-		// tlHello.staggerFrom($("#holly_dot > *"), 0.6, {scale:0, transformOrigin:"50% 50%", ease:Power3.easeOut },  0.2, "-=0.8");
+		tlHello.staggerFrom($("#holly_y > *"), 0.6, {drawSVG:"0%", ease:Power3.easeOut},  0.2, "-=0.7");
+		tlHello.staggerFrom($("#holly_l1 > *"), 0.6, {drawSVG:"0%", ease:Power3.easeOut},  0.4, "-=1.2");
+		tlHello.staggerFrom($("#holly_l2 > *"), 0.6, {drawSVG:"0%", ease:Power3.easeOut},  0.4, "-=1");
+		tlHello.staggerFrom($("#holly_o > *"), 1.2, {drawSVG:"0%", ease:Power3.easeOut},  0.2, "-=1.2");
+		tlHello.staggerFrom($("#holly_dot > *"), 0.6, {scale:0, transformOrigin:"50% 50%", ease:Power3.easeOut },  0.2, "-=0.8");
 		tlHello.staggerFrom($(".hello-scrolldown"), 1.2, {bottom:-50, ease:Power3.easeOut },  0.2, "-=0.8");
 
 		if($browser.name == "Safari" && $browser.version < 10) {

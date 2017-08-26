@@ -91,6 +91,11 @@
 
 }
 
+.letters{
+  @include rotate(-35deg);
+
+}
+
 .raptor{
   position: relative;
   max-height: 70px;

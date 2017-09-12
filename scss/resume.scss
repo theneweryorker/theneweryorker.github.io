@@ -151,10 +151,34 @@ input[type="radio"] {
   -ms-transition: height 0.2s ease-out;
   transition: height 0.2s ease-out;
   margin-top: -6%;
+  // background-color: red;
+
 
 
 
 }
+
+.body{
+  background-color: $wes_mustard;
+  padding: 8%;
+}
+
+.scrolldown {
+  -webkit-transition: bottom 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+  -moz-transition: bottom 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+  transition: bottom 400ms cubic-bezier(0.7, 0, 0.3, 1) 0ms; }
+.scrolldown .arrow {
+    -webkit-animation: bounce 800ms cubic-bezier(0.7, 0, 0.3, 1) infinite alternate;
+    -moz-animation: bounce 800ms cubic-bezier(0.7, 0, 0.3, 1) infinite alternate;
+    animation: bounce 800ms cubic-bezier(0.7, 0, 0.3, 1) infinite alternate; }
+
+  .arrow{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
 
 .item {
   // line-height: 5px;

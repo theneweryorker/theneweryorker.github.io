@@ -117,7 +117,7 @@ $(document).ready(function(){
 	var preambuleText;
 	var preambuleLines;
 	var tlVision;
-	var tlCreativity;
+	// var tlCreativity;
 	var tlHomeIdeas;
 	initHome = function(){
 
@@ -216,12 +216,12 @@ $(document).ready(function(){
 					}
 				}
 
-				if (elem.is('.creativity')) {
-					if( elem.hasClass('visible') && action == "add" && !elem.hasClass('animating') ) {
-						elem.addClass('animating');
-						tlCreativity.play().timeScale(1);
-					}
-				}
+				// if (elem.is('.creativity')) {
+				// 	if( elem.hasClass('visible') && action == "add" && !elem.hasClass('animating') ) {
+				// 		elem.addClass('animating');
+				// 		tlCreativity.play().timeScale(1);
+				// 	}
+				// }
 
 				if (elem.is('.ideas')) {
 					if( elem.hasClass('visible') && action == "add" && !elem.hasClass('animating') ) {
@@ -280,8 +280,8 @@ $(document).ready(function(){
 			prllxVisionSills.progress(normSkills);
 
 			//PARALLAX CREA CONTENT
-			var minCrea = $(".creativity .block-content").offset().top - wH;
-			var maxCrea= $(".creativity .block-content").offset().top + $(".creativity .block-content").outerHeight();
+			// var minCrea = $(".creativity .block-content").offset().top - wH;
+			// var maxCrea= $(".creativity .block-content").offset().top + $(".creativity .block-content").outerHeight();
 			var normCrea = clamp(normalize(window.pageYOffset, minCrea, maxCrea), 0, 1);
 			prllxCreaContent.progress(normCrea);
 

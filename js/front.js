@@ -183,31 +183,6 @@ $(document).ready(function(){
 
 
 		//ANIMATIONS CREATIVITY
-		tlCreativity = new TimelineLite({ paused: true});
-		var creaTitleText = new SplitText(".creativity h2 .txt", {type:"lines"});
-		var creaTitleLines = creaTitleText.lines;
-		for(var i = 0; i<creaTitleLines.length; i++){
-		  creaTitleLines[i].innerHTML = '<span>'+creaTitleLines[i].innerHTML+'</span>';
-		}
-		var creaIntroText = new SplitText(".creativity .block-content p.intro", {type:"lines"});
-		var creaIntroLines = creaIntroText.lines;
-		for(var i = 0; i<creaIntroLines.length; i++){
-		  creaIntroLines[i].innerHTML = '<span>'+creaIntroLines[i].innerHTML+'</span>';
-		}
-		tlCreativity.from(".creativity .block-content p.intro + p", 0.5, {y:60, opacity:0, ease:Power3.easeOut}, 0.2)
-		tlCreativity.from(".creativity .project-container svg > *", 1.9, {drawSVG:"0%", ease:Power3.easeOut}, "-=1")
-
-		// tlCreativity.from(".creativity .project-container svg > *", 2.2, {drawSVG:"0%", ease:Power3.easeOut}, "-=0.5")
-
-		tlCreativity.staggerFrom($(creaTitleLines).find('span'), 1.2, {y:"100%", ease: Power3.easeInOut},  0.08, "-=1");
-		tlCreativity.staggerFrom($(creaIntroLines).find('> span'), 1.2, {y:"100%", ease: Power3.easeInOut},  0.08, "-=1");
-
-		// tlCreativity.from(".creativity .block-content p.intro + p", 0.8, {y:60, opacity:0, ease:Power3.easeOut}, "-=1")
-		tlCreativity.from(".creativity .block-content a", 0.8, {y:60, opacity:0, ease:Power3.easeOut}, "-=1")
-
-		TweenLite.set(".creativity .block-content", {y: '25%'});
-		var prllxCreaContent = TweenLite.to(".creativity .block-content", 1, { yPercent: -25, ease: Linear.easeNone, paused: true });
-		var prllxVisuelProject = TweenLite.to(".project-container .project-visual img", 1, { yPercent: -50, ease: Linear.easeNone, paused: true });
 
 
 		//ANIMATIONS IDEAS

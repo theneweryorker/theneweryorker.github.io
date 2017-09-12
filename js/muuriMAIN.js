@@ -53,7 +53,12 @@ function filter() {
     if(activeFilter !== 'all'){
     items.forEach(function (item) {
       var $elem = $(item._element);
-      var isFilterMatch = $elem.attr('data-label') === activeFilter ? true : false;
+      // // var isFilterMatch = $elem.attr('data-label') === activeFilter ? true : false;
+      // console.log($elem.attr('class').includes(activeFilter));
+      // console.log($elem.attr('class'));
+
+      var isFilterMatch = $elem.attr('class').includes(activeFilter) ? true : false;
+
       (isFilterMatch ? itemsToShow : itemsToHide).push(item);
     });
   } else {

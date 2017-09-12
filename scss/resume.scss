@@ -111,6 +111,7 @@ input[type="radio"] {
 
 
 .spacer{
+  //this is for radio buttons
   flex:0.3;
 }
 
@@ -149,119 +150,39 @@ input[type="radio"] {
   -moz-transition: height 0.2s ease-out;
   -ms-transition: height 0.2s ease-out;
   transition: height 0.2s ease-out;
+  margin-top: -6%;
+
 
 
 }
 
 .item {
-  position: absolute;
-  line-height: 100px;
+  // line-height: 5px;
   margin: 10px;
   z-index: 1;
+  position: absolute;
   // padding-bottom: 2%;
 }
 
-  .item.h1{
-    height: 220px;
-    line-height: 220px;
-  }
-
-.item.h2 {
-  height: 400px;
-  line-height: 400px; }
-
-
-.item.h3 {
-height: 500px;
-line-height: 500px; }
-
-.item.h4{
-  height: 640px;
-  line-height: 480px;
-}
-
-.item.h5{
-  height: 200px;
-  line-height: 200px;
-}
-
-.item.h6{
-  height: 940px;
-  line-height: 940px;
-}
-
-.item.h7{
-  height: 460px;
-  line-height: 460px;
-}
-
-.item.special{
-  height: 430px;
-  line-height: 430px;
-}
-
-
-  .item.w1{
-    width: 300px;
-  }
-
-  .item.w2{
-    width: 400px;
-  }
-
-  .item.w3{
-    width: 460px;
-  }
-
-.item.w4{
-  width: 620px;
-}
 
 .item-content {
   position: relative;
   width: 100%;
-  height: 100%; }
+}
 
-.card {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 300;
-  // background-color: rgba(255, 255, 255, 0.9);
-  border: 3px solid;
-  color: black;
-  border-radius: 4px;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out; }
+.distance{
+  margin-top: 2%;
+}
 
-  .card_colored{
-    @extend .card;
-    background-color: #f3eee6;
-    border: 3px solid black;
-  }
+.distance2{
+  margin-top: -6%;
+}
 
-  .card_black{
-    @extend .card;
-    background-color: black;
-    border: 4px solid black;
-
-  }
+.proj_dist{
+  margin-top: -5%;
+}
 
 
-.item.red .card {
-  color: #f94a7a; }
-
-.item.green .card {
-  color: #2ac06d; }
-
-.item.blue .card {
-  color: #4A9FF9; }
 
 /*# sourceMappingURL=portfolio.css.map */
 
@@ -271,12 +192,13 @@ line-height: 500px; }
 .header {
   font-family: 'butlerextrabold';
   font-size: 32px;
+  padding-bottom: 50px;
 }
 
 .resume_text{
   font-family: 'glacial_indifferenceregular';
-  font-size: 18px;
-  line-height: 20px;
+  font-size: 12px;
+  line-height: 14px;
 }
 
 .show{
@@ -301,7 +223,7 @@ line-height: 500px; }
 
 
 .resume_link{
- text-decoration: none;
+ // text-decoration: none;
  color: black;
 }
 
@@ -309,11 +231,14 @@ line-height: 500px; }
   // height: 50px;
   line-height: 30px;
   width: 100%;
+    margin-top: 3%;
+
 }
 
 .date{
   position: absolute;
   right: 0;
+  font-size: 12px;
 }
 
 ul{
@@ -323,10 +248,42 @@ ul{
 
 }
 
-// .highlight{
-//     background-image: linear-gradient(to right, rgba(255,255,255,0) 50%, $wes_brightyellow 50%);
-//     background-position: 0% 0;
-//     background-size: 200% auto;
-//     text-decoration: none;
-//     transition: background-position 0.2s ease-out;
-//   }
+.item.w1{
+  width: 13em;
+  display: block;
+}
+
+.item.w2{
+  width: 400px;
+}
+
+.item.w3{
+  width: 460px;
+}
+
+.item.w4{
+width: 620px;
+}
+
+.project{
+  margin-top: 4%;
+}
+
+// .a1 {
+//     grid-column: 1 / span 3;
+//     grid-row: 1;
+//     margin: 3%;
+//     // border-left: 1px solid black;
+// }
+
+.red{
+  color: red;
+}
+
+.highlight{
+    background-image: linear-gradient(to right, rgba(255,255,255,0) 50%, $wes_brightyellow 50%);
+    background-position: 0% 0;
+    background-size: 200% auto;
+    text-decoration: none;
+    transition: background-position 0.2s ease-out;
+  }

@@ -37,6 +37,11 @@
   font-weight: normal;
   font-style: normal; }
 @font-face {
+  font-family: 'glacial_indifferenceitalic';
+  src: url("../font/glacialindifference-italic-webfont.woff2") format("woff2"), url("../font/glacialindifference-italic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
   font-family: 'butler_stencilblack';
   src: url("../font/butler_black_stencil-webfont.woff2") format("woff2"), url("../font/butler_black_stencil-webfont.woff") format("woff");
   font-weight: normal;
@@ -326,7 +331,7 @@ body {
   font-size: 18px;
   line-height: 1.5;
   margin: 0 20px;
-  color: #6e6e6e;
+  color: black;
   cursor: url("../assets/cursor.png"), default; }
 
 /* Clearfix */
@@ -526,5 +531,42 @@ input[type="radio"] {
   color: #4A9FF9; }
 
 /*# sourceMappingURL=portfolio.css.map */
+.header {
+  font-family: 'butlerextrabold';
+  font-size: 32px; }
+
+.resume_text {
+  font-family: 'glacial_indifferenceregular';
+  font-size: 18px;
+  line-height: 20px; }
+
+.show {
+  display: none; }
+
+.resume_bold {
+  font-family: 'glacial_indifferencebold';
+  font-size: 18px; }
+
+.position {
+  font-family: 'glacial_indifferenceitalic';
+  font-size: 18px;
+  margin-top: -1%; }
+
+.resume_link {
+  text-decoration: none;
+  color: black; }
+
+.resume {
+  line-height: 30px;
+  width: 100%; }
+
+.date {
+  position: absolute;
+  right: 0; }
+
+ul {
+  list-style-type: circle;
+  list-style-position: inside;
+  margin-top: -0.5%; }
 
 /*# sourceMappingURL=portfolio.css.map */

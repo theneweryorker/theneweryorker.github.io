@@ -182,7 +182,7 @@ $(document).ready(function(){
 		var prllxVisionSills = TweenLite.to(".vision .skills-container", 2, { y: '15%', ease: Linear.easeNone, paused: true });
 
 
-		//ANIMATIONS CREATIVITY
+		//ANIMATIONS CREATIVITY -- taken out!
 
 
 		//ANIMATIONS IDEAS

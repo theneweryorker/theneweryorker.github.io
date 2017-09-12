@@ -466,6 +466,9 @@ input[type="radio"] {
   font-size: 32px;
   padding-bottom: 50px; }
 
+.header2 {
+  position: absolute; }
+
 .resume_text {
   font-family: 'glacial_indifferenceregular';
   font-size: 12px;

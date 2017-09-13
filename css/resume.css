@@ -509,6 +509,10 @@ input[type="radio"] {
   font-family: 'glacial_indifferencebold';
   font-size: 18px; }
 
+.resume_ed {
+  font-family: 'glacial_indifferenceregular';
+  font-size: 18px; }
+
 .position {
   font-family: 'glacial_indifferenceitalic';
   font-size: 18px;

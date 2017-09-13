@@ -389,9 +389,9 @@ input[type="radio"] {
 
 .radio_button {
   flex: 1.5;
-  border: 3px solid;
+  background-color: #F4C615;
   color: black;
-  border-radius: 4px;
+  border-radius: 30px;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -ms-transition: all 0.2s ease-out;
@@ -484,8 +484,14 @@ input[type="radio"] {
 /*# sourceMappingURL=portfolio.css.map */
 .header {
   font-family: 'butlerextrabold';
-  font-size: 32px;
-  padding-bottom: 50px; }
+  font-size: 3em;
+  padding-bottom: 50px;
+  margin-left: -15%; }
+
+.big_header {
+  font-family: 'butlerextrabold';
+  font-size: 9em;
+  margin-left: -5%; }
 
 .header2 {
   position: absolute; }
@@ -493,7 +499,8 @@ input[type="radio"] {
 .resume_text {
   font-family: 'glacial_indifferenceregular';
   font-size: 12px;
-  line-height: 14px; }
+  line-height: 14px;
+  letter-spacing: 0.08em; }
 
 .show {
   display: none; }

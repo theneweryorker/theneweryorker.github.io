@@ -406,6 +406,9 @@
   display: none;
   transform: rotate(-10deg); }
 
+.above {
+  z-index: 5000l; }
+
 .page-home section.vision {
   background: #f8f8f8; }
 

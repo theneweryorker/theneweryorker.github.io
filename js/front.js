@@ -282,8 +282,8 @@ $(document).ready(function(){
 			//PARALLAX CREA CONTENT
 			// var minCrea = $(".creativity .block-content").offset().top - wH;
 			// var maxCrea= $(".creativity .block-content").offset().top + $(".creativity .block-content").outerHeight();
-			var normCrea = clamp(normalize(window.pageYOffset, minCrea, maxCrea), 0, 1);
-			prllxCreaContent.progress(normCrea);
+			// var normCrea = clamp(normalize(window.pageYOffset, minCrea, maxCrea), 0, 1);
+			// prllxCreaContent.progress(normCrea);
 
 			// var minProject = $(".project-container .project-visual").offset().top - wH;
 			// var maxProject= $(".project-container .project-visual").offset().top + $(".project-container .project-visual").outerHeight();

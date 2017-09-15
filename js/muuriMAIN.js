@@ -22,8 +22,8 @@ var $filterField = $('.filter-field');
 // so we gotta do it manually.
 m.grid = new Muuri({
   container: document.getElementsByClassName('grid')[0],
-  items: [].slice.call(document.getElementsByClassName('item')),
-  dragEnabled: true
+  items: [].slice.call(document.getElementsByClassName('item'))
+  // dragEnabled: true
 });
 
 //see function updateIndices at bottom-- this will come in handy for CSS reasons,

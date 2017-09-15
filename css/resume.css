@@ -404,6 +404,13 @@ input[type="radio"] {
     font-size: 12px;
     letter-spacing: 0.1em; }
 
+#toggle {
+  font-family: glacial_indifferencebold;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  display: none;
+  margin-bottom: -2%; }
+
 .spacer {
   flex: 0.3; }
 
@@ -440,7 +447,7 @@ input[type="radio"] {
   -moz-transition: height 0.2s ease-out;
   -ms-transition: height 0.2s ease-out;
   transition: height 0.2s ease-out;
-  margin-top: -6%; }
+  margin-top: -9%; }
 
 .body {
   background-color: #F4C615;
@@ -524,7 +531,12 @@ input[type="radio"] {
 .resume {
   line-height: 30px;
   width: 100%;
-  margin-top: 3%; }
+  margin-top: 3.5%; }
+
+.resume_ent {
+  line-height: 30px;
+  width: 100%;
+  margin-top: 5%; }
 
 .date {
   position: absolute;
@@ -561,5 +573,10 @@ ul {
   background-size: 200% auto;
   text-decoration: none;
   transition: background-position 0.2s ease-out; }
+
+ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style-position: outside; }
 
 /*# sourceMappingURL=resume.css.map */

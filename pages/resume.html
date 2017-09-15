@@ -49,8 +49,8 @@
 	<section>
 
 		<span class="section-title big_header" style="font-size: 69px; border-bottom-left-radius: 4px">Resume </span>
-<br>
-<br>
+
+
 
 <!--
   <div class="item-content header" style="margin-top: 4%;">
@@ -60,10 +60,12 @@
     <div class="resume_text"> Horizons School of Technology<br> Curriculum: Javascript, HTML5, CSS (Sass), React JS, Flux</div>
 
   </div> -->
-	<!-- <div style="margin-bottom: -8%;"> TOGGLE </div><br> -->
 
-    <div class="controls cf" style="margin-top: 5%;">
+    <div class="controls cf" style="margin-top: -1%;">
+			<div id="toggle"> Press buttons to filter experiences by topic! </div><br>
+
   		<div class="control filter">
+
   			<!-- form-control is the design of the form; control-field handles its positioning -->
   <form class="form-control control-field filter-field">
 
@@ -116,7 +118,7 @@
 				<div class="spacer"></div>
 
 				<div class="container radio_button">
-					<input type="radio" name="option" id="c4" value="research">
+					<input type="radio" name="option" id="c5" value="research">
 					<label for="c5" style="text-align: center; line-height: 14px;">DESIGN RESEARCH</label>
 					</input>
 				</div>
@@ -145,7 +147,7 @@
   Work
 </div>
 
-  <div class="grid muuri" style="height: 4000px">
+  <div class="grid muuri" style="height: 4500px">
 
 
 		<div class="item resume business" data-label="business" data-id="2">
@@ -162,7 +164,7 @@
 		</div>
 
 
-    <div class="item resume business team" data-label="art" data-id="2">
+    <div class="item resume business team research" data-label="art" data-id="2">
 		<div class="item-content resume_bold">
 			The Mack Institute,  <span class="resume_text"> Philadelphia, PA </span> <span class="resume_text date"> Aug 2016 - Dec 2016 </span>
       <div class="position"> Project Team Leader </div>
@@ -308,30 +310,61 @@ financial tech for SPRING social impact incubator.</li>
     		</div>
     		</div>
 
-        <div class="header header2" style="margin-top: 24%;">
+				<div class="item resume w1 project research" data-label="branding" data-id="2">
+				<div class="item-content resume_bold">
+					Food Trucks
+					<div class="resume_text show">
+						<ul>
+							<li>3 week ethnographic project conducted for University of Philadelphia foodtrucks. </li>
+						</ul>
+					</div>
+				</div>
+				</div>
+
+        <div class="header header2" style="margin-top: 33%;">
           Entrepreneurship
         </div>
 
-        <div class="item resume branding" data-label="branding" data-id="2" style="margin-top: 13%">
+				<!-- <div class="header" style="margin-top: 28%; margin-bottom: -7%;">
+					Entrepreneurship
+				</div> -->
+
+        <div class="item resume resume_ent branding" data-label="branding" data-id="2" style="margin-top: 13%">
         <div class="item-content resume_bold">
-          Caravan   <span class="resume_text"> Philadelphia, PA </span><span class="resume_text date"> Aug 2016 - April 2017 </span>
+          Caravan,   <span class="resume_text"> Philadelphia, PA </span><span class="resume_text date"> Aug 2016 - April 2017 </span>
           <div class="position"> Co-founder </div>
 
           <div class="resume_text show">
             <ul>
-              <li>Online startup linking fashion students to clients who need behance tailoring and clothing design needs. </li>
+              <li>Caravan takes the “sharing economy” a step further, leveraging travelers’ unused luggage space to allow buyers to get the goods they want from the countries they want at the prices they want.  </li>
+							<li>Oversaw and directed branding, web
+  development, and marketing efforts;
+  coordinated with Moroccan suppliers for beta
+  test; led meetings with investors in Bay Area.  </li>
+
             </ul>
           </div>
         </div>
         </div>
 
-        <div class="item resume social" data-label="art" data-id="2">
+        <div class="item resume resume_ent social" data-label="art" data-id="2">
         <div class="item-content resume_bold">
           rePurpose   <span class="resume_text"> Philadelphia, PA </span><span class="resume_text date"> Feb 2016 - Jan 2017 </span>
           <div class="position"> Co-founder </div>
           <div class="resume_text show">
             <ul>
-              <li>Caravan takes the “sharing economy” a step further, leveraging travelers’ unused luggage space to allow buyers to get the goods they want from the countries they want at the prices they want. </li>
+              <li>
+								Co-founded rePurpose, a social enterprise
+	  helping slum populations to own their own part
+	  of the global recycling supply chain.
+	</li>
+		<li>Featured as one of the “Nation’s Top College
+							  Startups” by Forbes and selected as 1 of 63
+							  teams chosen out of 25,000 to compete in San
+							  Francisco’s Regional Finals of The Hult Prize,
+							  the world’s largest social entrepreneurship
+							  competition.
+							 </li>
             </ul>
           </div>
         </div>
@@ -424,16 +457,6 @@ financial tech for SPRING social impact incubator.</li>
 	</script>
 
 <script>
-  // $(".resume_bold").mouseenter(function(){
-  //   $(this).find(".show").css("display","visible");
-  //     var x = $(this).find(".show")
-  //     console.log(x)
-  // // console.log(this .resume_text)
-  //     // $("this .resume_text").css("visible");
-  //     // slideDown();
-  // }).mouseleave(function(){
-  //     $(this.resume_text).slideUp();
-  // })
 
   $(".resume").mouseenter(function(){
 
@@ -441,38 +464,19 @@ financial tech for SPRING social impact incubator.</li>
     $(this).children('.resume_bold').css("color", "red");
     $(this).find('.resume_link').css("color", "red");
 
-
-    // $(this).children('.resume_bold').addClass('.red');
-    // $(this).css("position", "relative")
-
-
-
-    // $(this.resume).css("color", "red")
-
-    // $(this).css("color","red")
-
-    // console.log($(this));
-    // $(".item.resume.muuri-item.muuri-shown").css("padding-bottom", "200px");
-
-
-
-    // console.log("here")
-    // // console.log($(this).css)
-    // // console.log($(this).children('.show')[0].innerHTML)
-    // $(this).find(".resume_text").css("margin-bottom", "20%");
-
   }).mouseleave(function(){
 
   $(this).find(".show").slideUp();
   $(this).children('.resume_bold').css("color", "black");
   $(this).find('.resume_link').css("color", "black");
 
-
-
-
-    // $(this).remove($(this).children('.show')[0].innerHTML);
-
   })
+
+
+	$(".controls").mouseenter(function(){
+	    $("#toggle").slideDown();
+	});
+
   </script>
 
 	<script src="../js/menu_otherpages.js"></script>

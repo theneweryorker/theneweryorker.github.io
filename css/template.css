@@ -346,6 +346,11 @@
   grid-row: 9;
   margin-top: 10%; }
 
+.explanation5 {
+  grid-column: 3/ span 6;
+  grid-row: 14;
+  margin-top: 10%; }
+
 .short {
   grid-column: 3 /span 2; }
 

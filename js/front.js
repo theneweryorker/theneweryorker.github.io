@@ -154,12 +154,84 @@ $(document).ready(function(){
 		// var prllxVideoContainer = TweenLite.to(".video-container img", 1, { yPercent: 50, ease: Linear.easeNone, paused: true });
 
 		//ANIMATIONS VISION
+		tlVision = new TimelineLite({ paused: true});
+		var visionTitleText = new SplitText(".vision h2 .txt", {type:"lines"});
+
+		var visionTitleLines = visionTitleText.lines;
+		// ^ an array of all the divs that wrap
+		for(var i = 0; i<visionTitleLines.length; i++){
+		  visionTitleLines[i].innerHTML = '<span>'+visionTitleLines[i].innerHTML+'</span>';
+		}
+		var visionIntroText = new SplitText(".vision .block-content p.intro", {type:"lines"});
+		var visionIntroLines = visionIntroText.lines;
+		for(var i = 0; i<visionIntroLines.length; i++){
+		  visionIntroLines[i].innerHTML = '<span>'+visionIntroLines[i].innerHTML+'</span>';
+		}
+		// tlVision.from(".vision h2 svg > *", 0.8, {drawSVG:"0%", ease:Power3.easeOut}, 0.5)
+		tlVision.from(".vision .padding svg > *", 1.5, {drawSVG:"0%", ease:Power3.easeOut}, 0.4)
+		tlVision.staggerFrom($(visionTitleLines).find('span'), 0.7, {y:"100%", ease: Power3.easeInOut},  0.08, "-=0.5");
+		tlVision.staggerFrom($(visionIntroLines).find('> span'), 1.2, {y:"100%", ease: Power3.easeInOut},  0.08, "-=1");
+		// tlVision.from(".vision .padding svg #pencil", 1.5, {drawSVG:"0%", ease:Power3.easeOut}, 0.6)
+
+		tlVision.from(".vision .block-content p.intro + p", 0.8, {y:60, opacity:0, ease:Power3.easeOut}, "-=1")
+		tlVision.from(".vision .block-content a", 0.8, {y:60, opacity:0, ease:Power3.easeOut}, "-=0.8")
+		TweenLite.set(".vision .skills-container", {y: '25%'});
+
+		//y:25%
+
+		var prllxVisionSills = TweenLite.to(".vision .skills-container", 2, { y: '15%', ease: Linear.easeNone, paused: true });
+
 
 		//ANIMATIONS CREATIVITY -- taken out!
 
 
 		//ANIMATIONS IDEAS
+		tlHomeIdeas = new TimelineLite({ paused: true});
+		var ideasTitleText = new SplitText(".ideas h2 .txt", {type:"lines"});
+		var ideasTitleLines = ideasTitleText.lines;
+		for(var i = 0; i<ideasTitleLines.length; i++){
+		  ideasTitleLines[i].innerHTML = '<span>'+ideasTitleLines[i].innerHTML+'</span>';
+		}
+		var ideasIntroText = new SplitText(".ideas .block-content p.intro", {type:"lines"});
+		var ideasIntroLines = ideasIntroText.lines;
+		for(var i = 0; i<ideasIntroLines.length; i++){
+		  ideasIntroLines[i].innerHTML = '<span>'+ideasIntroLines[i].innerHTML+'</span>';
+		}
+		tlHomeIdeas.from(".ideas h2 svg > *", 0.8, {drawSVG:"0%", ease:Power3.easeOut}, 0.5)
+		tlHomeIdeas.staggerFrom($(ideasTitleLines).find('span'), 1.2, {y:"100%", ease: Power3.easeInOut},  0.08, "-=1");
+		tlHomeIdeas.staggerFrom($(ideasIntroLines).find('> span'), 1.2, {y:"100%", ease: Power3.easeInOut},  0.08, "-=1");
+		tlHomeIdeas.staggerFrom(".ideas .block-content p.intro ~ p", 0.8, {y:60, opacity:0, ease:Power3.easeOut},  0.08, "-=1")
+		tlHomeIdeas.from(".ideas .block-content a", 0.8, {y:60, opacity:0, ease:Power3.easeOut}, "-=1")
+		var prllxIdeasVisuel = TweenLite.to(".ideas .visuel-container img", 1, { yPercent: -50, ease: Linear.easeNone, paused: true });
 
+		$('.animated').viewportChecker({
+	  	  	repeat:false,
+	  	  	offset:-100,
+	  	  	callbackFunction: function(elem, action){
+
+		  	  	if (elem.is('.vision')) {
+					if( elem.hasClass('visible') && action == "add" && !elem.hasClass('animating') ) {
+						elem.addClass('animating');
+						tlVision.play().timeScale(1);
+					}
+				}
+
+				// if (elem.is('.creativity')) {
+				// 	if( elem.hasClass('visible') && action == "add" && !elem.hasClass('animating') ) {
+				// 		elem.addClass('animating');
+				// 		tlCreativity.play().timeScale(1);
+				// 	}
+				// }
+
+				if (elem.is('.ideas')) {
+					if( elem.hasClass('visible') && action == "add" && !elem.hasClass('animating') ) {
+						elem.addClass('animating');
+						tlHomeIdeas.play().timeScale(1);
+					}
+				}
+
+	  	  	}
+  	  	});
 
 		TweenLite.ticker.addEventListener("tick", onScroll);
 
@@ -202,10 +274,10 @@ $(document).ready(function(){
 
 
 			//PARALLAX SKILLS
-			// var minSkills = $(".vision .skills-container").offset().top - wH;
-			// var maxSkills= $(".vision .skills-container").offset().top + $(".vision .skills-container").outerHeight();
-			// var normSkills = clamp(normalize(window.pageYOffset, minSkills, maxSkills), 0, 1);
-			// prllxVisionSills.progress(normSkills);
+			var minSkills = $(".vision .skills-container").offset().top - wH;
+			var maxSkills= $(".vision .skills-container").offset().top + $(".vision .skills-container").outerHeight();
+			var normSkills = clamp(normalize(window.pageYOffset, minSkills, maxSkills), 0, 1);
+			prllxVisionSills.progress(normSkills);
 
 			//PARALLAX CREA CONTENT
 			// var minCrea = $(".creativity .block-content").offset().top - wH;
@@ -219,10 +291,10 @@ $(document).ready(function(){
 			// prllxVisuelProject.progress(normProject);
 
 			//PARALLAX IDEAS VISUEL
-			// var minIdeas = $(".ideas .visuel-container").offset().top - wH;
-			// var maxIdeas = $(".ideas .visuel-container").offset().top + $(".ideas .visuel-container").outerHeight();
-			// var normIdeas = clamp(normalize(window.pageYOffset, minIdeas, maxIdeas), 0, 1);
-			// prllxIdeasVisuel.progress(normIdeas);
+			var minIdeas = $(".ideas .visuel-container").offset().top - wH;
+			var maxIdeas = $(".ideas .visuel-container").offset().top + $(".ideas .visuel-container").outerHeight();
+			var normIdeas = clamp(normalize(window.pageYOffset, minIdeas, maxIdeas), 0, 1);
+			prllxIdeasVisuel.progress(normIdeas);
 
 		}
 

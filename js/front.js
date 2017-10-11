@@ -169,7 +169,6 @@ $(document).ready(function(){
 		}
 		// tlVision.from(".vision h2 svg > *", 0.8, {drawSVG:"0%", ease:Power3.easeOut}, 0.5)
 		tlVision.from(".vision .padding svg > *", 1.5, {drawSVG:"0%", ease:Power3.easeOut}, 0.4)
-		console.log("vision padding");
 		tlVision.staggerFrom($(visionTitleLines).find('span'), 0.7, {y:"100%", ease: Power3.easeInOut},  0.08, "-=0.5");
 		tlVision.staggerFrom($(visionIntroLines).find('> span'), 1.2, {y:"100%", ease: Power3.easeInOut},  0.08, "-=1");
 		// tlVision.from(".vision .padding svg #pencil", 1.5, {drawSVG:"0%", ease:Power3.easeOut}, 0.6)

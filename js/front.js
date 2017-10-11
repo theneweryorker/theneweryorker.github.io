@@ -250,7 +250,7 @@ $(document).ready(function(){
 				tlPreambule.reverse().timeScale(2);
 			}
 
-			if ( !$('body').hasClass('page-home') || wW < 768  ) {
+			if ( !$('body').hasClass('page-home') || wW < 768  ) {
 				return;
 			};
 
@@ -258,7 +258,7 @@ $(document).ready(function(){
 
 			if (scrollAmount < $('.preambule').outerHeight() + wH) {
 				$('.hello, .preambule').show();
-			} else {
+			} else {
 				$('.hello, .preambule').hide();
 			}
 

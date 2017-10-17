@@ -315,6 +315,11 @@
     -webkit-transform: rotate3d(0, 0, 1, 0deg);
     transform: rotate3d(0, 0, 1, 0deg);
     opacity: 1; } }
+#still_thinking {
+  font-family: "butlerregular";
+  font-size: 5em;
+  text-align: center; }
+
 .photo_overlay {
   margin-top: 113px;
   height: 80px;
@@ -407,7 +412,7 @@
   transform: rotate(-10deg); }
 
 .above {
-  z-index: 5000l; }
+  z-index: 5000; }
 
 .page-home section.vision {
   background: #f8f8f8; }

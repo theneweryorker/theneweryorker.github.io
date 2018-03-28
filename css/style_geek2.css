@@ -3,8 +3,8 @@
 body {
 	padding:0px;
 	margin:0px;
-	background:url('../img/bg-3.jpg');
-	font-family:"skolar-sans-latin", Helvetica, Arial, sans-serif;
+	background:url('../assets/cursor.png');
+font-family: 'kino_40regular';
 	font-weight:300;
 	font-size:15px;
 	overflow:hidden;

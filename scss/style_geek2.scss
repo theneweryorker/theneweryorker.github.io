@@ -4,7 +4,7 @@
 body {
 	padding:0px;
 	margin:0px;
-	background:url('../assets/cursor.png');
+	background:url('../assets/space_background.jpg');
   // font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
   font-family:"glacial_indifferencebold";
 	font-weight:300;
@@ -141,9 +141,9 @@ button:active {
 
 #about {
 	z-index:2;
-	color:#2193c6;
-	background:#f1ff63;
-	border-color:#2193c6;
+	color:$gg_blue;
+	background:$gg_yellow;
+	border-color:$gg_blue;
 	width:445px;
 	height:325px;
 }
@@ -153,6 +153,8 @@ button:active {
 	overflow:hidden;
 	padding:0px 20px 20px 20px;
 	margin-top:20px;
+  font-family: 'butler_stencilblack';
+
 }
 
 #about .arrows {
@@ -161,11 +163,23 @@ button:active {
 
 #contactinfo {
 	z-index:1;
-	color:#D9322C;
-	background:#E0B7C7;
-	border-color:#fff;
-	width:300px;
+	color: $gg_red;
+	background:$gg_pink;
+	border-color:$gg_red;
+	width:30em;
 	height:440px;
+}
+
+
+
+#header_support{
+  font-size: 5em;
+  line-height: 1em;
+  text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
 }
 
 #contactinfo a { color:#fff; }
@@ -173,9 +187,11 @@ button:active {
 
 #contactinfo .content {
 	height:400px;
-	overflow:hidden;
-	padding:0px 20px 20px 20px;
+	padding:0px 0px 0px 20px;
 	margin-top:20px;
+  overflow:auto;
+  height: 85%;
+
 }
 
 #character {

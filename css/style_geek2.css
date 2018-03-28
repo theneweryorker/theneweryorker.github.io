@@ -3,8 +3,8 @@
 body {
   padding: 0px;
   margin: 0px;
-  background: url("../img/bg-3.jpg");
-  font-family: "skolar-sans-latin", Helvetica, Arial, sans-serif;
+  background: url("../assets/cursor.png");
+  font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 15px;
   overflow: hidden;
@@ -67,7 +67,7 @@ body {
   padding: 20px 20px; }
 
 textarea {
-  font-family: "skolar-sans-latin", Helvetica, Arial, sans-serif;
+  font-family: "glacial_indifferencebold";
   font-size: 15px;
   width: 100%;
   resize: none;

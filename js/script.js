@@ -3,7 +3,7 @@ $(document).ready( function() {
 
 $("#title-responsive img#quote-mid").css("width",$(window).width()-($("#gg_face").width()+$("#gg_quote_left").width()+$("#gg_quote_right").width())-45+"px");
 
-
+// try and get logo to the right
 
 /*
 	$("#instagram.focus a").click(function(e){
@@ -21,6 +21,10 @@ $("#title-responsive img#quote-mid").css("width",$(window).width()-($("#gg_face"
 	$(window).click(function(e){
 		//console.log(e);
 	});
+
+  //arrow-up starts out inactive; when you click up or
+  //down it makes the arrows inactive or active (colored differently)
+  //to tell you that there's more content up or down
 
 	$("#about .arrow-up").addClass('inactive');
 	$about_active = "summary";
@@ -51,22 +55,30 @@ $("#title-responsive img#quote-mid").css("width",$(window).width()-($("#gg_face"
 
   $('.textarea-scrollbar').scrollbar();
 
-	$.getJSON("_/js/quotes.json", function(data){
-		$num_quotes = data.quotes.length;
-		$rand = Math.floor(Math.random() * $num_quotes);
-		$quote = data.quotes[$rand];
-		$("#quote-text").html($quote.text);
-		$("#quote-author").html($quote.author);
-		$("#quote-twitter").attr("href", "https://twitter.com/home?status="+$quote.text+" -"+$quote.handle+" %23GeekGirlsFilm");
-	});
+//don't care about twitter
+	// $.getJSON("_/js/quotes.json", function(data){
+	// 	$num_quotes = data.quotes.length;
+	// 	$rand = Math.floor(Math.random() * $num_quotes);
+	// 	$quote = data.quotes[$rand];
+	// 	$("#quote-text").html($quote.text);
+	// 	$("#quote-author").html($quote.author);
+	// 	$("#quote-twitter").attr("href", "https://twitter.com/home?status="+$quote.text+" -"+$quote.handle+" %23GeekGirlsFilm");
+	// });
 
+//for future reference, structure json like this http://geekgirlsfilm.com/_/js/characters.json
+
+//character information is in a json format
 	$.getJSON("_/js/characters.json", function(data){
 
 		$num_chars = data.characters.length;
+    //num_chars is the number of characters
 		$rand = Math.floor(Math.random() * $num_chars);
+    //pick a random number (aka a random character)
 		$cur_char = $rand;
+    //assign cur_char to that random number
 
 		$character = data.characters[$cur_char];
+    //find the character that is assigned to that number
 
 		if(typeof $character.name != 'undefined'){
 			$("#character-name").show();
@@ -291,6 +303,9 @@ $("#title-responsive img#quote-mid").css("width",$(window).width()-($("#gg_face"
 	});
 	*/
 
+
+
+//this is all about mobile and we don't care!
 
 	$("span.toggle").mousedown(function(){
 		if(!$("body").hasClass('mobile')){

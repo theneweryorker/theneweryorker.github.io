@@ -171,7 +171,6 @@ button:active {
 }
 
 
-
 #header_support{
   font-size: 5em;
   line-height: 1em;
@@ -193,6 +192,13 @@ button:active {
   height: 85%;
 
 }
+
+// #dinosaur{
+//   width:764px;
+// 	height:480px;
+// }
+
+
 
 #character {
 	color:#f1ff63;
@@ -235,47 +241,47 @@ button:active {
 #character-img-mobile { width:100%; height:100%; }
 .character-img img { border:2px solid #f1ff63; }
 
-#contact {
-	color:#2193C6;
-	background:#eed6eb;
-	border-color:#2193C6;
-	width:340px;
-	height:350px;
-}
-#contact a { color:#2193C6; text-decoration:none; }
-#contact .content {
-	height:261px; overflow:hidden;
-}
-#contact textarea {
-	border-color:#2193C6;
-	color:#2193C6;
-  width: 275px;
-  height: 180px;
-}
-#contact p { border:2px solid #2193C6; padding:5px 10px 6px 10px; margin-top:10px; text-align:center; }
-#contact input[type="text"]{
-	background:rgba(33, 147, 198, 0.25);
-	color:#2193C6;
-	width:180px;
-	float:left;
-}
-
-#contact button {
-	float:right;
-	border-color:#2193C6;
-	color:#2193C6;
-}
-
-#chat {
-	color:#000;
-	background:#91efe2;
-	border-color:#000;
-	width:445px;
-	height:300px;
-}
-#chat .content {
-	height:211px; overflow:hidden;
-}
+// #contact {
+// 	color:#2193C6;
+// 	background:#eed6eb;
+// 	border-color:#2193C6;
+// 	width:340px;
+// 	height:350px;
+// }
+// #contact a { color:#2193C6; text-decoration:none; }
+// #contact .content {
+// 	height:261px; overflow:hidden;
+// }
+// #contact textarea {
+// 	border-color:#2193C6;
+// 	color:#2193C6;
+//   width: 275px;
+//   height: 180px;
+// }
+// #contact p { border:2px solid #2193C6; padding:5px 10px 6px 10px; margin-top:10px; text-align:center; }
+// #contact input[type="text"]{
+// 	background:rgba(33, 147, 198, 0.25);
+// 	color:#2193C6;
+// 	width:180px;
+// 	float:left;
+// }
+//
+// #contact button {
+// 	float:right;
+// 	border-color:#2193C6;
+// 	color:#2193C6;
+// }
+//
+// #chat {
+// 	color:#000;
+// 	background:#91efe2;
+// 	border-color:#000;
+// 	width:445px;
+// 	height:300px;
+// }
+// #chat .content {
+// 	height:211px; overflow:hidden;
+// }
 /*
 #chat textarea {
 	border-color:#000;

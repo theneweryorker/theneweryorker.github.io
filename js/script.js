@@ -67,6 +67,7 @@ $("#title-responsive img#quote-mid").css("width",$(window).width()-($("#gg_face"
 
 //for future reference, structure json like this http://geekgirlsfilm.com/_/js/characters.json
 
+
 //character information is in a json format
 	$.getJSON("_/js/characters.json", function(data){
 

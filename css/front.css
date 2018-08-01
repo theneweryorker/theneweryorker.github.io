@@ -2720,11 +2720,11 @@ span.msk span {
     height: 340px; } }
 .page-home section.hello h1 .line {
   fill: none;
-  stroke: #000000;
+  stroke: #d73141;
   stroke-width: 41px; }
 
 .page-home section.hello h1 svg .dot {
-  fill: #C33B27; }
+  fill: #d73141; }
 
 .page-home section.preambule {
   position: relative;

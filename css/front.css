@@ -355,8 +355,7 @@
   transform: rotate(-15deg);
   margin-top: -100px;
   margin-left: -50px;
-  position: fixed;
-  box-shadow: 2.5vw 3vw 2.5vw 0px rgba(0, 0, 0, 0.16); }
+  position: fixed; }
 
 #front_hello {
   font-family: "butlerextrabold";

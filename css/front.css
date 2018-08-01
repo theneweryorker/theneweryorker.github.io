@@ -358,7 +358,8 @@
   position: fixed; }
 
 #front_hello {
-  font-family: "butlerextrabold";
+  font-family: "glacial_indifferencebold";
+  font-style: italic;
   font-size: 9.5rem;
   color: white;
   margin-left: 180px;
@@ -2723,7 +2724,7 @@ span.msk span {
   stroke-width: 41px; }
 
 .page-home section.hello h1 svg .dot {
-  fill: #3F64AF; }
+  fill: #C33B27; }
 
 .page-home section.preambule {
   position: relative;

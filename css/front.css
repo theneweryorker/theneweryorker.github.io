@@ -2680,7 +2680,7 @@ span.msk span {
   animation: bounce 800ms cubic-bezier(0.7, 0, 0.3, 1) infinite alternate; }
 
 .page-home section.hello .hello-scrolldown .arrow svg path {
-  fill: #3F64AF; }
+  fill: #000000; }
 
 .page-home section.hello h1 {
   position: absolute;

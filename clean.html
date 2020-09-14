@@ -1,0 +1,164 @@
+<!DOCTYPE html >
+<html>
+	
+
+<head>
+
+
+	<title>Holly</title>
+
+
+
+    <link rel="stylesheet" href="separate_page.css" />
+
+    <!-- ADD FONTS HERE -->
+    <link rel="stylesheet" href="https://use.typekit.net/wap3day.css">
+	<link rel="stylesheet" href="https://use.typekit.net/wap3day.css">
+	<link rel="stylesheet" href="https://use.typekit.net/zek2pyt.css">
+
+			
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+
+
+    <!-- THIS IS ALL THE CURSOR -->
+    <style>
+        * {
+      cursor: none;
+    }
+    
+    .custom-cursor {
+      position: fixed;
+      opacity: 0;
+      pointer-events: none;
+      mix-blend-mode: difference;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: white;
+      transition: transform 350ms ease;
+      transform: translate(-50%, -50%) scale(.5);
+      z-index: 1000;
+    }
+    .custom-cursor--link {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    </style>
+
+
+<div class="custom-cursor"></div>
+
+<!-- this makes the cursor bigger when hovering on links  -->
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+  var cursor = document.querySelector(".custom-cursor");
+  var links = document.querySelectorAll("a");
+  var initCursor = false;
+
+  for (var i = 0; i < links.length; i++) {
+    var selfLink = links[i];
+
+    selfLink.addEventListener("mouseover", function() {
+      cursor.classList.add("custom-cursor--link");
+    });
+    selfLink.addEventListener("mouseout", function() {
+      cursor.classList.remove("custom-cursor--link");
+    });
+  }
+
+  window.onmousemove = function(e) {
+    var mouseX = e.clientX;
+    var mouseY = e.clientY;
+
+    if (!initCursor) {
+      // cursor.style.opacity = 1;
+      TweenLite.to(cursor, 0.3, {
+        opacity: 1
+      });
+      initCursor = true;
+    }
+
+    TweenLite.to(cursor, 0, {
+      top: mouseY + "px",
+      left: mouseX + "px"
+    });
+  };
+
+  window.onmouseout = function(e) {
+    TweenLite.to(cursor, 0.3, {
+      opacity: 0
+    });
+    initCursor = false;
+  };
+});
+</script>
+    <!-- THIS IS ALL THE CURSOR -->
+
+
+
+	
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="bg-header">
+    <div class="grid grid--full text-center large--text-left large--text-left">
+      <h1> 
+        GODDAMNIT.
+      </h1>
+    </div>
+  </header>
+
+  <!-- LEFT -->
+<main>
+  <div>
+    <img src="2020assets/Mao.png">        
+</div>
+
+    
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="466 px" height="466px">
+    <ellipse
+    cx="233" cy="233" rx="233" style="fill:rgb(210,127,154); stroke:none; stroke-width:0; pointer-events: visiblePainted;">
+    </ellipse>
+    </svg>
+    </main>
+
+<!-- RIGHT -->
+<footer class="bg-red">
+    <div class="footer_content">
+
+        <span>Holly is a twenty-something living in San Francisco, CA. She skateboards (ish), brandishes a failed nose piercing, and has a passionate-yet-tasteful, 
+            fascination with old Communist propaganda. Despite this, and big media’s 
+            nascent interest in cultural diversity, she is still without a quirky eponymous HBO show. <br> <br> 
+            Seriously, what gives? </span>
+            <br>
+            <br>
+
+         <span> When she’s not busy imagining her life as a <span class="clumsy">clumsy, mumblecore-yet-aspirational</span></span>
+
+    </div>
+            
+
+</footer>
+
+</body>
+
+<script>
+
+    $(".clumsy").hover(
+        function() {
+      $(this).prepend('<img src="2020assets/lena_bw.png" id="backgroundimage1"></img>');
+    },
+
+        function(){
+            $("#backgroundimage1").remove()
+        });
+        </script>
+    
+
+
+
+</html>
+

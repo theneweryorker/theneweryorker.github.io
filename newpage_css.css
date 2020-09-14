@@ -125,24 +125,10 @@
 	----------------------------------------------------------  */
 
 
-	#content {
-		margin-right: 80px;
-		float: clear;
-		margin-top: 75px;
-        width: 800px;
-        position: relative;
-        z-index: 6;
-	}
+.intro{
+	padding: 30px;
+}
 
-
-	.project {
-        font: 45px/46px poynter-oldstyle-display, serif;
-		letter-spacing: -1px;
-		font-weight: normal;
-		display: inline;
-		/* margin-right: 22px; */
-		opacity: 0;
-	}
 
 
 	#violator {

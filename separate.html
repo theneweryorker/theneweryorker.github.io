@@ -1,0 +1,246 @@
+<!DOCTYPE html >
+<html>
+	
+
+<head>
+
+
+	<title>Holly</title>
+
+
+	<meta charset="utf-8">
+	<meta name="description" content="Building emotional experiences for a human internet. Co-founder of Wander. Creator of many other various intersting things." />
+	<meta name="keywords" content=" Design, Strategy, Illustration, User Experience, User Interface, Interactive, Branding, Wander" />
+
+
+    <!-- http://t.co/dKP3o1e -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="newpage_css.css" />
+    <link rel="stylesheet" href="separate_page.css" />
+
+    <!-- ADD FONTS HERE -->
+    <link rel="stylesheet" href="https://use.typekit.net/wap3day.css">
+	<link rel="stylesheet" href="https://use.typekit.net/wap3day.css">
+	<link rel="stylesheet" href="https://use.typekit.net/zek2pyt.css">
+
+
+
+
+
+
+	<style id="color"></style>
+			
+
+
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<!-- <script type="text/javascript" src="js/tweets1.js"></script> -->
+    <!-- <script type="text/javascript" src="slowload.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+
+
+    <!-- THIS IS ALL THE CURSOR -->
+    <style>
+        * {
+      cursor: none;
+    }
+    
+    .custom-cursor {
+      position: fixed;
+      opacity: 0;
+      pointer-events: none;
+      mix-blend-mode: difference;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background-color: white;
+      transition: transform 350ms ease;
+      transform: translate(-50%, -50%) scale(.5);
+      z-index: 1000;
+    }
+    .custom-cursor--link {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    </style>
+
+
+<div class="custom-cursor"></div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+  var cursor = document.querySelector(".custom-cursor");
+  var links = document.querySelectorAll("a");
+  var initCursor = false;
+
+  for (var i = 0; i < links.length; i++) {
+    var selfLink = links[i];
+
+    selfLink.addEventListener("mouseover", function() {
+      cursor.classList.add("custom-cursor--link");
+    });
+    selfLink.addEventListener("mouseout", function() {
+      cursor.classList.remove("custom-cursor--link");
+    });
+  }
+
+  window.onmousemove = function(e) {
+    var mouseX = e.clientX;
+    var mouseY = e.clientY;
+
+    if (!initCursor) {
+      // cursor.style.opacity = 1;
+      TweenLite.to(cursor, 0.3, {
+        opacity: 1
+      });
+      initCursor = true;
+    }
+
+    TweenLite.to(cursor, 0, {
+      top: mouseY + "px",
+      left: mouseX + "px"
+    });
+  };
+
+  window.onmouseout = function(e) {
+    TweenLite.to(cursor, 0.3, {
+      opacity: 0
+    });
+    initCursor = false;
+  };
+});
+</script>
+    <!-- THIS IS ALL THE CURSOR -->
+
+
+
+	
+
+</head>
+
+<body>
+
+  <header class="bg-something">
+    <div class="large--text-left">
+    </div>
+  </header>
+
+<main id="hello">
+    
+    <div style="
+    pointer-events: none!important; left: 290px; top: 2220px; width: 446px; height: 448px; z-index: 104; transform: matrix(1, 0, 0, 1, 0, -188); opacity: 1;">
+        <div style="transition: opacity .2s ease; left: 0px; top: 0px; width: 446px; height: 448px; z-index: 104;">
+            <img src="2020assets/Mao.png" style="top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+    ">        
+        </div>
+    </div>
+    
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="466 px" height="466px">
+    <ellipse
+    cx="233" cy="233" rx="233" style="fill:rgb(210,127,154); stroke:none; stroke-width:0; pointer-events: visiblePainted;">
+    </ellipse>
+    </svg>
+    </main>
+
+
+
+
+
+
+<footer class="bg-red">
+    <div class="footer_content">
+        <div class="text">
+
+        <!-- <div class="text">
+        Holly is a twenty-something living in Brooklyn NY. 
+        She skateboards, engages in identity politics from time to time 
+        (it gets the best of us all), and has a passionate, yet academically tasteful, 
+        interest in old Communist propaganda. Despite all of this, and big media’s 
+        nascent interest in cultural diversity, she is still without a quirky eponymous HBO show. 
+        Seriously, what gives? 
+        <br>
+        <br>
+
+        When she’s not busy imagining her life as a clumsy, mublecore-yet-aspirational 
+        coming-of-age film, she does brand stuff at Google. Past lives include design at 
+        Ritual; making pivot charts at McKinsey & Company; drawing demand and supply curves at 
+        Wharton. Does all of that make sense? Probably not.  
+        </div> -->
+
+        <span id="line1">Holly is a twenty-something living in San Francisco, CA. She skateboards (ish), brandishes a failed nose piercing, and has a passionate-yet-tasteful, 
+            fascination with old Communist propaganda. Despite this, and big media’s 
+            nascent interest in cultural diversity, she is still without a quirky eponymous HBO show. <br> <br> 
+            Seriously, what gives? </span>
+            <br>
+            <br>
+            <!-- <img src="2020assets/lena_bw.png" id="backgroundimage1"></img> -->
+
+         <span id="line2">When she’s not busy imagining her life as a <span class="clumsy">clumsy, mumblecore-yet-aspirational</span></span>
+
+        <!-- <span class="flag"><img src="2020assets/handicon.png" id="funlogo" style= "height: 2em; margin-bottom: -5%;"></img></span> -->
+        <span class="project" id="line2">Brooklyn, NY, doing brand work at </span>
+        <span class="flag"> <img src="2020assets/google_color.png" id="funlogo" style="height: 1.5em; margin-bottom:-8px; margin-right: -0.4em;z-index: 2;"></img></span>
+		<span class="project" id="line3">. Before that, she designed things at  
+            <a href="https://www.ritual.com">
+                <span class="flag"> 
+                    <img src="2020assets/ritual_yellow.png" style= "height: 0.8em; margin-bottom: -1.5%; z-index: 2;" id="funlogo"></img>
+                </span>      
+            </a> in LA
+            <span class="flag"> 
+                <img src="2020assets/vitamin.png" style= "height: 1.3em; margin-bottom: -11%; z-index: 2;" id="funlogo"></img>
+            </span>  
+		</span>
+		
+        <!-- <img src="2020assets/randomsketch-02.png" id="backgroundimage"></img> -->
+	
+		<span class="project" id="line4">, became a pivot chart enthusiast at 
+            <span class="flag"> 
+                <img src="2020assets/mck.png" id="funlogo" style= "height:1em; margin-bottom: -4%;"></img>
+            </span>
+        </span>
+        <span class="project" id="line5">, freelanced some 
+        </span>
+
+		<span class="project" id="line6">, and spent a few years studying white collar crime at 
+            <a href="https://twitter.com/#!/keenancummings">
+                <span class="flag"> 
+                    <img src="2020assets/wharton.png" style= "height: 1em; margin-bottom:-4px; margin-right: -0.4em;z-index: 2;" id="funlogo"></img>
+                </span>  
+            </a>
+        </span>
+		<span class="project" id="line7">. Also, check out <a href="http://designersdebateclub.com">Designer's Debate Club</a>, an event series I cofounded<!--with <a href="https://twitter.com/jontroutman">Jon Troutman</a> -->.</span> 
+    </div>
+    </div>
+        
+        
+    
+
+        <path data-v-14715884 d="M86 51l31-25L86 1M116.5 26H.5"></path>
+
+</footer>
+
+</body>
+
+<script>
+
+    $(".clumsy").hover(
+        function() {
+      $(this).prepend('<img src="2020assets/lena_bw.png" id="backgroundimage1"></img>');
+    },
+
+        function(){
+            $("#backgroundimage1").remove()
+        });
+        </script>
+    
+
+
+
+</html>
+

@@ -351,14 +351,10 @@ span.imgText img {
   background-position: -99.99% 0;
   animation-fill-mode: forwards; }
 
-#content {
-  font-family: 'Caslon Old Face';
-  font-size: 45px;
-  color: #000; }
 
 #header {
-  font-family: 'xenos_medium';
-  font-size: 80px; }
+  
+}
 
 .wrapper {
   display: grid;
@@ -369,16 +365,13 @@ span.imgText img {
   color: #444; }
 
 .tool_content {
-  font-family: 'xenos_medium';
   font-size: 12px; }
 
 .tool_ital {
-  font-family: "Caslon Old Face";
+
   font-size: 10px; }
 
-.xeno {
-  font-family: 'xenos_medium';
-  font-size: 30px; }
+
 
 .draggable {
   margin-top: 5%;

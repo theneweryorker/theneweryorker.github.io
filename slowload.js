@@ -1,8 +1,7 @@
 
 
 
-$(document).ready(function(){
-
+$(function() {
 	//
 	// Set each project span to 0 opacity and animate to fully opaque. 
 	// Used a series of delay methods to craete cascade effect

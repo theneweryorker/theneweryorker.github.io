@@ -5,160 +5,142 @@
 <head>
 
 
-	<title>Holly</title>
+	<title>Keenan Cummings</title>
 
 
+	<meta charset="utf-8">
+	<meta name="description" content="Building emotional experiences for a human internet. Co-founder of Wander. Creator of many other various intersting things." />
+	<meta name="keywords" content=" Design, Strategy, Illustration, User Experience, User Interface, Interactive, Branding, Wander" />
 
-    <link rel="stylesheet" href="separate_page.css" />
 
-    <!-- ADD FONTS HERE -->
-    <link rel="stylesheet" href="https://use.typekit.net/wap3day.css">
-	<link rel="stylesheet" href="https://use.typekit.net/wap3day.css">
-	<link rel="stylesheet" href="https://use.typekit.net/zek2pyt.css">
+    <!-- http://t.co/dKP3o1e -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+	<link rel="stylesheet" href="newpage_css.css" />
+	<link rel="stylesheet" href="css/type/apercu.css" type="text/css" charset="utf-8" />
+	<style id="color"></style>
 			
+
+	<!--[if !IE]>-->
+	<link type="text/css" rel="stylesheet" media="only screen and (max-device-width: 480px)" href="css/iPhone.css">
+	<!--<![endif]-->
+
+
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
-
-
-    <!-- THIS IS ALL THE CURSOR -->
-    <style>
-        * {
-      cursor: none;
-    }
-    
-    .custom-cursor {
-      position: fixed;
-      opacity: 0;
-      pointer-events: none;
-      mix-blend-mode: difference;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background-color: white;
-      transition: transform 350ms ease;
-      transform: translate(-50%, -50%) scale(.5);
-      z-index: 1000;
-    }
-    .custom-cursor--link {
-      transform: translate(-50%, -50%) scale(1);
-    }
-    </style>
-
-
-<div class="custom-cursor"></div>
-
-<!-- this makes the cursor bigger when hovering on links  -->
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-  var cursor = document.querySelector(".custom-cursor");
-  var links = document.querySelectorAll("a");
-  var initCursor = false;
-
-  for (var i = 0; i < links.length; i++) {
-    var selfLink = links[i];
-
-    selfLink.addEventListener("mouseover", function() {
-      cursor.classList.add("custom-cursor--link");
-    });
-    selfLink.addEventListener("mouseout", function() {
-      cursor.classList.remove("custom-cursor--link");
-    });
-  }
-
-  window.onmousemove = function(e) {
-    var mouseX = e.clientX;
-    var mouseY = e.clientY;
-
-    if (!initCursor) {
-      // cursor.style.opacity = 1;
-      TweenLite.to(cursor, 0.3, {
-        opacity: 1
-      });
-      initCursor = true;
-    }
-
-    TweenLite.to(cursor, 0, {
-      top: mouseY + "px",
-      left: mouseX + "px"
-    });
-  };
-
-  window.onmouseout = function(e) {
-    TweenLite.to(cursor, 0.3, {
-      opacity: 0
-    });
-    initCursor = false;
-  };
-});
-</script>
-    <!-- THIS IS ALL THE CURSOR -->
-
-
+	<script type="text/javascript" src="slowload.js"></script>
 
 	
 
 </head>
 
+
 <body>
 
-  <!-- HEADER -->
-  <header class="bg-header">
-    <div class="grid grid--full text-center large--text-left large--text-left">
-      <h1> 
-        GODDAMNIT.
-      </h1>
-    </div>
-  </header>
+	
+	<img id="logo" src="img/logo.png">
 
-  <!-- LEFT -->
-<main>
-  <div>
-    <img src="2020assets/Mao.png">        
-</div>
+	
+	<ul id="nav">
+		
 
+
+		<ul id="keenancummings">
+			<li class="home"> keenan cummings </li>
+			<li>san francisco, ca</li>
+		</ul>
+
+		
+
+		<ul id="pages">
+			<!-- <li class="links"><a href="about.html">curriculum vitae</a></li> -->
+			<li class="links"><a href="mailto:hi@keenancummings.com">contact</a></li>
+			<li class="links"><a href="https://twitter.com/#!/keenancummings" target="blank">on twitter &nbsp;</a>
+		</ul>
+
+		
+
+		<ul id="social">			
+			<li class="links"><a href="http://blog.keenancummings.com/" target="blank"> my blog &nbsp;</a><br /></li>
+			<li class="links"><a href="http://folio.keenancummings.com/" target="blank"> outdated portfolio &nbsp;</a><br /></li>
+		</ul>	
+
+
+	<!--
+		<ul id="elsewhere">
+			<a href="http://library.keenancummings.com" target="blank"><div id="library" /> </div>
+			<li class="links"><a href="http://dribbble.com/KeenanCummings" target="blank">dribbble &nbsp;</a><br /></li>
+			<li class="links"><a href="http://days.am" target="blank">download Days</a><br /></li>
+		</ul>	
+	-->
+
+	</ul>
+
+
+	<br />
+
+
+	<div id="content">
+
+    <div class="flex-child magenta" style="background-color: red;">
+      Flex Column 1
+  
+		<!-- < div class="project" id="violator">check out <a href="http://days.am">Days</a>!</div> -->
+
+		<span class="project" id="line1">SF-based product designer.</span>
+		
+
+		<span class="flag">previously</span>
+		<span class="project" id="line2">Co-Founder / Creative Director of <a href="https://techcrunch.com/2013/05/03/wander-launches-days-app-looks-to-change-your-perspective-of-photo-sharing-entirely/">Days</a> (acquired by Yahoo).
+		</span>
+
+		<span class="flag">currently</span>
+		<span class="project" id="line3">Leading a team at <a href="https://www.linkedin.com/in/keenancummings">Airbnb</a>.
+		</span>
     
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="466 px" height="466px">
-    <ellipse
-    cx="233" cy="233" rx="233" style="fill:rgb(210,127,154); stroke:none; stroke-width:0; pointer-events: visiblePainted;">
-    </ellipse>
-    </svg>
-    </main>
+  </div>
 
-<!-- RIGHT -->
-<footer class="bg-red">
-    <div class="footer_content">
+  <div class="flex-child green" style="color: green;">
 
-        <span>Holly is a twenty-something living in San Francisco, CA. She skateboards (ish), brandishes a failed nose piercing, and has a passionate-yet-tasteful, 
-            fascination with old Communist propaganda. Despite this, and big media’s 
-            nascent interest in cultural diversity, she is still without a quirky eponymous HBO show. <br> <br> 
-            Seriously, what gives? </span>
-            <br>
-            <br>
+		<span class="flag">writing</span>
+		<span class="project" id="line4">I occasionally write and post works-in-progress on <a href="http://blog.keenancummings.com/">my blog</a>.</span>
+		
 
-         <span> When she’s not busy imagining her life as a <span class="clumsy">clumsy, mumblecore-yet-aspirational</span></span>
+		<span class="flag">twitter</span>
+		<span class="project" id="line5">I share shorter thoughts and links as <a href="https://twitter.com/#!/keenancummings">@keenancummings</a>.</span>
 
-    </div>
-            
 
-</footer>
+		<span class="flag">D.D.C.</span>
+		<span class="project" id="line6">Also, check out <a href="http://designersdebateclub.com">Designer's Debate Club</a>, an event series I cofounded<!--with <a href="https://twitter.com/jontroutman">Jon Troutman</a> -->.</span> 
+
+  </div>
+		<!--
+		<span class="flag">B.S.A.</span>
+		<span class="project" id="line7">Eagle Scout.</span> 
+	    -->
+
+		<br />
+		
+	
+	</div>
+
+
+<!-- <script type="text/javascript" src="js/colors.js"></script> -->
+
+<script type="text/javascript">
+
+	/* $(document).ready(function() {
+		$('#library')
+			.delay(1200)
+			.animate( {'right' : '0'}, 400);
+
+	}); */
+
+
+</script>
 
 </body>
 
-<script>
-
-    $(".clumsy").hover(
-        function() {
-      $(this).prepend('<img src="2020assets/lena_bw.png" id="backgroundimage1"></img>');
-    },
-
-        function(){
-            $("#backgroundimage1").remove()
-        });
-        </script>
-    
-
-
-
 </html>
-

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<!--
+MINIMIZE BUTTON FEATURE
+WINDOW SIZES/DIMENSIONS + TOP BAR
+COLORS OF WINDOWS
+AT MEDIA MENU BAR COLORS AND FONTS
+FONTS
+ON CLICK BRING TO FOREFRONT - WE MEAN BUSINESS
+BACKGROUND IMAGES -->
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="I gotta be real, I don't know what this is.">
+
+    <title>THE NEWER YORKER</title>
+
+		
+		<meta name="theme-color" content="#ffffff">
+		<meta property="og:title" content="THE NEWER YORKER" />
+		<meta property="og:type" content="website" />
+    <!-- <meta property='og:image' content='http://geekgirlsfilm.com/fb_logo2.png'/>
+		<meta property="og:url" content="http://geekgirlsfilm.com" /> -->
+
+		<!-- <link rel="stylesheet" href="css/jquery.scrollbar.css" type="text/css" media="screen"> -->
+		<!-- <link href="css/homepage.css" rel="stylesheet"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="css/stickers.css"> -->
+	
+	<style>
+
+
+
+
+.window {
+  border-width: 6px;
+  border-style: solid;
+  position: absolute;
+  display: none; }
+
+
+
+.window h3 {
+  font-weight: 400;
+  font-size: 15px;
+  text-transform: lowercase;
+  border-width: 0px 0px 6px 0px;
+  border-style: solid;
+  padding: 10px 20px 12px 20px;
+  line-height: 100%;
+  margin: 0px; }
+
+.window h3:hover {
+  cursor: move; }
+
+.window h3 span.toggle:hover {
+  cursor: pointer; }
+
+.window span.toggle {
+  float: right;
+  font-size: 30px;
+  line-height: 7px; }
+
+.window span.toggle::after {
+  content: '\2013'; }
+
+.window.mini span.toggle::after {
+  content: '\2b'; }
+
+.window.focus span.toggle {
+  display: inline; }
+
+.window .content {
+  padding: 20px 20px; }
+
+textarea {
+  font-family: "glacial_indifferencebold";
+  font-size: 15px;
+  width: 100%;
+  resize: none;
+  border-width: 2px;
+  background: transparent;
+  padding: 10px 5px 10px 5px !important; }
+
+
+
+#about {
+  z-index: 1;
+  color: #000000;
+  background: #ffffff;
+  border-color: #000000;
+  width: 445px;
+  height: 325px; }
+
+#about .content {
+  height: 190px;
+  overflow: hidden;
+  padding: 0px 20px 20px 20px;
+  margin-top: 20px; }
+
+
+#contactinfo {
+  z-index: 2;
+  color: #000000;
+  background: #ffffff;
+  border-color: #000000;
+  width: 30em;
+  height: 440px; }
+
+#header_support {
+  font-size: 5em;
+  line-height: 1em;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
+
+#contactinfo a {
+  color: #000000; }
+
+#contactinfo p img {
+  margin: 15px 0px 0px 0px; }
+
+#contactinfo .content {
+  height: 400px;
+  padding: 0px 0px 0px 20px;
+  margin-top: 20px;
+  overflow: auto;
+  height: 85%; }
+
+#character {
+  color: #000000;
+  background: #ffffff;
+  border-color: #000000;
+  width: 350px;
+  height: 200px; }
+
+#character .arrow-left {
+  text-align: left;
+  position: absolute;
+  top: 225px;
+  left: 15px; }
+
+#character .arrow-right {
+  text-align: right;
+  position: absolute;
+  top: 225px;
+  right: 15px; }
+
+#character h3 {
+  height: 15px; }
+
+#character .content {
+  height: 426px;
+  overflow: hidden;
+  padding: 20px 50px; }
+
+#character-content {
+  height: 264px; }
+
+#character p {
+  padding-bottom: 13px; }
+
+#character a {
+  color: #f1ff63; }
+
+.character-img img {
+  border: 2px solid #f1ff63; }
+
+
+@media only screen and (max-width: 750px) {
+  html, body {
+    overflow: auto !important;
+    -webkit-overflow-scrolling: touch; }
+
+
+  .window {
+    width: 100% !important;
+    height: 57px !important;
+    position: relative !important;
+    top: 0px !important;
+    left: 0px !important;
+    border: none !important; }
+
+  .window .content {
+    display: none; }
+
+  #about .arrows {
+    display: none; }
+
+  .window.focus {
+    height: auto !important;
+    padding-bottom: 20px; }
+
+  .window.focus .content {
+    display: block;
+    height: 100% !important;
+    overflow: auto !important; }
+
+  #quote {
+    display: none !important; }
+
+  #logo {
+    display: none !important; }
+
+  #title-responsive {
+    display: block; }
+
+  .window h3 {
+    border: none;
+    padding: 20px 20px 22px 20px; }
+
+  .window.focus h3 {
+    border-width: 0px 0px 2px 0px;
+    border-style: solid; }
+
+  #about .content {
+    height: 100% !important; }
+
+  #about-team {
+    display: block !important; }
+
+  #about-credits {
+    display: block !important; }
+
+  #character .content {
+    height: auto !important; }
+
+  #character-content {
+    height: auto !important; }
+
+  #character .arrow-left, #character .arrow-right {
+    display: none; }
+
+  #character.focus .arrow-left {
+    display: block; }
+
+  #character.focus .arrow-right {
+    display: block; }
+ }
+@media only screen and (max-width: 347px) {
+  #title-responsive h1 {
+    left: 115px;
+    top: 22px;
+    font-size: 18px; }
+
+  #title-responsive h2 {
+    right: 35px;
+    top: 31px;
+    font-size: 10px; } }
+@media only screen and (max-width: 320px) {
+  #title-responsive h2 {
+    display: none; } }
+
+
+	</style>
+
+
+  </head>
+
+  <body>
+
+		<div id="logo"></div>
+		<div id="title-responsive">
+			<h1>the yorker, but newer</h1>
+			<h2>content on its way, maybe</h2>
+			<!-- <img id="gg_face" src="_/img/gg_face.png" height="54" style="padding-left:20px;" alt="" />
+			<img id="gg_quote_left" src="_/img/gg_quote_left.png" style="margin-left:10px;" height="54" alt="" />
+			<img id="quote-mid" src="_/img/gg_quote_mid.png" height="54"  alt="" />
+			<img id="gg_quote_right" src="_/img/gg_quote_right.png" height="54" style="padding-right:15px;" alt="" /> -->
+		</div>
+
+		<div id="about" class="window">
+			<h3><span class="toggle"></span></h3>
+			<div class="content">
+				<div id="about-summary">
+					<p>WIP.</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="contactinfo" class="window">
+			<h3>hire me. <span class="toggle"></span></h3>
+			<div class="content">
+					<p><em id="header_support">I <br> FREE <br> LANCE.</em></p>
+          <br>
+          <span> Check out old work <a href="http://holly-li.com/pages/resume.html" target="_blank"> here</a> and <a href="http://holly-li.com/pages/branding.html" target="_blank"> here</a>.<br>
+            <span> E-mail me <a href="mailto:thisishollyli@gmail.com" target="_blank"> here</a> </span>
+
+			</div>
+		</div>
+
+
+		<div id="character" class="window">
+			<h3>rococo basilisk<span class="toggle"></span></h3>
+			<div class="content">
+				<div class="character-img" id="character-img-desktop">
+					
+				</div>
+				
+			</div>
+	
+		</div>
+
+
+<!-- <h1 class="header"> a sticker </br> for you </h1> -->
+    <div class="more_stickers">
+    <!-- </div> -->
+
+
+      <!-- <div class="d"> -->
+        <img src="/assets/raptor.png" class="draggable" style= "max-height: 100px;">
+        <img src="/assets/stars.gif" class="draggable2" style= "max-height: 100px;">
+
+      </div>
+
+<div class="puthere" style="margin-top: 5%;"></div>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script> -->
+		<script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js" type="text/javascript"></script>
+		<script src="js/jquery.iframetracker.js"></script>
+		<!-- <script src="_/js/jquery.scrollTo.min.js"></script> -->
+		<script src="js/jquery.scrollbar.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script src="../js/jquery.mobile.custom.min.js" type="text/javascript" charset="utf-8"></script> -->
+
+		<script src="js/homepagescript.js"></script>
+
+		<!-- <div id="fb-root"></div> -->
+		<!-- <script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=298421847275361";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script> -->
+
+		<!-- <script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-93007381-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script> -->
+
+
+      <script>
+      //SCRIPT FOR CLICKING FOR NEW STICKERS
+
+       $(".draggable2").click(function(){
+           $('<img src="/assets/stars.gif" style="max-height: 100px; position: absolute; z-index: 1002;"">').appendTo($(".puthere")).draggable();
+           });
+
+      $(".draggable").click(function(){
+        console.log("I was clicked");
+           // $('<img src="/assets/raptor.png" style="max-height: 100px; position: absolute;"">').appendTo($(".more_stickers")).draggable();
+           $('<img src="/assets/raptor.png" style="max-height: 100px; position: absolute; z-index: 1002;"">').appendTo($(".puthere")).draggable();
+
+           });
+
+      </script>
+
+      <script>
+      // SCRIPT FOR STICKERS DIRECTIONS
+
+      $(".stickers").mouseenter(function(){
+          $("#hiddenDiv").slideDown();
+      }).mouseleave(function(){
+          $("#hiddenDiv").slideUp();
+      })
+
+
+      </script>
+
+
+  </body>
+</html>

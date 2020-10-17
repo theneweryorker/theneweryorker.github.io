@@ -1,59 +1,9 @@
 var $draggable, draggable2, draggable3;
-$(document).ready( function() {
 
-$("#title-responsive img#quote-mid").css("width",$(window).width()-($("#gg_face").width()+$("#gg_quote_left").width()+$("#gg_quote_right").width())-45+"px");
+$(function() {
 
 // try and get logo to the right
 
-/*
-	$("#instagram.focus a").click(function(e){
-		e.preventDefault();
-		window.open(
-		  $(this).attr("href"),
-		  '_blank' // <- This is what makes it open in a new window.
-		);
-	});
-
-	$("#instagram a").click(function(e){
-		e.preventDefault();
-	});
-*/
-	$(window).click(function(e){
-		//console.log(e);
-	});
-
-  //arrow-up starts out inactive; when you click up or
-  //down it makes the arrows inactive or active (colored differently)
-  //to tell you that there's more content up or down
-
-	$("#about .arrow-up").addClass('inactive');
-	$about_active = "summary";
-
-	$("#about .arrow-down").click(function(){
-		if($about_active=="summary"){
-			$("#about .content").scrollTo($("#about-team"), 500);
-			$("#about .arrow-up").removeClass('inactive');
-			$about_active="team";
-		} else if($about_active=="team") {
-			$("#about .content").scrollTo($("#about-credits"), 500);
-			$about_active="credits";
-			$("#about .arrow-down").addClass('inactive');
-		}
-	});
-
-	$("#about .arrow-up").click(function(){
-		if($about_active=="credits"){
-			$("#about .content").scrollTo($("#about-team"), 500);
-			$("#about .arrow-down").removeClass('inactive');
-			$about_active="team";
-		} else if($about_active=="team") {
-			$("#about .content").scrollTo($("#about-summary"), 500);
-			$about_active="summary";
-			$("#about .arrow-up").addClass('inactive');
-		}
-	});
-
-  $('.textarea-scrollbar').scrollbar();
 
 //don't care about twitter
 	// $.getJSON("_/js/quotes.json", function(data){
@@ -273,25 +223,25 @@ $("#title-responsive img#quote-mid").css("width",$(window).width()-($("#gg_face"
   }
   $(window).mousemove(mouse);
 	*/
-	$(".window").each(function(){
-		$page_width = $(window).width()-340;
-		$page_height = $(window).height();
-		$width = $(this).width();
-		$height = $(this).height();
-		$x = Math.floor((Math.random() * ($page_width-$width)) + 1);
-		$y = Math.floor((Math.random() * ($page_height-$height)) + 1);
+// 	$(".window").each(function(){
+// 		$page_width = $(window).width()-340;
+// 		$page_height = $(window).height();
+// 		$width = $(this).width();
+// 		$height = $(this).height();
+// 		$x = Math.floor((Math.random() * ($width)) + 1);
+// 		$y = Math.floor((Math.random() * ($page_height-$height)) + 1);
 
-//		console.log($x);
-//		console.log($y);
-		$(this).css('left',$x);
-		$(this).css('top',$y);
+// //		console.log($x);
+// //		console.log($y);
+// 		$(this).css('left',$x);
+// 		$(this).css('top',$y);
 
-		$(this).fadeIn();
+// 		$(this).fadeIn();
 
-//		$('#contact textarea').jScrollPane();
+// //		$('#contact textarea').jScrollPane();
 
 
-	});
+// 	});
 
 	/*
 	$(".window h3").mousedown(function(){

@@ -8,11 +8,11 @@
 	}
 
 	body {
-		margin: 0 2em;
+		margin: 0 0.4em;
 		background: none;
 		-webkit-font-smoothing: antialiased;
 		font-family: 'migraextralight';
-		font-size: 3.2em;
+		font-size: 2.5em;
 		line-height: 1.6em;
 	}
 	  
@@ -35,16 +35,21 @@
 	#content {
 		/* min-width: 1270px;
 		width: 1270px; */
-		width: 100%;
-		margin-left: 1.1em;
+		margin-top: 1.3em;
+		width: 84%;
+		margin-left: 5.3em;
 		display: flex;
 
 	}
 
+	.invisible{
+		opacity: 0;
+	}
+
 	.flex-child {
 		flex: 1;
-		/* width: 50%; */
-		border: 10px yellow;
+		/* width: 40%; */
+		/* border: 10px yellow; */
 	}  
 
 	#sectionheader{
@@ -98,25 +103,6 @@
 		margin-left: -0.3em;
 	}
 
-/* 
-	.flag:before {
-	   display: block;
-	   position: absolute;
-	   
-	}
-
-
-	.flag:after {
-	   content:"";
-       padding-right: 40px;
-	   right: 100%;
-	   top: 0%;
-	   width: 0;
-	   height: 0;
-	   border-top: 0px solid transparent;
-	   border-bottom: 11px solid transparent;
-    } */
-    
  
 
     #funlogo{
@@ -124,10 +110,7 @@
 		margin-bottom: -10%;
     }
 
-    #backgroundimage{
-        position: absolute;
-        z-index: -100;
-    }
+
 
 
 
@@ -152,137 +135,15 @@
 	@media screen and (max-width: 840px) {
 		body {
 			width: 840px;
-		}
-	}
-
-
-
-
-/*	----------------------------------------------------------
-	- RESPONSIVE LAYOUT : 1270PX WIDE				 		 -
-	----------------------------------------------------------  */
-
-
-	@media screen and (min-width: 1070px) {
-
-
 		
-
-
-
-/*	----------------------------------------------------------
-	- RESPONSIVE LAYOUT : 500PX WIDE				 		 -
-	----------------------------------------------------------  */
-
-
-	@media screen and (max-width: 500px) {
-
-
-
-		img#logo {
-			display: block;
-			margin: 0 auto;
-			padding-right: 52%;
-			text-align: center;
-			margin-top: 40px;
-			width: 100px;
-		}
-		
-
-		#violator {
-			display: none;
-		}
-
-		#nav ul {
-			padding: 0px 0px;
-			float: none;
-			width: 390px;
-			display: none;
-		}
-
-		#nav li {
-			text-align: center;
-			font-size: 20px;
-			line-height: 28px;
-			border-radius: 50px;
-		}
-
-		#keenancummings li:first-child {
-			font: 43px/32px 'Apercu', helvetica, sans-serif;
-		}
-
-		#keenancummings li:last-child {
-			display: none;
-		}
-
-		#pages {
-			margin-top: 30px;
-		}
-
-		.links {
-			padding: 10px;
-			color: blue;
-			margin: 7px 0;
-			border: 3px solid blue;
-		}
-
-		.links::after {
-			content: " \279C";
-		}
-
-		#nav .links::before {
-			content: "";
-		}
-
-
-		#elsewhere {
-			display: none;
-		}
-
-		#social {
-			display: none;
-		}
-
-
-		.links a:visited {
-			color: blue;
-			
-		}
-
-		.links a:hover, a:active {
-			color: blue;
-			background: none;
-			border-radius: 24px;
-			padding: 0 0px;
-			padding-left: 10px;
-			-webkit-transition: all .1s ease-in-out;
-			-moz-transition: all .1s ease-in-out;
-			transition: all .1s ease-in-out;
-		}
-
-
-		body {
 			padding: 0;
 			margin: 0;
 		}
 
 	
 		
+
 	
-		.project {
-			font-size: 36px;
-			line-height: 45px;
-            /* margin-right: 0; */
-            /* display: inline-block; */
-		}
-
-		/* .flag {
-			display: none;
-		} */
-
-		/* span + span.project:before {
-			content: "";
-		} */
 
 		.footer {
 			display: none;

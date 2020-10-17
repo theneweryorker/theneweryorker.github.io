@@ -2,9 +2,290 @@
 <html>
 
 <head>
-    <script type="text/javascript" src="slowload.js"></script>
+    <!-- <script type="text/javascript" src="slowload.js"></script> -->
    <link rel="stylesheet" href="newpage_css.css" />
    		<link href="css/homepage.css" rel="stylesheet">
+
+           <style>
+
+            .window {
+              border-width: 3px;
+            border-style: solid;
+              position: absolute;
+    
+              
+               }
+            
+               @font-face {
+                font-family: 'glacial_indifferenceregular';
+                src: url("font/glacialindifference-regular-webfont.woff2") format("woff2"), url("font/glacialindifference-regular-webfont.woff") format("woff");
+                font-weight: normal;
+                font-style: normal; }
+
+                @font-face {
+                    font-family: 'glacial_indifferencebold';
+                    src: url("../font/glacialindifference-bold-webfont.woff2") format("woff2"), url("../font/glacialindifference-bold-webfont.woff") format("woff");
+                    font-weight: normal;
+                    font-style: normal; }
+                                
+            
+            .window h3 {
+              font-weight: 400;
+              font-size: 15px;
+              text-transform: lowercase;
+              border-width: 0px 0px 3px 0px;
+              border-style: solid;
+            border-color: black;
+              padding: 10px 20px 12px 20px;
+              line-height: 100%;
+              margin: 0px; }
+            
+            .window h3:hover {
+              cursor: move; }
+            
+            .window h3 span.toggle:hover {
+              cursor: pointer; }
+            
+            .window span.toggle {
+              float: right;
+              font-size: 30px;
+              line-height: 7px;
+              font-family: 'glacial_indifferenceregular';
+             }
+            
+            .window span.toggle::after {
+              content: '\2013'; }
+            
+            .window.mini span.toggle::after {
+              content: '\2b'; }
+            
+            .window.focus span.toggle {
+              display: inline;
+             }
+            
+            .window .content {
+              padding: 20px 20px; }
+            
+            textarea {
+              width: 100%;
+              resize: none;
+              border-width: 2px;
+              background: transparent;
+              padding: 5px 5px 5px 5px !important; }
+            
+            
+            #about {
+              z-index: 100;
+              color: #000000;
+              background-color: #FFFF88;
+              border-color:black;
+              width: 4.4em;
+              height: 9em; 
+              position: absolute;
+              top: 4.3em;
+              left: 0.5em;
+            
+            }
+            
+            #about .content {
+              /* height: 190px;
+              padding: 0px 20px 20px 20px; */
+              /* background-color:#FFFF88; */
+              font-family: 'glacial_indifferenceregular';
+            }
+
+            #about h3,
+            #contactinfo h3{
+                font-family: 'glacial_indifferencebold';
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+
+
+            }
+            
+        
+            #contactinfo {
+              z-index: 2;
+              background-color:#FFFF88;
+              border-color: #000000;
+              width: 12em;
+              height: 3em; 
+            position: absolute;
+        top: 0.7em;
+    right: 2.1em;}
+            
+            /* #header_support {
+              font-size: 5em;
+              line-height: 1em;
+              text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
+             */
+
+            #contactinfo a {
+              color: #000000; }
+            
+            #contactinfo p  {
+              margin: 0px 0px 0px 0px;
+              font-size: 0.5em;
+              line-height:1.2em;
+              font-family: 'glacial_indifferenceregular';
+
+
+ }
+            
+            #contactinfo .content {
+              height: 400px;
+              padding: 0px 0px 0px 20px;
+              margin-top: 20px;
+              overflow: auto;
+              height: 85%; }
+            
+            /* #character {
+              color: #000000;
+              background: #ffffff;
+              border-color: #000000;
+              width: 350px;
+              height: 200px; }
+             */
+            #character .arrow-left {
+              text-align: left;
+              position: absolute;
+              top: 225px;
+              left: 15px; }
+            
+            #character .arrow-right {
+              text-align: right;
+              position: absolute;
+              top: 225px;
+              right: 15px; }
+            
+            #character h3 {
+              height: 15px; }
+            
+            #character .content {
+              height: 426px;
+              overflow: hidden;
+              padding: 20px 50px; }
+            
+            #character-content {
+              height: 264px; }
+            
+            #character p {
+              padding-bottom: 13px; }
+            
+            #character a {
+              color: #f1ff63; }
+            
+            .character-img img {
+              border: 2px solid #f1ff63; }
+            
+            
+            @media only screen and (max-width: 750px) {
+              html, body {
+                overflow: auto !important;
+                -webkit-overflow-scrolling: touch; }
+            
+            
+              .window {
+                width: 100% !important;
+                height: 57px !important;
+                position: relative !important;
+                top: 0px !important;
+                left: 0px !important;
+                border: none !important; }
+            
+              .window .content {
+                display: none; }
+            
+              #about .arrows {
+                display: none; }
+            
+              .window.focus {
+                height: auto !important;
+                padding-bottom: 20px; }
+            
+              .window.focus .content {
+                display: block;
+                height: 100% !important;
+                overflow: auto !important; }
+            
+              #quote {
+                display: none !important; }
+            
+              #logo {
+                display: none !important; }
+            
+              #title-responsive {
+                display: block; }
+            
+              .window h3 {
+                border: none;
+                padding: 20px 20px 22px 20px; }
+            
+              .window.focus h3 {
+                border-width: 0px 0px 2px 0px;
+                border-style: solid; }
+            
+              #about .content {
+                height: 100% !important; }
+            
+              #about-team {
+                display: block !important; }
+            
+              #about-credits {
+                display: block !important; }
+            
+              #character .content {
+                height: auto !important; }
+            
+              #character-content {
+                height: auto !important; }
+            
+              #character .arrow-left, #character .arrow-right {
+                display: none; }
+            
+              #character.focus .arrow-left {
+                display: block; }
+            
+              #character.focus .arrow-right {
+                display: block; }
+             }
+            @media only screen and (max-width: 347px) {
+              #title-responsive h1 {
+                left: 115px;
+                top: 22px;
+                font-size: 18px; }
+            
+              #title-responsive h2 {
+                right: 35px;
+                top: 31px;
+                font-size: 10px; } }
+            @media only screen and (max-width: 320px) {
+              #title-responsive h2 {
+                display: none; } }
+
+                input[type=text] {
+                 width: 100%;
+                padding: 8px 8px;
+                margin: 8px 0;
+                box-sizing: border-box;
+                -webkit-transition: 0.5s;
+                font-family: 'glacial_indifferenceregular';
+                transition: 0.5s;               
+                outline: none;
+                }
+
+                .form-submit-button {
+
+                    color: black;
+                    padding: 0.2em;
+                
+                    font-family: 'glacial_indifferenceregular';
+
+                    }
+            
+            
+                </style>
+
 
  
 </head>
@@ -15,82 +296,110 @@
         Section 1.
 
     </div>
+
+
+    <div id="about" class="window">
+        <h3>HEY! DRAG THESE WINDOWS.<span class="toggle"></span></h3>
+        <div class="content">
+            <div id="about-summary" style="line-height: 0.8em;">
+                    <form action="mailto:thisishollyli@gmail.com" method="post" enctype="text/plain">
+                        <span style="font-size:0.5em;">E-mail:</span>
+                        <input type="text" name="mail" style="width:96%;"><br>
+                        <span style="font-size:0.5em;">Comment:</span>
+                        <input type="text" name="comment" style="width:96%; height: 5em; overflow:scroll">
+                        <input type="submit" class="form-submit-button" value="Send">
+                        </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="contactinfo" class="window">
+        <h3>Reach out <span class="toggle"></span></h3>
+        <div class="content">
+                <p>I'm always looking for cool new projects. 
+      <br>
+      <span> If you're looking for the old site, you can find it <a href="thisishollyli.com/" target="_blank"> here.</a><br>
+
+
+        </div>
+    </div>
+
 <div id="content">
 
     <div class="flex-child left" style="color:black;">
-        <span id="line1">Hello. I’m a 23- year-old kid </span> 
-        <span id="bold">(</span>
-        <span class="flag"> 
+        <span class="line1 invisible">Hello. I’m a 23- year-old kid </span> 
+        <span id="bold" class="line1 invisible">(</span>
+        <span class="flag line1 invisible"> 
             <img src="2020assets/kid_face.png" id="funlogo" style="margin-bottom:-0.4em;"></img>
         </span>
-        <span id="bold">)</span>
-        <span id="line2">figuring things out</span>
-        <span class="superscript">1</span>
-        <span class="after_superscript">.</span>
-        <span id="line3">I grew up in a small Ohioan town</span>
-        <span class="flag"> 
+        <span id="bold" class="line1 invisible">)</span>
+        <span class="line2 invisible">figuring things out</span>
+        <span class="line2 superscript invisible">1</span>
+        <span class="line2 after_superscript invisible">.</span>
+        <span class="line3 invisible">I grew up in a small Ohioan town</span>
+        <span class="flag line3 invisible"> 
             <img src="2020assets/apple.png" id="funlogo" style="height:1.1em; margin-bottom: -0.1em"></img>
         </span>
-        <span id="line4">and went to school in Philly</span>
-        <span class="flag"> 
+        <span class="line4 invisible">and went to school in Philly</span>
+        <span class="flag line4 invisible"> 
             <img src="2020assets/benfranklin.png" id="funlogo" style="height:1.6em; margin-bottom: -0.5em"></img>
         </span>
-        <span>,</span>
-        <span id="line5">where I studied people and numbers. I’ve lived in India</span>
-        <span class="superscript">2</span>
-        <span class="after_superscript">,</span>
-        <span id="line6">the UK</span>
-        <span class="superscript">3</span>
-        <span class="after_superscript">,</span>
-        <span id="line7">Morocco</span> 
-        <span class="superscript">4</span>
-        <span class="after_superscript">,</span>
-        <span id="line8">and LA</span> 
-        <span class="superscript">5</span>
-        <span class="flag"> 
+        <span class="line4 invisible">,</span>
+        <span class="line5 invisible">where I studied people and numbers. I’ve lived in India</span>
+        <span class="superscript line5 invisible">2</span>
+        <span class="after_superscript line5 invisible">,</span>
+        <span class="line6 invisible">the UK</span>
+        <span class="superscript line6 invisible">3</span>
+        <span class="after_superscript line6 invisible">,</span>
+        <span class="line7 invisible">Morocco</span> 
+        <span class="superscript line7 invisible">4</span>
+        <span class="after_superscript line7 invisible">,</span>
+        <span class="line8 invisible">and LA</span> 
+        <span class="superscript line8 invisible">5</span>
+        <span class="flag line8 invisible"> 
             <img src="2020assets/airplane.png" id="funlogo" style="height:0.9em;"></img>
         </span>
-        <span id="line9">doing oddjobs</span> 
-        <span class="superscript">6</span>
-        <span id="line10">but call SF home where I work at Google.</span> 
-        <span class="flag"> 
+        <span class="line9 invisible">doing oddjobs</span> 
+        <span class="superscript line9 invisible">6</span>
+        <span class="line10 invisible">but call SF home where I work at Google.</span> 
+        <span class="flag line10 invisible"> 
             <img src="2020assets/handicon-01.png" id="funlogo" style="height:1.4em;"></img>
         </span>
 
     </div>
     
-    <div class="flex-child right" style="color: black; margin-left: 0.4em">
-      <span id="line11"> Ask me about Asian Am. activism, communist propoganda </span>
-      <span class="flag"> 
+    <div class="flex-child right" style="color: black; margin-left: 0.9em">
+      <span class="line11 invisible"> Ask me about Asian American activism, communist propoganda </span>
+      <span class="flag line11 invisible"> 
         <img src="2020assets/Mao.png" id="funlogo" style="height:1.7em; margin-bottom: -0.5em;"></img>
     </span>
-    <span id="line12">, and financial</span>
-    <span class="flag"> 
+    <span class="line12 invisible">, and financial</span>
+    <span class="flag line12 invisible"> 
         <img src="2020assets/warrenbuffet.jpeg" id="funlogo" style="height:1.4em; margin-bottom: -0.2em;"></img>
     </span>
-    <span id="line13">markets. What I’m doing right now: learning how to ollie</span>
-    <span class="superscript">7</span>
-    <span class="flag"> 
+    <span class="line13 invisible">markets. What I’m doing right now: learning how to ollie</span>
+    <span class="superscript line13 invisible">7</span>
+    <span class="flag line13 invisible"> 
         <img src="2020assets/rad-12.png" id="funlogo" style="height:1.2em; margin-left: -0.2em; margin-bottom:-0.2em"></img>
     </span>
-    <span style="margin-left: -0.3em;">,</span>
-    <span id="line14" style="margin-top:-0.2em;"> flipping thrifted clothes, reading David Chang’s memoir</span>
-    <span class="flag"> 
+    <span style="margin-left: -0.3em;" class="line13 invisible">,</span>
+    <span class="line14 invisible" style="margin-top:-0.2em;"> flipping thrifted clothes, reading David Chang’s memoir</span>
+    <span class="flag line14 invisible"> 
         <img src="2020assets/momofuku.jpg" id="funlogo" style="height:1.2em;"></img>
     </span>
-    <span>,</span>
-    <span id="line15">unapologetically looking up</span>
-    <span class="flag"> 
+    <span class="line14 invisible">,</span>
+    <span class="line15 invisible">unapologetically looking up</span>
+    <span class="flag line15 invisible"> 
         <img src="2020assets/newyorker-13.png" id="funlogo" style="height:1.6em; margin-bottom: -0.4em"></img>
     </span>
-    <span id="line16">crossword answers.</span>
+    <span class="line16 invisible">crossword answers.</span>
 
     </div>
 
     
   </div>
 
-  <footer style="padding-top: 1em;">
+  <footer >
     <div id="content">
 
         <div class="flex-child left">
@@ -106,25 +415,22 @@
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.min.js"></script>
+  <script src="js/homepagescript.js"></script>
 
   <script type="text/javascript">
-    (function() {
+    $(function() {
+        for(x = 1; x <= 16; x++){
+            var class_name = ".line" + x
+            var delay_time = 100 * x
+            
+            $(class_name).delay(delay_time).animate( {opacity: 1 } , 700);  
+        }       
+    });
 
-$("#line1").delay(100).animate( {opacity: 1 } , 700);  				
-        
-$("#line2").delay(200).animate( {opacity: 1 } , 700);
 
-$("#line3").delay(300).animate( {opacity: 1 } , 700);
 
-$("#line4").delay(400).animate( {opacity: 1 } , 700);
-
-$("#line5").delay(500).animate( {opacity: 1 } , 700);
-
-$("#line6").delay(600).animate( {opacity: 1 } , 700);
-
-$("#line7").delay(700).animate( {opacity: 1 } , 700);
-
-})();
+    
 </script>
   </body>
 

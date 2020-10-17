@@ -15,8 +15,6 @@ $(function() {
 	// 	$("#quote-twitter").attr("href", "https://twitter.com/home?status="+$quote.text+" -"+$quote.handle+" %23GeekGirlsFilm");
 	// });
 
-//for future reference, structure json like this http://geekgirlsfilm.com/_/js/characters.json
-
 
 //character information is in a json format
 	// $.getJSON("_/js/characters.json", function(data){

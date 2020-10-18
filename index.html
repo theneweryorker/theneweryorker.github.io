@@ -79,37 +79,6 @@
       padding: 5px 5px 5px 5px !important;
     }
 
-
-    #about {
-      z-index: 100;
-      color: #000000;
-      background-color: #FFFF88;
-      border-color: black;
-      width: 4.4em;
-      height: 9em;
-      position: absolute;
-      top: 4.3em;
-      left: 0.5em;
-
-    }
-
-    #about .content {
-      /* height: 190px;
-              padding: 0px 20px 20px 20px; */
-      /* background-color:#FFFF88; */
-      font-family: 'glacial_indifferenceregular';
-    }
-
-    #about h3,
-    #contactinfo h3 {
-      font-family: 'glacial_indifferencebold';
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-
-
-    }
-
-
     #contactinfo {
       z-index: 2;
       background-color: #FFFF88;
@@ -321,12 +290,38 @@
     }
 
     .form-submit-button {
-
       color: black;
       padding: 0.2em;
-
       font-family: 'glacial_indifferenceregular';
+    }
+    
+    /* Austin's CSS for draggable window */
+    #about {
+      z-index: 100;
+      color: #000000;
+      background-color: #FFFF88;
+      border-color: black;
+      width: 4.4em;
+      height: 9em;
+      position: absolute;
+      top: 4.3em;
+      left: 0.5em;
+      display:flex;
+      flex-direction: column;
+    }
 
+    #about h3,
+    #contactinfo h3 {
+      font-family: 'glacial_indifferencebold';
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    #canvasContainer {
+      background: red;
+      opacity: 50%;
+      overflow: auto;
+      flex: 1;
     }
   </style>
 </head>
@@ -341,17 +336,7 @@
 
   <div id="about" class="window">
     <h3>HEY! DRAG THESE WINDOWS.<span class="toggle"></span></h3>
-    <div class="content">
-      <div id="canvasContainer" width="100%;">
-        <!-- <form action="mailto:thisishollyli@gmail.com" method="post" enctype="text/plain">
-          <span style="font-size:0.5em;">E-mail:</span>
-          <input type="text" name="mail" style="width:96%;"><br>
-          <span style="font-size:0.5em;">Comment:</span>
-          <input type="text" name="comment" style="width:96%; height: 5em; overflow:scroll">
-          <input type="submit" class="form-submit-button" value="Send">
-        </form> -->
-      </div>
-    </div>
+    <div id="canvasContainer" width="100%;"></div>
   </div>
 
   <div id="contactinfo" class="window">
@@ -473,184 +458,178 @@
 
   </script>
 
-  <script>     
-            var drawingApp = (function () {
+  <script>
+    var drawingApp = (function () {
 
-          "use strict";
+      "use strict";
 
-          // var canvasWidth = window.innerWidth,
-          //     canvasHeight = window.innerHeight,
-          //     clearButton = document.getElementById('btnClear'),
-          //     clickX = [],
-          //     clickY = [],
-          //     clickDrag = [],
-          //     paint,
-          //     canvas,
-          //     context,
+      // var canvasWidth = window.innerWidth,
+      //     canvasHeight = window.innerHeight,
+      //     clearButton = document.getElementById('btnClear'),
+      //     clickX = [],
+      //     clickY = [],
+      //     clickDrag = [],
+      //     paint,
+      //     canvas,
+      //     context,
 
-          var canvasWidth = $("#about .content").width(),
-              canvasHeight = $("#about .content").height(),
-              clearButton = document.getElementById('btnClear'),
-              clickX = [],
-              clickY = [],
-              clickDrag = [],
-              paint,
-              canvas,
-              context,
+      var canvasWidth = $("#about").width(),
+        canvasHeight = $("#about").height(),
+        clearButton = document.getElementById('btnClear'),
+        clickX = [],
+        clickY = [],
+        clickDrag = [],
+        paint,
+        canvas,
+        context,
 
-              // Resizes the canvas.
-              resizeCanvas = function () {
+        // Resizes the canvas.
+        resizeCanvas = function () {
 
-                canvasWidth = $("#about .content").width();
-                canvasHeight = $("#about .content").width();
+          canvasWidth = $("#about").width();
+          canvasHeight = $("#about").height();
 
-                canvas.setAttribute('width', canvasWidth);
-                canvas.setAttribute('height', canvasHeight);
+          canvas.setAttribute('width', canvasWidth);
+          canvas.setAttribute('height', canvasHeight);
 
-                /**
-                           * Your drawings need to be inside this function otherwise they will be reset when 
-                           * you resize the browser window and the canvas goes will be cleared.
-                           */
+          /**
+          * Your drawings need to be inside this function otherwise they will be reset when 
+          * you resize the browser window and the canvas goes will be cleared.
+          */
+          redraw();
+        },
+
+        // Clears the canvas.
+        clearCanvas = function () {
+
+          context.clearRect(0, 0, canvasWidth, canvasHeight);
+
+        },
+
+        // Erase all actions.
+        eraseAll = function () {
+
+          clickX = [];
+          clickY = [];
+          clickDrag = [];
+          clearCanvas();
+
+        },
+
+        // Redraws the canvas.
+        redraw = function () {
+
+          clearCanvas();
+
+          var radius = 8;
+          context.strokeStyle = "#3644FD";
+          context.lineJoin = "round";
+          context.lineWidth = radius;
+
+          for (var i = 0; i < clickX.length; i++) {
+            context.beginPath();
+            if (clickDrag[i] && i) {
+              context.moveTo(clickX[i - 1], clickY[i - 1]);
+            } else {
+              context.moveTo(clickX[i] - 1, clickY[i]);
+            }
+            context.lineTo(clickX[i], clickY[i]);
+            context.closePath();
+            context.stroke();
+          }
+
+        },
+
+        // Adds a point to the drawing array.
+        // @param x
+        // @param y
+        // @param dragging
+        addClick = function (x, y, dragging) {
+
+          clickX.push(x);
+          clickY.push(y);
+          clickDrag.push(dragging);
+
+        },
+
+        // Add mouse and touch event listeners to the canvas
+        createUserEvents = function () {
+
+          var press = function (e) {
+            // Mouse down location
+            var mouseX = e.pageX - this.offsetLeft,
+              mouseY = e.pageY - this.offsetTop;
+
+            paint = true;
+            addClick(mouseX, mouseY, false);
+            redraw();
+          },
+
+            drag = function (e) {
+              if (paint) {
+                addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
                 redraw();
-              },
+              }
+              // Prevent the whole page from dragging if on mobile
+              e.preventDefault();
+            },
 
-              // Clears the canvas.
-              clearCanvas = function () {
+            release = function () {
+              paint = false;
+              redraw();
+            },
 
-                context.clearRect(0, 0, canvasWidth, canvasHeight);
-
-              },
-
-              // Erase all actions.
-              eraseAll = function () {
-
-                clickX = [];
-                clickY = [];
-                clickDrag = [];
-                clearCanvas(); 
-
-              },
-
-              // Redraws the canvas.
-              redraw = function () {
-
-                clearCanvas();
-
-                var radius = 8;
-                context.strokeStyle = "#3644FD";
-                context.lineJoin = "round";
-                context.lineWidth = radius;
-
-                for(var i=0; i < clickX.length; i++)
-                {		
-                  context.beginPath();
-                  if(clickDrag[i] && i){
-                    context.moveTo(clickX[i-1], clickY[i-1]);
-                  } else {
-                    context.moveTo(clickX[i]-1, clickY[i]);
-                  }
-                  context.lineTo(clickX[i], clickY[i]);
-                  context.closePath();
-                  context.stroke();
-                }
-
-              },
-
-              // Adds a point to the drawing array.
-              // @param x
-              // @param y
-              // @param dragging
-              addClick = function (x, y, dragging) {
-
-                clickX.push(x);
-                clickY.push(y);
-                clickDrag.push(dragging);
-
-              },
-
-              // Add mouse and touch event listeners to the canvas
-              createUserEvents = function () {
-
-                var press = function (e) {
-                  // Mouse down location
-                  var mouseX = e.pageX - this.offsetLeft,
-                    mouseY = e.pageY - this.offsetTop;
-
-                  paint = true;
-                  addClick(mouseX, mouseY, false);
-                  redraw();
-                },
-
-                drag = function (e) {
-                  if (paint) {
-                    addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
-                    redraw();
-                  }
-                  // Prevent the whole page from dragging if on mobile
-                  e.preventDefault();
-                },
-
-                release = function () {
-                  paint = false;
-                  redraw();
-                },
-
-                cancel = function () {
-                  paint = false;
-                };
-
-                // Add mouse event listeners to canvas element
-                canvas.addEventListener("mousedown", press, false);
-                canvas.addEventListener("mousemove", drag, false);
-                canvas.addEventListener("mouseup", release);
-                canvas.addEventListener("mouseout", cancel, false);
-
-                // Add touch event listeners to canvas element
-                canvas.addEventListener("touchstart", press, false);
-                canvas.addEventListener("touchmove", drag, false);
-                canvas.addEventListener("touchend", release, false);
-                canvas.addEventListener("touchcancel", cancel, false);
-
-              },
-
-              /**
-              * Creates a canvas element.
-              */
-              init = function () {
-
-                // Create the canvas (Neccessary for IE because it doesn't know what a canvas element is)
-                canvas = document.createElement('canvas');
-                canvas.setAttribute('width', canvasWidth);
-                canvas.setAttribute('height', canvasHeight);
-                canvas.setAttribute('id', 'canvas');
-                document.getElementById('canvasContainer').appendChild(canvas);
-                if (typeof G_vmlCanvasManager !== "undefined") {
-                  canvas = G_vmlCanvasManager.initElement(canvas);
-                }
-                context = canvas.getContext("2d"); // Grab the 2d canvas context
-                // Note: The above code is a workaround for IE 8 and lower. Otherwise we could have used:
-                //     context = document.getElementById('canvas').getContext("2d");
-
-                // Add mouse events
-                // ----------------
-
-                createUserEvents();
-
-                // clearButton.addEventListener("mousedown", eraseAll, false);
-                window.addEventListener("resize", resizeCanvas);
-
-              };
-
-            return {
-
-              init: init
-
+            cancel = function () {
+              paint = false;
             };
 
-          }());
+          // Add mouse event listeners to canvas element
+          canvas.addEventListener("mousedown", press, false);
+          canvas.addEventListener("mousemove", drag, false);
+          canvas.addEventListener("mouseup", release);
+          canvas.addEventListener("mouseout", cancel, false);
 
-          drawingApp.init();
-            
+          // Add touch event listeners to canvas element
+          canvas.addEventListener("touchstart", press, false);
+          canvas.addEventListener("touchmove", drag, false);
+          canvas.addEventListener("touchend", release, false);
+          canvas.addEventListener("touchcancel", cancel, false);
+
+        },
+
+        /**
+        * Creates a canvas element.
+        */
+        init = function () {
+
+          // Create the canvas (Neccessary for IE because it doesn't know what a canvas element is)
+          canvas = document.createElement('canvas');
+          canvas.setAttribute('width', canvasWidth);
+          canvas.setAttribute('height', canvasHeight);
+          canvas.setAttribute('id', 'canvas');
+          document.getElementById('canvasContainer').appendChild(canvas);
+          if (typeof G_vmlCanvasManager !== "undefined") {
+            canvas = G_vmlCanvasManager.initElement(canvas);
+          }
+          context = canvas.getContext("2d");
+
+          createUserEvents();
+
+          // clearButton.addEventListener("mousedown", eraseAll, false);
+          window.addEventListener("resize", resizeCanvas);
+
+        };
+
+      return {
+
+        init: init
+
+      };
+
+    }());
+
+    drawingApp.init();
+
 
 
 

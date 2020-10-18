@@ -481,6 +481,7 @@
         clickDrag = [],
         paint,
         canvas,
+        boundingRect,
         context,
 
         // Resizes the canvas.
@@ -488,6 +489,7 @@
 
           canvasWidth = $("#canvasContainer").width();
           canvasHeight = $("#canvasContainer").height();
+          boundingRect = canvas.getBoundingClientRect();
 
           canvas.setAttribute('width', canvasWidth);
           canvas.setAttribute('height', canvasHeight);
@@ -532,7 +534,7 @@
               context.moveTo(clickX[i] - 1, clickY[i]);
             }
 
-            console.log("in redraw(): ", clickX[i], clickY[i])
+            // console.log("in redraw(): ", clickX[i], clickY[i])
 
             context.lineTo(clickX[i], clickY[i]);
             context.closePath();
@@ -555,16 +557,20 @@
 
           var press = function (e) {
             // Mouse down location
-            console.log("in press(): ",e.pageX, e.pageY, this.offsetLeft, this.offsetTop)
-            paint = true;
-            addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false);
+            // console.log("in press(): ",e.pageX, e.pageY, this.offsetLeft, this.offsetTop)
+            paint = true;            
+            var xOffset = boundingRect.left;
+            var yOffset = boundingRect.top;
+            addClick(e.pageX - xOffset, e.pageY - yOffset, false);
             redraw();
           },
 
             drag = function (e) {
               if (paint) {
-                console.log("in drag(): ",e.pageX, e.pageY, this.offsetLeft, this.offsetTop)
-                addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
+                // console.log("in drag(): ",e.pageX, e.pageY, this.offsetLeft, this.offsetTop)
+                var xOffset = boundingRect.left;
+                var yOffset = boundingRect.top;
+                addClick(e.pageX - xOffset, e.pageY - yOffset, true);
                 redraw();
               }
               // Prevent the whole page from dragging if on mobile
@@ -609,6 +615,7 @@
             canvas = G_vmlCanvasManager.initElement(canvas);
           }
           context = canvas.getContext("2d");
+          boundingRect = document.getElementById("canvas").getBoundingClientRect();
           createUserEvents();
           // clearButton.addEventListener("mousedown", eraseAll, false);
           window.addEventListener("resize", resizeCanvas);

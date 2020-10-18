@@ -294,7 +294,7 @@
       padding: 0.2em;
       font-family: 'glacial_indifferenceregular';
     }
-    
+
     /* Austin's CSS for draggable window */
     #about {
       z-index: 100;
@@ -306,7 +306,7 @@
       position: absolute;
       top: 4.3em;
       left: 0.5em;
-      display:flex;
+      display: flex;
       flex-direction: column;
     }
 
@@ -473,8 +473,8 @@
       //     canvas,
       //     context,
 
-      var canvasWidth = $("#about").width(),
-        canvasHeight = $("#about").height(),
+      var canvasWidth = $("#canvasContainer").width(),
+        canvasHeight = $("#canvasContainer").height(),
         clearButton = document.getElementById('btnClear'),
         clickX = [],
         clickY = [],
@@ -486,8 +486,8 @@
         // Resizes the canvas.
         resizeCanvas = function () {
 
-          canvasWidth = $("#about").width();
-          canvasHeight = $("#about").height();
+          canvasWidth = $("#canvasContainer").width();
+          canvasHeight = $("#canvasContainer").height();
 
           canvas.setAttribute('width', canvasWidth);
           canvas.setAttribute('height', canvasHeight);
@@ -501,9 +501,7 @@
 
         // Clears the canvas.
         clearCanvas = function () {
-
           context.clearRect(0, 0, canvasWidth, canvasHeight);
-
         },
 
         // Erase all actions.
@@ -533,11 +531,13 @@
             } else {
               context.moveTo(clickX[i] - 1, clickY[i]);
             }
+
+            console.log("in redraw(): ", clickX[i], clickY[i])
+
             context.lineTo(clickX[i], clickY[i]);
             context.closePath();
             context.stroke();
           }
-
         },
 
         // Adds a point to the drawing array.
@@ -545,11 +545,9 @@
         // @param y
         // @param dragging
         addClick = function (x, y, dragging) {
-
           clickX.push(x);
           clickY.push(y);
           clickDrag.push(dragging);
-
         },
 
         // Add mouse and touch event listeners to the canvas
@@ -557,16 +555,15 @@
 
           var press = function (e) {
             // Mouse down location
-            var mouseX = e.pageX - this.offsetLeft,
-              mouseY = e.pageY - this.offsetTop;
-
+            console.log("in press(): ",e.pageX, e.pageY, this.offsetLeft, this.offsetTop)
             paint = true;
-            addClick(mouseX, mouseY, false);
+            addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false);
             redraw();
           },
 
             drag = function (e) {
               if (paint) {
+                console.log("in drag(): ",e.pageX, e.pageY, this.offsetLeft, this.offsetTop)
                 addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
                 redraw();
               }
@@ -581,7 +578,7 @@
 
             cancel = function () {
               paint = false;
-            };
+            }
 
           // Add mouse event listeners to canvas element
           canvas.addEventListener("mousedown", press, false);
@@ -612,27 +609,18 @@
             canvas = G_vmlCanvasManager.initElement(canvas);
           }
           context = canvas.getContext("2d");
-
           createUserEvents();
-
           // clearButton.addEventListener("mousedown", eraseAll, false);
           window.addEventListener("resize", resizeCanvas);
 
         };
 
       return {
-
         init: init
-
       };
 
     }());
-
     drawingApp.init();
-
-
-
-
   </script>
 </body>
 

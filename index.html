@@ -481,7 +481,7 @@
         clickDrag = [],
         paint,
         canvas,
-        boundingRect,
+        canvasBounds,
         context,
 
         // Resizes the canvas.
@@ -489,7 +489,7 @@
 
           canvasWidth = $("#canvasContainer").width();
           canvasHeight = $("#canvasContainer").height();
-          boundingRect = canvas.getBoundingClientRect();
+          canvasBounds = document.getElementById("canvas").getBoundingClientRect();
 
           canvas.setAttribute('width', canvasWidth);
           canvas.setAttribute('height', canvasHeight);
@@ -557,34 +557,28 @@
 
           var press = function (e) {
             // Mouse down location
-            // console.log("in press(): ",e.pageX, e.pageY, this.offsetLeft, this.offsetTop)
-            paint = true;            
-            var xOffset = boundingRect.left;
-            var yOffset = boundingRect.top;
-            addClick(e.pageX - xOffset, e.pageY - yOffset, false);
+            paint = true
+            addClick(e.pageX - canvasBounds.left, e.pageY - canvasBounds.top, false);
             redraw();
           },
 
-            drag = function (e) {
-              if (paint) {
-                // console.log("in drag(): ",e.pageX, e.pageY, this.offsetLeft, this.offsetTop)
-                var xOffset = boundingRect.left;
-                var yOffset = boundingRect.top;
-                addClick(e.pageX - xOffset, e.pageY - yOffset, true);
-                redraw();
-              }
-              // Prevent the whole page from dragging if on mobile
-              e.preventDefault();
-            },
-
-            release = function () {
-              paint = false;
+          drag = function (e) {
+            if (paint) {
+              addClick(e.pageX - canvasBounds.left, e.pageY - canvasBounds.top, true);
               redraw();
-            },
-
-            cancel = function () {
-              paint = false;
             }
+            // Prevent the whole page from dragging if on mobile
+            e.preventDefault();
+          },
+
+          release = function () {
+            paint = false;
+            redraw();
+          },
+
+          cancel = function () {
+            paint = false;
+          }
 
           // Add mouse event listeners to canvas element
           canvas.addEventListener("mousedown", press, false);
@@ -615,7 +609,7 @@
             canvas = G_vmlCanvasManager.initElement(canvas);
           }
           context = canvas.getContext("2d");
-          boundingRect = document.getElementById("canvas").getBoundingClientRect();
+          canvasBounds = document.getElementById("canvas").getBoundingClientRect();
           createUserEvents();
           // clearButton.addEventListener("mousedown", eraseAll, false);
           window.addEventListener("resize", resizeCanvas);

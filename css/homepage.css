@@ -478,17 +478,7 @@ span.imgText img {
   font-family: 'glacial_indifferenceregular';
 }
 
-.window span.toggle::after {
-  content: '\2013';
-}
 
-.window.mini span.toggle::after {
-  content: '\2b';
-}
-
-.window.focus span.toggle {
-  display: inline;
-}
 
 .window .content {
   padding: 20px 20px;

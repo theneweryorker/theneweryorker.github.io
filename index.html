@@ -534,9 +534,6 @@
             } else {
               context.moveTo(clickX[i] - 1, clickY[i]);
             }
-
-            // console.log("in redraw(): ", clickX[i], clickY[i])
-
             context.lineTo(clickX[i], clickY[i]);
             context.closePath();
             context.stroke();
@@ -615,8 +612,10 @@
           
           // clearButton.addEventListener("mousedown", eraseAll, false);
           window.addEventListener("resize", resizeCanvas);
-          document.getElementById("about").addEventListener("mouseup", resizeCanvas)
-
+          //refresh canvas 
+          $('.window').on('dragEnd', function () {
+            canvasBounds = document.getElementById("canvas").getBoundingClientRect();
+          });
         };
 
       return {

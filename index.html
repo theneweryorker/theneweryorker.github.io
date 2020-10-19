@@ -341,7 +341,6 @@
 
   <div id="about" class="window">
     <h3>HEY! DRAG THESE WINDOWS.<span class="toggle"></span></h3>
-    <div class="content">
       <div id="canvasContainer" width="100%;">
         <!-- <form action="mailto:thisishollyli@gmail.com" method="post" enctype="text/plain">
           <span style="font-size:0.5em;">E-mail:</span>
@@ -350,7 +349,6 @@
           <input type="text" name="comment" style="width:96%; height: 5em; overflow:scroll">
           <input type="submit" class="form-submit-button" value="Send">
         </form> -->
-      </div>
     </div>
   </div>
 
@@ -378,7 +376,11 @@
       <span class="line2 invisible">figuring things out</span>
       <span class="line2 superscript invisible">1</span>
       <span class="line2 after_superscript invisible">.</span>
-      <span class="line3 invisible">I grew up in a small Ohioan town</span>
+      <span class="line3 invisible">I grew up in a </span>
+      <span class="line3 invisible myDIV direction">
+          <a href="https://www.athensnews.com/news/campus/top-party-school-ranking-not-thrilling-ou-officials/article_6071ac97-72e6-5e88-9ac4-4b03a16d0daa.html">small Ohioan town</a>
+      </span>
+      <img src="assets/athens_ohio.jpg" class="backgroundimage" style="margin-left:2em;"></img>
       <span class="flag line3 invisible">
         <img src="2020assets/apple.png" id="funlogo" style="height:1.1em; margin-bottom: -0.1em"></img>
       </span>
@@ -411,7 +413,10 @@
     </div>
 
     <div class="flex-child right" style="color: black; margin-left: 0.9em">
-      <span class="line11 invisible"> Ask me about Asian American activism, communist propoganda </span>
+      <span class="line11 invisible"> Ask me about </span>
+      <span class="line11 invisible myDIV direction">Asian American activism,</span>      
+      <img src="assets/yellow_peril.jpg" class="backgroundimage" style="margin-left: 3em;"></img>
+      <span class="line11 invisible">communist propoganda </span>
       <span class="flag line11 invisible">
         <img src="2020assets/Mao.png" id="funlogo" style="height:1.7em; margin-bottom: -0.5em;"></img>
       </span>
@@ -419,24 +424,26 @@
       <span class="flag line12 invisible">
         <img src="2020assets/warrenbuffet.jpeg" id="funlogo" style="height:1.4em; margin-bottom: -0.2em;"></img>
       </span>
-      <span class="line13 invisible">markets. What I’m doing right now: learning how to ollie</span>
+      <span class="line13 invisible"> markets. What I’m doing right now:</span>
+      <span class="line14 invisible myDIV direction">learning how to ollie</span>
+      <img src="assets/skater.gif" class="backgroundimage" style="margin-left:-3em; max-width: 4em; max-height: 3em;"></img>
       <span class="superscript line13 invisible">7</span>
-      <span class="flag line13 invisible">
+      <span class="flag line14 invisible">
         <img src="2020assets/rad-12.png" id="funlogo"
           style="height:1.2em; margin-left: -0.2em; margin-bottom:-0.2em"></img>
       </span>
       <span style="margin-left: -0.3em;" class="line13 invisible">,</span>
-      <span class="line14 invisible" style="margin-top:-0.2em;"> flipping thrifted clothes, reading David Chang’s
+      <span class="line15 invisible" style="margin-top:-0.2em;"> flipping thrifted clothes, reading David Chang’s
         memoir</span>
-      <span class="flag line14 invisible">
+      <span class="flag line15 invisible">
         <img src="2020assets/momofuku.jpg" id="funlogo" style="height:1.2em;"></img>
       </span>
-      <span class="line14 invisible">,</span>
-      <span class="line15 invisible">unapologetically looking up</span>
-      <span class="flag line15 invisible">
+      <span class="line15 invisible">,</span>
+      <span class="line16 invisible">unapologetically looking up</span>
+      <span class="flag line16 invisible">
         <img src="2020assets/newyorker-13.png" id="funlogo" style="height:1.6em; margin-bottom: -0.4em"></img>
       </span>
-      <span class="line16 invisible">crossword answers.</span>
+      <span class="line17 invisible">crossword answers.</span>
 
     </div>
 
@@ -447,7 +454,7 @@
     <div id="content">
 
       <div class="flex-child left">
-        <img style="max-width: 100%;" src="2020assets/formulas1.png">
+        <img style="max-width: 93%;" src="2020assets/formulas1.png">
       </div>
       <div class="flex-child right">
         <img style="max-width: 100%;" src="2020assets/formulas2.png">
@@ -463,7 +470,7 @@
 
   <script type="text/javascript">
     $(function () {
-      for (x = 1; x <= 16; x++) {
+      for (x = 1; x <= 17; x++) {
         var class_name = ".line" + x
         var delay_time = 100 * x
 
@@ -488,8 +495,8 @@
           //     canvas,
           //     context,
 
-          var canvasWidth = $("#about .content").width(),
-              canvasHeight = $("#about .content").height(),
+          var canvasWidth = $("#about").width(),
+              canvasHeight = $("#about").height()*0.85,
               clearButton = document.getElementById('btnClear'),
               clickX = [],
               clickY = [],
@@ -501,8 +508,8 @@
               // Resizes the canvas.
               resizeCanvas = function () {
 
-                canvasWidth = $("#about .content").width();
-                canvasHeight = $("#about .content").width();
+                canvasWidth = $("#about").width();
+                canvasHeight = $("#about").height()*0.85;
 
                 canvas.setAttribute('width', canvasWidth);
                 canvas.setAttribute('height', canvasHeight);
@@ -573,8 +580,9 @@
 
                 var press = function (e) {
                   // Mouse down location
-                  var mouseX = e.pageX - this.offsetLeft,
-                    mouseY = e.pageY - this.offsetTop;
+                  var mouseX = e.pageX,
+                    mouseY = e.pageY;
+                    console.log(e.pageX);
 
                   paint = true;
                   addClick(mouseX, mouseY, false);
@@ -583,7 +591,7 @@
 
                 drag = function (e) {
                   if (paint) {
-                    addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
+                    addClick(e.pageX, e.pageY, true);
                     redraw();
                   }
                   // Prevent the whole page from dragging if on mobile
@@ -620,6 +628,8 @@
 
                 // Create the canvas (Neccessary for IE because it doesn't know what a canvas element is)
                 canvas = document.createElement('canvas');
+                console.log(canvasWidth);
+                console.log(canvasHeight);
                 canvas.setAttribute('width', canvasWidth);
                 canvas.setAttribute('height', canvasHeight);
                 canvas.setAttribute('id', 'canvas');
@@ -655,6 +665,35 @@
 
 
   </script>
+
+<script>
+
+
+  // $(".line3").hover(
+  //     function() {
+  //   $(this).prepend('<img src="assets/athens_ohio.jpg" class="backgroundimage1"></img>');
+
+  // },
+
+  //     function(){
+  //         $(".backgroundimage1").remove()
+
+  //     });
+
+
+  // $(".line11").hover(
+  //   function(){
+  //     $(this).prepend('<img src="assets/yellow_peril.jpg" class="backgroundimage1"></img>');
+
+  //   },
+
+  //   function(){
+  //         $(".backgroundimage1").remove()
+  //     });
+
+  
+</script>
+
 </body>
 
 

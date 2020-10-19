@@ -7,6 +7,27 @@
   <link rel="icon" type="image/png" href="assets/dot-03.png" />
 
   <style>
+
+* {
+      cursor: none;
+    }
+    
+    .custom-cursor {
+      position: fixed;
+      opacity: 0;
+      pointer-events: none;
+      mix-blend-mode: difference;
+      width:1.5em;
+      height: 1.5em;
+      border-radius: 50%;
+      background-color:red;
+      transition: transform 350ms ease;
+      transform: translate(-50%, -50%) scale(.5);
+      z-index: 1000;
+    }
+    .custom-cursor--link {
+      transform: translate(-50%, -50%) scale(1);
+    }
     .window {
       border-width: 3px;
       border-style: solid;
@@ -99,6 +120,8 @@
       /* background-color:#FFFF88; */
       font-family: 'glacial_indifferenceregular';
     }
+
+
 
     #about h3,
     #contactinfo h3 {
@@ -335,6 +358,8 @@
 <body>
   <div id="sectionheader" style="padding-top: 0.5em; padding-left: 0.5em;">
     Section 1.
+    <div class="custom-cursor"></div>
+
 
   </div>
 
@@ -467,6 +492,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.min.js"></script>
   <script src="js/homepagescript.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+
 
   <script type="text/javascript">
     $(function () {
@@ -668,28 +695,47 @@
 
 <script>
 
+document.addEventListener("DOMContentLoaded", function(event) {
+  var cursor = document.querySelector(".custom-cursor");
+  var links = document.querySelectorAll("a");
+  var initCursor = false;
 
-  // $(".line3").hover(
-  //     function() {
-  //   $(this).prepend('<img src="assets/athens_ohio.jpg" class="backgroundimage1"></img>');
+  for (var i = 0; i < links.length; i++) {
+    var selfLink = links[i];
 
-  // },
+    selfLink.addEventListener("mouseover", function() {
+      cursor.classList.add("custom-cursor--link");
+    });
+    selfLink.addEventListener("mouseout", function() {
+      cursor.classList.remove("custom-cursor--link");
+    });
+  }
 
-  //     function(){
-  //         $(".backgroundimage1").remove()
+  window.onmousemove = function(e) {
+    var mouseX = e.clientX;
+    var mouseY = e.clientY;
 
-  //     });
+    if (!initCursor) {
+      // cursor.style.opacity = 1;
+      TweenLite.to(cursor, 0.3, {
+        opacity: 1
+      });
+      initCursor = true;
+    }
 
+    TweenLite.to(cursor, 0, {
+      top: mouseY + "px",
+      left: mouseX + "px"
+    });
+  };
 
-  // $(".line11").hover(
-  //   function(){
-  //     $(this).prepend('<img src="assets/yellow_peril.jpg" class="backgroundimage1"></img>');
-
-  //   },
-
-  //   function(){
-  //         $(".backgroundimage1").remove()
-  //     });
+  window.onmouseout = function(e) {
+    TweenLite.to(cursor, 0.3, {
+      opacity: 0
+    });
+    initCursor = false;
+  };
+});
 
   
 </script>

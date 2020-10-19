@@ -18,8 +18,8 @@
 	  
 	@font-face {
 		font-family: 'migraextralight';
-		src: url('migra-extralight-webfont.woff2') format('woff2'),
-			 url('migra-extralight-webfont.woff') format('woff');
+		src: url('../font/migra-extralight-webfont.woff2') format('woff2'),
+			 url('../font/migra-extralight-webfont.woff') format('woff');
 		font-weight: normal;
 		font-style: normal;
 	
@@ -59,12 +59,12 @@
 
 	@font-face {
 		font-family: 'cmu_serif_extraboldslanted';
-		src: url('cmunbl-webfont.eot');
-		src: url('cmunbl-webfont.eot?#iefix') format('embedded-opentype'),
-			 url('cmunbl-webfont.woff2') format('woff2'),
-			 url('cmunbl-webfont.woff') format('woff'),
-			 url('cmunbl-webfont.ttf') format('truetype'),
-			 url('cmunbl-webfont.svg#cmu_serif_extraboldslanted') format('svg');
+		src: url('../font/cmunbl-webfont.eot');
+		src: url('../font/cmunbl-webfont.eot?#iefix') format('embedded-opentype'),
+			 url('../font/cmunbl-webfont.woff2') format('woff2'),
+			 url('../font/cmunbl-webfont.woff') format('woff'),
+			 url('../font/cmunbl-webfont.ttf') format('truetype'),
+			 url('../font/cmunbl-webfont.svg#cmu_serif_extraboldslanted') format('svg');
 		font-weight: normal;
 		font-style: normal;
 	
@@ -122,12 +122,6 @@
 			padding: 0;
 			margin: 0;
 		}
-
-	
-		
-
-	
-
 		.footer {
 			display: none;
 		}

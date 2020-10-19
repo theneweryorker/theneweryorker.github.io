@@ -235,9 +235,18 @@ $("#contactForm button[type=submit]").click(function (e) {
 });
 
 
-/* DRAWING CODE
-Moved over from index.html
-*/
+/* TEXT FADE IN ANIMATION CODE */
+$(function () {
+	for (x = 1; x <= 16; x++) {
+	  var class_name = ".line" + x
+	  var delay_time = 100 * x
+
+	  $(class_name).delay(delay_time).animate({ opacity: 1 }, 700);
+	}
+  });
+
+
+  /* DRAWING CODE */
 var drawingApp = (function () {
 
 	"use strict";
@@ -292,7 +301,7 @@ var drawingApp = (function () {
 		clearCanvas();
 
 		var radius = 8;
-		context.strokeStyle = "#3644FD";
+		context.strokeStyle = "#FF0000";
 		context.lineJoin = "round";
 		context.lineWidth = radius;
 

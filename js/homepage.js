@@ -233,3 +233,163 @@ $("#contactForm button[type=submit]").click(function (e) {
 		window.open('mailto:info@geekgirlsfilm.com?subject=[geekgirlsfilm.com]&body=' + $yourMessage, '_blank');
 	}
 });
+
+
+/* DRAWING CODE
+Moved over from index.html
+*/
+var drawingApp = (function () {
+
+	"use strict";
+	
+	var canvasWidth = $("#canvasContainer").width(),
+	  canvasHeight = $("#canvasContainer").height(),
+	  clearButton = document.getElementById('btnClear'),
+	  clickX = [],
+	  clickY = [],
+	  clickDrag = [],
+	  paint,
+	  canvas,
+	  canvasBounds,
+	  context,
+
+	  // Resizes the canvas.
+	  resizeCanvas = function () {
+
+		canvasWidth = $("#canvasContainer").width();
+		canvasHeight = $("#canvasContainer").height();
+		canvasBounds = document.getElementById("canvas").getBoundingClientRect();
+		console.log(canvasBounds)
+
+		canvas.setAttribute('width', canvasWidth);
+		canvas.setAttribute('height', canvasHeight);
+
+		/**
+		* Your drawings need to be inside this function otherwise they will be reset when 
+		* you resize the browser window and the canvas goes will be cleared.
+		*/
+		redraw();
+	  },
+
+	  // Clears the canvas.
+	  clearCanvas = function () {
+		context.clearRect(0, 0, canvasWidth, canvasHeight);
+	  },
+
+	  // Erase all actions.
+	  eraseAll = function () {
+
+		clickX = [];
+		clickY = [];
+		clickDrag = [];
+		clearCanvas();
+
+	  },
+
+	  // Redraws the canvas.
+	  redraw = function () {
+
+		clearCanvas();
+
+		var radius = 8;
+		context.strokeStyle = "#3644FD";
+		context.lineJoin = "round";
+		context.lineWidth = radius;
+
+		for (var i = 0; i < clickX.length; i++) {
+		  context.beginPath();
+		  if (clickDrag[i] && i) {
+			context.moveTo(clickX[i - 1], clickY[i - 1]);
+		  } else {
+			context.moveTo(clickX[i] - 1, clickY[i]);
+		  }
+		  context.lineTo(clickX[i], clickY[i]);
+		  context.closePath();
+		  context.stroke();
+		}
+	  },
+
+	  // Adds a point to the drawing array.
+	  // @param x
+	  // @param y
+	  // @param dragging
+	  addClick = function (x, y, dragging) {
+		clickX.push(x);
+		clickY.push(y);
+		clickDrag.push(dragging);
+	  },
+
+	  // Add mouse and touch event listeners to the canvas
+	  createUserEvents = function () {
+
+		var press = function (e) {
+		  // Mouse down location
+		  paint = true
+		  addClick(e.pageX - canvasBounds.left, e.pageY - canvasBounds.top, false);
+		  redraw();
+		},
+
+		drag = function (e) {
+		  if (paint) {
+			addClick(e.pageX - canvasBounds.left, e.pageY - canvasBounds.top, true);
+			redraw();
+		  }
+		  // Prevent the whole page from dragging if on mobile
+		  e.preventDefault();
+		},
+
+		release = function () {
+		  paint = false;
+		  redraw();
+		},
+
+		cancel = function () {
+		  paint = false;
+		}
+
+		// Add mouse event listeners to canvas element
+		canvas.addEventListener("mousedown", press, false);
+		canvas.addEventListener("mousemove", drag, false);
+		canvas.addEventListener("mouseup", release);
+		canvas.addEventListener("mouseout", cancel, false);
+
+		// Add touch event listeners to canvas element
+		canvas.addEventListener("touchstart", press, false);
+		canvas.addEventListener("touchmove", drag, false);
+		canvas.addEventListener("touchend", release, false);
+		canvas.addEventListener("touchcancel", cancel, false);
+
+	  },
+
+	  /**
+	  * Creates a canvas element.
+	  */
+	  init = function () {
+
+		// Create the canvas (Neccessary for IE because it doesn't know what a canvas element is)
+		canvas = document.createElement('canvas');
+		canvas.setAttribute('width', canvasWidth);
+		canvas.setAttribute('height', canvasHeight);
+		canvas.setAttribute('id', 'canvas');
+		document.getElementById('canvasContainer').appendChild(canvas);
+		if (typeof G_vmlCanvasManager !== "undefined") {
+		  canvas = G_vmlCanvasManager.initElement(canvas);
+		}
+		context = canvas.getContext("2d");
+		canvasBounds = document.getElementById("canvas").getBoundingClientRect();
+		createUserEvents();
+		
+		// clearButton.addEventListener("mousedown", eraseAll, false);
+		window.addEventListener("resize", resizeCanvas);
+		//refresh canvas 
+		$('.window').on('dragEnd', function () {
+		  canvasBounds = document.getElementById("canvas").getBoundingClientRect();
+		});
+	  };
+
+	return {
+	  init: init
+	};
+
+  }());
+  drawingApp.init();

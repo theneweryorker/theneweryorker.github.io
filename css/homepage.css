@@ -428,3 +428,319 @@ span.imgText img {
   transform: scaleX(1); }
 
 /*# sourceMappingURL=homepage.css.map */
+
+/* Moving from the stuff copied into the index.html file */
+.window {
+  border-width: 3px;
+  border-style: solid;
+  position: absolute;
+}
+
+@font-face {
+  font-family: 'glacial_indifferenceregular';
+  src: url("font/glacialindifference-regular-webfont.woff2") format("woff2"), url("font/glacialindifference-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'glacial_indifferencebold';
+  src: url("../font/glacialindifference-bold-webfont.woff2") format("woff2"), url("../font/glacialindifference-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.window h3 {
+  font-weight: 400;
+  font-size: 15px;
+  text-transform: lowercase;
+  border-width: 0px 0px 3px 0px;
+  border-style: solid;
+  border-color: black;
+  padding: 10px 20px 12px 20px;
+  line-height: 100%;
+  margin: 0px;
+}
+
+.window h3:hover {
+  cursor: move;
+}
+
+.window h3 span.toggle:hover {
+  cursor: pointer;
+}
+
+.window span.toggle {
+  float: right;
+  font-size: 30px;
+  line-height: 7px;
+  font-family: 'glacial_indifferenceregular';
+}
+
+.window span.toggle::after {
+  content: '\2013';
+}
+
+.window.mini span.toggle::after {
+  content: '\2b';
+}
+
+.window.focus span.toggle {
+  display: inline;
+}
+
+.window .content {
+  padding: 20px 20px;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  border-width: 2px;
+  background: transparent;
+  padding: 5px 5px 5px 5px !important;
+}
+
+#contactinfo {
+  z-index: 2;
+  background-color: #FFFF88;
+  border-color: #000000;
+  width: 12em;
+  height: 3em;
+  position: absolute;
+  top: 0.7em;
+  right: 2.1em;
+}
+
+/* #header_support {
+          font-size: 5em;
+          line-height: 1em;
+          text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
+         */
+
+#contactinfo a {
+  color: #000000;
+}
+
+#contactinfo p {
+  margin: 0px 0px 0px 0px;
+  font-size: 0.5em;
+  line-height: 1.2em;
+  font-family: 'glacial_indifferenceregular';
+
+
+}
+
+#contactinfo .content {
+  height: 400px;
+  padding: 0px 0px 0px 20px;
+  margin-top: 20px;
+  overflow: auto;
+  height: 85%;
+}
+
+/* #character {
+          color: #000000;
+          background: #ffffff;
+          border-color: #000000;
+          width: 350px;
+          height: 200px; }
+         */
+#character .arrow-left {
+  text-align: left;
+  position: absolute;
+  top: 225px;
+  left: 15px;
+}
+
+#character .arrow-right {
+  text-align: right;
+  position: absolute;
+  top: 225px;
+  right: 15px;
+}
+
+#character h3 {
+  height: 15px;
+}
+
+#character .content {
+  height: 426px;
+  overflow: hidden;
+  padding: 20px 50px;
+}
+
+#character-content {
+  height: 264px;
+}
+
+#character p {
+  padding-bottom: 13px;
+}
+
+#character a {
+  color: #f1ff63;
+}
+
+.character-img img {
+  border: 2px solid #f1ff63;
+}
+
+
+@media only screen and (max-width: 750px) {
+
+  html,
+  body {
+    overflow: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+
+  .window {
+    width: 100% !important;
+    height: 57px !important;
+    position: relative !important;
+    top: 0px !important;
+    left: 0px !important;
+    border: none !important;
+  }
+
+  .window .content {
+    display: none;
+  }
+
+  #about .arrows {
+    display: none;
+  }
+
+  .window.focus {
+    height: auto !important;
+    padding-bottom: 20px;
+  }
+
+  .window.focus .content {
+    display: block;
+    height: 100% !important;
+    overflow: auto !important;
+  }
+
+  #quote {
+    display: none !important;
+  }
+
+  #logo {
+    display: none !important;
+  }
+
+  #title-responsive {
+    display: block;
+  }
+
+  .window h3 {
+    border: none;
+    padding: 20px 20px 22px 20px;
+  }
+
+  .window.focus h3 {
+    border-width: 0px 0px 2px 0px;
+    border-style: solid;
+  }
+
+  #about .content {
+    height: 100% !important;
+  }
+
+  #about-team {
+    display: block !important;
+  }
+
+  #about-credits {
+    display: block !important;
+  }
+
+  #character .content {
+    height: auto !important;
+  }
+
+  #character-content {
+    height: auto !important;
+  }
+
+  #character .arrow-left,
+  #character .arrow-right {
+    display: none;
+  }
+
+  #character.focus .arrow-left {
+    display: block;
+  }
+
+  #character.focus .arrow-right {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 347px) {
+  #title-responsive h1 {
+    left: 115px;
+    top: 22px;
+    font-size: 18px;
+  }
+
+  #title-responsive h2 {
+    right: 35px;
+    top: 31px;
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  #title-responsive h2 {
+    display: none;
+  }
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 8px 8px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  -webkit-transition: 0.5s;
+  font-family: 'glacial_indifferenceregular';
+  transition: 0.5s;
+  outline: none;
+}
+
+.form-submit-button {
+  color: black;
+  padding: 0.2em;
+  font-family: 'glacial_indifferenceregular';
+}
+
+/* Austin's CSS for draggable window */
+#about {
+  z-index: 100;
+  color: #000000;
+  background-color: #FFFF88;
+  border-color: black;
+  width: 4.4em;
+  height: 9em;
+  position: absolute;
+  top: 4.3em;
+  left: 0.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+#about h3,
+#contactinfo h3 {
+  font-family: 'glacial_indifferencebold';
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#canvasContainer {
+  overflow: auto;
+  flex: 1;
+}

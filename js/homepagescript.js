@@ -214,23 +214,6 @@ $(window).on("load", function () {
 			$(this).parent().css('z-index', z);
 		}
 	});
-
-	setTimeout(function () {
-		$('#facebook iframe').iframeTracker({
-			blurCallback: function () {
-				z++;
-				$("#facebook").css('z-index', z);
-			}
-		});
-
-		$('#twitter iframe').iframeTracker({
-			blurCallback: function () {
-				z++;
-				$("#twitter").css('z-index', z);
-			}
-		});
-
-	}, 1000);
 });
 
 

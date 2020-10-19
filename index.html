@@ -490,6 +490,7 @@
           canvasWidth = $("#canvasContainer").width();
           canvasHeight = $("#canvasContainer").height();
           canvasBounds = document.getElementById("canvas").getBoundingClientRect();
+          console.log(canvasBounds)
 
           canvas.setAttribute('width', canvasWidth);
           canvas.setAttribute('height', canvasHeight);
@@ -611,8 +612,10 @@
           context = canvas.getContext("2d");
           canvasBounds = document.getElementById("canvas").getBoundingClientRect();
           createUserEvents();
+          
           // clearButton.addEventListener("mousedown", eraseAll, false);
           window.addEventListener("resize", resizeCanvas);
+          document.getElementById("about").addEventListener("mouseup", resizeCanvas)
 
         };
 

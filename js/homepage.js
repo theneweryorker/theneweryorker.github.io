@@ -237,7 +237,7 @@ $("#contactForm button[type=submit]").click(function (e) {
 
 /* TEXT FADE IN ANIMATION CODE */
 $(function () {
-	for (x = 1; x <= 16; x++) {
+	for (x = 1; x <= 17; x++) {
 	  var class_name = ".line" + x
 	  var delay_time = 100 * x
 

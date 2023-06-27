@@ -217,22 +217,6 @@ $(window).on("load", function () {
 });
 
 
-/*email*/
-function isEmail(email) {
-	var re = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-	return re.test(email);
-}
-
-$("#contactForm button[type=submit]").click(function (e) {
-	e.preventDefault();
-	$yourEmail = $("input[name=yourEmail]").val();
-	$yourMessage = $("textarea[name=yourMessage]").val();
-	if ($yourEmail != "") {
-		window.open('mailto:info@geekgirlsfilm.com?subject=[geekgirlsfilm.com] Inquiry from ' + $yourEmail + '&body=' + $yourMessage, '_blank');
-	} else {
-		window.open('mailto:info@geekgirlsfilm.com?subject=[geekgirlsfilm.com]&body=' + $yourMessage, '_blank');
-	}
-});
 
 
 /* TEXT FADE IN ANIMATION CODE */

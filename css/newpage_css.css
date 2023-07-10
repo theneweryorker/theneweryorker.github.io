@@ -289,6 +289,10 @@
 		position:relative;
 	}
 
+	.myDIV:hover{
+		color:blue;
+	}
+
 
 	.line3.myDIV:hover{
 		color:blue;

@@ -93,7 +93,7 @@
 	
     .blogcontainer {
       display: flex;
-	  margin: 2em 2em 4em 4em;
+	  margin: 2em 2em 3em 3em;
 		font-weight: 400;
 		font-style: normal;
 		font-size: 0.5em;
@@ -122,6 +122,24 @@
 		text-align: right;
 		font-size: 1.3em;
 		
+	  }
+
+	  .circle_line{
+		position: relative;
+  		border-top: 1px solid black;
+		padding: 0.8em;
+	  }
+
+	  .circle_line::after {
+		content: "";
+		position: absolute;
+		top: -4px; /* Adjust as needed */
+		right: 0;
+		width: 8px; /* Adjust as needed */
+		height: 8px; /* Adjust as needed */
+		border-radius: 50%;
+		background-color: white;
+  		border: 1px solid black;
 	  }
 	  
 	  .column-middle {
@@ -176,7 +194,7 @@
 		width: 0.4em;
 		height: 0.4em;
 		border-style: solid;
-		border-color: red;
+		border-color: #19a4ff;
 		border-width: 0em 0.15em 0.15em 0em;
 		transform: rotate(45deg);
 

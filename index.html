@@ -165,12 +165,12 @@
                       </div>
                       <div class="blogparagraph_show">
                         <p>
-                          Personally, not having a body of work to evince the existence or quality of one’s inner thoughts — 
-                          or yet another take on whether or not AI will doom the creative class — sometimes feels like indolence. 
+                          Not having a body of work to evince the existence or quality of one’s inner thoughts — 
+                          or yet another take on whether or not AI will doom the creative class — can sometimes feels like indolence. 
                           After all, Twitter and Substack are free to all. If others can build prolific careers or rich communities 
-                          from these platforms, why not you? Yes, the FOMO is probably just another self-enforcement mechanic of 
-                          late-stage capitalism. You know the one: the one which tries to convince ourselves that a lack of 
-                          participation — inherently a lack of public contribution — is irresponsible somehow, though we can’t 
+                          from these platforms, why not you? Much has been written about how the FOMO of constant self-improvement is 
+                          just another self-enforcement mechanic of late-stage capitalism — it tries to convince you that a lack of 
+                          participation — inherently a lack of public contribution — is irresponsible somehow, though you can’t 
                           exactly place why. 
                         </p>
                       </div>
@@ -178,32 +178,40 @@
 
                       <div class="blogparagraph_show">
                         <p>
-                          Of course, there were a lot of concurrent trends to get us here. 
+                          Of course, there were a lot of concurrent trends to get us here. (Click on caret to expand.)
                         </p>
-                        <!-- <button class="toggle-button" onclick="toggleExpand(this)" onclick="toggleCaret(this)"></button> -->
+                        <button class="toggle-button" onclick="toggleExpand(this)" onclick="toggleCaret(this)"></button>
                       </div>
-                      <div class="blogparagraph_show">
+                      <div class="blogparagraph_hidden">
                         <p>
                           There was Tumblr, Twitter, and Medium, which — I’ll speak in general strokes here — standardized 
-                          this kind of solipsistic and informal essay writing. The essays were often shrouded in the lived 
+                          this kind of solipsistic and informal essay writing<span class="hover-trigger" data-content="content-1" style="color: red; font-size: 1.3em;">*</span>. The essays were often shrouded in the lived 
                           experiences of the author; their intuited opinions and observations were inherently non-fact-checkable. 
                           Writing here could feel authoritative while being nearly entirely subjective, and could be readily produced. 
                           It was easy for both the author and the reader, requiring little fact-checking for either party, and was 
                           often instantly relatable and shareable. 
 
                         </p>
-                    </div>
+                  
+                   
+                      <p style="margin-top: 1em;">
+                        
+                        Then there was the already-burgeoning preference for individuals over institutions when it came to 
+                        consumption. (Out of growing distrust, or a trend of nichification and personalization of web behavior
+                      ?) 
+                        You’d trust an influencer more than a faceless clothing corporation; your favorite editor instead of 
+                        Man Repeller. It was fun to get your takes straight from the source, with no one in the middle. 
 
-                    <div class="blogparagraph_show">
-                      <p>
+                      </p>
+                    
+                      <p style="margin-top: 1em;">
                         
                           One upside of the genre’s popularization was that it was accessible: suddenly anyone could weigh in 
                           on pressing issues of our time with no apparent authority; just existing and observing was prerogative 
                           enough to say something on the matter. The downside, however, was excess. Not just more essays, but, 
-                          thanks to Substack, often essays on a weekly basis. 
+                          thanks to Substack, often essays on a weekly basis<span class="hover-trigger" data-content="content-2" style="color: red; font-size: 1.3em;">*</span>. 
 
                       </p>
-                      <!-- <button class="toggle-button" onclick="toggleExpand(this)" onclick="toggleCaret(this)"></button> -->
                     </div>
                     <div class="blogparagraph_show">
                       <p>
@@ -233,17 +241,20 @@
       <p style="line-height: 1em; margin-top: 1.2em;"> Hover on (*)s to see text appear here. </p>
 
       <span class="hover-content" id="content-1"> 
-        <span style="font-weight: 600;   font-style: italic;">
+        <!-- <span style="font-weight: 600;   font-style: italic;">
           sufficiently-researched cultural criticism:
-        </span>
-        Additional information appears here when you hover over the asterisk.
+        </span> -->
+        To me, Jia Tolentino’s <span style="font-style: italic;"> Trick Mirror </span> is a perfect example of this (and is, admittedly, a very good read.) 
+        It encapsulated this specific 
+        solipsistic sensibility perfectly: sufficiently-researched cultural criticism with manageably abstract provocations, 
+        delivered in the first-person. In all its self-assuredness and informality, it read like a millennial diary 
+        entry if it was given a journalistic brief: acerbic sociocultural commentary sprinkled with tenets of nth-wave feminism 
+        and occasional qualitative data points, marked by the niche, conceptual vocabulary of new-age internet studies programs. 
       </span>
 
       <span class="hover-content" id="content-2"> 
-        <span style="font-weight: 600;font-style: italic;">
-          writing freely:
-        </span>
-        without the surveillance of anticipating an audience. 
+        
+        To date, I have 523 unread Substack emails. 
       </span>
         </div> 
 
@@ -261,43 +272,41 @@ function toggleCaret(button) {
 
 
 <script>
-var hoverTriggers = document.querySelectorAll(".hover-trigger");
+  var hoverTriggers = document.querySelectorAll(".hover-trigger");
 
-hoverTriggers.forEach(function(hoverTrigger) {
-  hoverTrigger.addEventListener("mouseover", function() {
-    var contentId = hoverTrigger.getAttribute("data-content");
-    var hoverContent = document.getElementById(contentId);
+  hoverTriggers.forEach(function(hoverTrigger) {
+    hoverTrigger.addEventListener("mouseover", function() {
+      var contentId = hoverTrigger.getAttribute("data-content");
+      var hoverContent = document.getElementById(contentId);
 
-    if (hoverContent) {
-      hoverContent.classList.add("active");
-      var triggerRect = hoverTrigger.getBoundingClientRect();
-      var triggerY = triggerRect.top + window.pageYOffset + 7;
-      hoverContent.style.top = triggerY + "px";
-    }
+      if (hoverContent) {
+        hoverContent.classList.add("active");
+        var triggerRect = hoverTrigger.getBoundingClientRect();
+        var triggerY = triggerRect.top + window.pageYOffset + 7;
+        hoverContent.style.top = triggerY + "px";
+      }
+    });
   });
-});
-
 </script>
-  <script>
-    // this is for expanding text 
-
-    function toggleExpand(button) {
-      var paragraph = button.parentNode;
-      paragraph.classList.toggle("expanded");
-      var nextParagraph = paragraph.nextElementSibling;
-      if (nextParagraph) {
-        if (paragraph.classList.contains("expanded")) {
+<script>
+  // this is for expanding text 
+  function toggleExpand(button) {
+    var paragraph = button.parentNode;
+    paragraph.classList.toggle("expanded");
+    var nextParagraph = paragraph.nextElementSibling;
+    if (nextParagraph) {
+      if (paragraph.classList.contains("expanded")) {
         nextParagraph.style.display = "block";
         button.classList.add("up");
       } else {
-      nextParagraph.style.display = "none";
-      button.classList.remove("up");
+        nextParagraph.style.display = "none";
+        button.classList.remove("up");
       }
-  }
-
-      
     }
-  </script>
+
+    
+  }
+</script>
 
 
 

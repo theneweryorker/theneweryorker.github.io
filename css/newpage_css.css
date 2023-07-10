@@ -108,7 +108,7 @@
 	  .hover-content.active{
 		display: block;
 		position: absolute;
-		width: 12em;
+		width: 17em;
 
 	  }
 
@@ -142,7 +142,7 @@
     }
 
 	.blogparagraph_show{
-		margin-top: 0.5em;
+		margin-top: 1em;
 		display: flex;
   	flex-wrap: wrap;
 
@@ -150,6 +150,11 @@
     .expanded {
       display: block;
     }
+
+	.hover-content{
+		font-size: 0.9em;
+		line-height: 1.1em;
+	}
 
 /* Expand button stuff  */
 /* Expand button stuff  */
@@ -162,6 +167,7 @@
 		width: 0.4em;
 		height: 2em;
 		margin-top: -0.5em;
+		margin-left: 0.7em;
 
 	  }
 	  

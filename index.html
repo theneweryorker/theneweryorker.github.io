@@ -287,8 +287,7 @@ function toggleCaret(button) {
       }
     });
   });
-</script>
-<script>
+
   // this is for expanding text 
   function toggleExpand(button) {
     var paragraph = button.parentNode;
@@ -301,6 +300,12 @@ function toggleCaret(button) {
       } else {
         nextParagraph.style.display = "none";
         button.classList.remove("up");
+        
+        hoverTriggers.forEach(function(hoverTrigger) {
+          var contentId = hoverTrigger.getAttribute("data-content");
+          var hoverContent = document.getElementById(contentId);
+          hoverContent.classList.remove("active");
+        });
       }
     }
 

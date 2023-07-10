@@ -63,9 +63,17 @@
 		/* border: 10px yellow; */
 	}  
 
-	#sectionheader{
+	/* #sectionheader{
 		font-family: 'cmu_serif_extraboldslanted';
 		font-size: 2em;
+	} */
+
+	#sectionheader{
+		font-family: "century-old-style-std", serif;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 2.6em;
+		letter-spacing: -0.25rem;
 	}
 
 	@font-face {
@@ -81,6 +89,100 @@
 	
 	}
 
+
+	
+    .blogcontainer {
+      display: flex;
+	  max-width: 87%;
+	  margin: 2em 2em 5em 5em;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 0.5em;
+		font-family: adobe-caslon-pro, serif;
+    }
+
+	.hover-content {
+		display: none;
+	  }
+	  
+	  .hover-content.active{
+		display: block;
+		position: absolute;
+		width: 12em;
+
+	  }
+
+	.column {
+		padding: 1em;
+		line-height: 1.2em;
+	  }
+	  
+	  .column-left {
+		width: 15%;
+		/* background-color: lightgray; */
+		text-align: right;
+		font-size: 1.3em;
+		
+	  }
+	  
+	  .column-middle {
+		width: 60%;
+		/* background-color: gray; */
+	  }
+	  
+	  .column-right {
+		width: 20%;
+		border-left: 2.5px dotted #808080;
+		/* background-color: darkgray; */
+	  }
+
+    .blogparagraph_hidden {
+      display: none;
+	  margin-bottom: 0.1em;
+    }
+
+	.blogparagraph_show{
+		margin-top: 0.5em;
+		display: flex;
+  	flex-wrap: wrap;
+
+	}
+    .expanded {
+      display: block;
+    }
+
+/* Expand button stuff  */
+/* Expand button stuff  */
+/* Expand button stuff  */
+
+	.toggle-button {
+		border: none;
+		background: none;
+		cursor: pointer;
+		width: 0.4em;
+		height: 2em;
+		margin-top: -0.5em;
+
+	  }
+	  
+	  .toggle-button::after {
+		content: "     ";
+		display: inline-block;
+		width: 0.4em;
+		height: 0.4em;
+		border-style: solid;
+		border-color: red;
+		border-width: 0em 0.15em 0.15em 0em;
+		transform: rotate(45deg);
+
+	  }
+	  
+	  .toggle-button.up{
+		transform: rotate(-180deg);
+		flex: 2;
+  		align-self: flex-start;
+	  }
+ 
 
 	/* ALL OF THE HOVER MAGIC */
 	/* ALL OF THE HOVER MAGIC */

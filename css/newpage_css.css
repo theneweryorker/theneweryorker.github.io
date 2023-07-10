@@ -181,6 +181,14 @@
 		margin-top:-0.5em;
 		line-height: 1em;
 	}
+
+	/* .headline_3{
+		font-size: 2.1em;
+		line-height: 0.8em;
+		position: relative;
+  		border-bottom: 1px solid black;
+		padding: 0.4em;
+	} */
 /* Expand button stuff  */
 /* Expand button stuff  */
 /* Expand button stuff  */
@@ -193,7 +201,50 @@
 		height: 2em;
 		margin-top: -0.5em;
 		margin-left: 0.9em;
+	  }
 
+	  #textarea{
+		font-family: adobe-caslon-pro, serif;
+		color: black;
+		font-size: 1em;
+		line-height: 1em;
+		margin: 0.3em;
+		border: none;
+		outline: none; 
+		resize: none; /* Disable resizing */
+		width: 7.1em;
+		height: 10em;
+	  }
+
+	  #textarea::placeholder {
+		color: black; 
+	  }
+
+	  .tocparent{
+		font-size: 2.1em;
+		line-height: 1em;
+		position: relative;
+		border-bottom: 1px solid black;
+		padding: 0.5em;
+		margin-top: 0.25em;
+		max-width: 100%;
+	}
+		.toc-entry{
+		display: flex;
+		gap: 1em;
+		flex-direction: row;
+		justify-content: space-between;
+		font-family: "century-old-style-std", serif;
+		font-weight: 400;
+		font-style: normal;
+		letter-spacing: -0.1rem;
+		}
+
+	  .explainer-text{
+		display: none;
+		font-size:0.5em;
+		margin-top:0.6em;
+		line-height: 1.1em;
 	  }
 	  
 	  .toggle-button::after {
@@ -210,9 +261,10 @@
 	  
 	  .toggle-button.up{
 		transform: rotate(-180deg);
-		flex: 2;
-  		align-self: flex-start;
+		/* flex: 2;  */
+  		/* align-self: flex-start; */
 	  }
+	  
 
 	  
  

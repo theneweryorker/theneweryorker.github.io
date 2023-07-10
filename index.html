@@ -302,23 +302,71 @@
 <!-- THIS IS SECTION 3!!!!  -->
 
 
-<div class="sectionheader" id="section2" style="padding-top: 0.1em; padding-left: 0.5em;">
+<div class="sectionheader" id="section3" style="padding-top: 0.1em; padding-left: 0.5em;">
   Section 3. 
 </div>
 
 <div class="blogcontainer">
-  <div class="column column-left" style="margin-top: 0.4em;">
-    <p>Coming soon. 
-    </p>
+  <div class="column column-left" style="margin-top: 0.7em;">
+    <!-- <p>Table of Contents: future thoughts
+    </p> -->
+
+    <div id="about" class="window" style=" width: 8em;height: 12em; top: 1em; margin-left: -1em;">
+      <h3 style="text-align: left; padding-left: 13px;">NOTES<span class="toggle"></span></h3>
+      <textarea id="textarea" rows="4" cols="50" placeholder="You can write here"></textarea>
+
+      <!-- <div id="canvasContainer" width="100%;"></div> -->
+    </div>
   </div>
-              <div class="column column-middle">
-                <div class="blogparagraph_show">
-                  <p>
-                    <!-- Coming soon. -->
-                    </p>
-                  <!-- <button class="toggle-button" onclick="toggleExpand(this)"></button> -->
+         <div class="column-middle" style="width:80%;">
+                <!-- THIS IS THE MIDDLE LIST -->
+                <!-- THIS IS THE MIDDLE LIST -->
+                <!-- THIS IS THE MIDDLE LIST -->
+              <div class="tocparent">
+                <div class="toc-entry">
+                  <div class="headline_3">AI and globalization: Drop-shipping of plastic and ideas</div>
+                  <button class="toggle-button" onclick="TOCExpand(this)"></button>
                 </div>
+                <div class="explainer-text">It seems to me that the most prominent anxieties surrounding AI 
+                  (displacement of labor; cheapened quality of outputs) and its upside (heightened efficiency; anything you can imagine made real)
+                  echo the very arguments I heard growing up in the 90s and early 00s around globalization. In some ways, the way I felt using Stable Diffusion
+                  for the first time reminded me <span style="font-style:italic">just a little</span> of my first time walking into Forever21
+                  in middle school: impossibly in awe of the variety that was possible.
+
+                  Not to draw <span style="font-style:italic">too many</span> parallels: both business models (fast fashion, and transformers)
+                  rely on pilfering from existing artists. 
                 </div>
+              </div>
+
+              <div class="tocparent">
+                <div class="toc-entry">
+                  <div class="headline_3">China and the artistic generation <img src="assets/china_generation.jpeg" style="height: 2em;vertical-align: middle;"></img></div>
+                  <button class="toggle-button" onclick="TOCExpand(this)"></button>
+                </div>
+                <div class="explainer-text">Thoughts from revisiting China in 2023, and what cultural hegemony might look like
+                  as she starts to develop her own voice.
+                </div>
+              </div>
+
+              <div class="tocparent">
+                <div class="toc-entry">
+                  <div class="headline_3">
+                    <!-- <img src="assets/fanfic.gif" style="height:3em; vertical-align: middle; margin-left: -4.5em; padding-right: 0.4em;"></img> -->
+                    The allure of the never-ending story: Marvel, AI and the state of fanfiction</div>
+                  <button class="toggle-button" onclick="TOCExpand(this)"></button>
+                </div>
+                <div class="explainer-text">Explanation for Line 1</div>
+              </div>
+
+              <div class="tocparent">
+                <div class="toc-entry">
+                  <div class="headline_3">the MET        Cloisters and cores</div>
+                  <button class="toggle-button" onclick="TOCExpand(this)"></button>
+                </div>
+                <div class="explainer-text">Explanation for Line 1</div>
+              </div>
+
+              </div>
                
                      
 
@@ -362,7 +410,7 @@ function toggleCaret(button) {
     });
   });
 
-  // this is for expanding text 
+  // this is for expanding text in blog
   function toggleExpand(button) {
     var paragraph = button.parentNode;
     paragraph.classList.toggle("expanded");
@@ -382,9 +430,26 @@ function toggleCaret(button) {
         });
       }
     }
-
-    
   }
+
+    // this is for expanding text in TOC
+
+  function TOCExpand(button) {
+  var tocEntry = button.parentNode;
+  var tocParent = tocEntry.parentNode
+  tocEntry.classList.toggle("expanded");
+  var explainerText = tocParent.querySelector(".explainer-text");
+  if (explainerText) {
+    if (tocEntry.classList.contains("expanded")) {
+      explainerText.style.display = "block";
+      button.classList.add("up");
+    } else {
+      explainerText.style.display = "none";
+      button.classList.remove("up");
+    }
+  }
+}
+
 </script>
 
 

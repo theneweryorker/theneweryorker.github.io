@@ -451,8 +451,8 @@ async function updateTextOnDrag(position, gridItem) {
   // Get the existing text inside .grid-item
   const gridItem = document.querySelector('.grid-item');
 const specialHoverText = gridItem.querySelector('.specialhover').textContent.trim();
-const gridText = gridItem.querySelector('.grid-text').textContent.trim();
-const existingText = specialHoverText + ' ' + gridText;
+const grid_Text = gridItem.querySelector('.grid-text').textContent.trim();
+const existingText = specialHoverText + ' ' + grid_Text;
 
 
   // Construct the OpenAI API request

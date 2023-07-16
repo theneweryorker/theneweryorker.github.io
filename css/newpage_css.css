@@ -175,7 +175,7 @@
 	}
 
 	.hover-trigger{
-		font-size: 0.8em; 
+		font-size: 0.7em; 
   		vertical-align: super;
 		font-weight: 600;
 		margin-top:-0.5em;
@@ -398,3 +398,103 @@
 		}
 
 	}
+
+
+
+	/* SECTION 4 */
+
+	.grid-container {
+		position: relative;
+		display: grid;
+		/* grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(4, 1fr); */
+		gap: 10px;
+		height: 50em;
+	  }
+  
+	  .grid-item {
+		position: absolute;
+		/* border: 1px solid black; */
+		padding: 0.1em;
+		/* display: flex;
+		align-items: center;
+    	justify-content: center; */
+		/* flex-wrap: wrap; */
+		cursor: move;
+		user-select: none;
+	  }
+
+	  .grid-text{
+		max-width: 10em;
+		line-height: 1em;
+		font-size: 0.8em;
+		text-align: center;
+	  }
+  
+	  .axis-line {
+		position: absolute;
+		background-color: black;
+	  }
+  
+	  .x-axis {
+		top: 50%;
+		left: 0;
+		width: 100%;
+		height: 1px;
+	  }
+  
+	  .y-axis {
+		top: 0;
+		left: 50%;
+		width: 1px;
+		height: 100%;
+	  }
+  
+	  .axis-title {
+		position: absolute;
+		font-weight: bold;
+		text-align: center;
+	  }
+  
+	  .x-axis-title-left {
+		top: calc(50%);
+		left: 5%;
+		transform: translateX(-50%);
+	  }
+	  
+	  .x-axis-title-right {
+		top: calc(50%);
+		right: 5%;
+		transform: translateX(50%);
+	  }
+  
+	  .y-axis-title {
+		top: 0%;
+		left: calc(50% + 10px);
+		transform: translateY(-50%);
+	  }
+  
+	  .grid-item:hover .specialhover {
+		display: block;
+	  }
+  
+	  .specialhover {
+		display: none;
+		position: absolute;
+		top: -60px;
+		left: 80px;
+		background-color: white;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		padding: 10px;
+		min-width: 10em;
+		line-height: 1em;
+		font-size: 0.8em;
+	  }
+
+	  .grid-image{
+	margin: 0em 3em -0.5em 3em;
+		max-height: 2em;
+		
+		
+	  }

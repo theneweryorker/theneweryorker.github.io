@@ -241,8 +241,8 @@
                       <p>
                         Welcome to the little peace I've made: This writing is both a <span style="font-style: italic">concession </span> to and a 
                         deliberate attempt to investigate my beliefs <span style="font-style: italic">apart from</span>
-                        from the constant, mostly-performative thought-production business that has become the internet. 
-                        In other words: yes, I’m adding more words to the world wide web. I’m hoping that by deliberately stripping 
+                        the constant, mostly-performative thought-production business that has become the internet. 
+                        I am adding more words to the world wide web. I’m also hoping that by deliberately stripping 
                         them of any internet currency, I can write freely<span class="hover-trigger" data-content="content-5" style="color: #f500cd;">5</span>: 
                         I don't own an (active) Twitter account, and I promise never to make my friends endure a half-hearted Substack attempt. After all, 
                         there are <span style="font-style: italic">always </span> better things to read on the internet, like <a href="https://www.theatlantic.com/ideas/archive/2023/03/philosophy-profundity-purpose-limits/673471/" style="color:#19a4ff">this</a>.
@@ -332,7 +332,7 @@
                 <!-- THIS IS THE MIDDLE LIST -->
               <div class="tocparent">
                 <div class="toc-entry">
-                  <div class="headline_3">AI and globalization: <span class="myDIV">Drop-shipping </span>
+                  <div class="headline_3">AI and globalization: <span class="myDIV">The drop-shipping </span>
                   <img src="assets/dress_me.gif" class="backgroundimage" style="margin-top:-4.5em; margin-left: 5em; max-height: 4em;"></img>
                   of plastic and ideas</div>
                   <button class="toggle-button" onclick="TOCExpand(this)"></button>
@@ -390,6 +390,148 @@
   </div>  -->
 
 </div>
+
+<!-- THIS IS SECTION 4!!!!  -->
+
+
+<div class="sectionheader" id="section3" style="padding-top: 0.1em; padding-left: 0.5em;">
+  Section 4. 
+</div>
+
+<div class="grid-container blogcontainer">
+  <div class="axis-line x-axis"></div>
+  <div class="axis-line y-axis"></div>
+  <div class="axis-title x-axis-title-left">end of times</div>
+  <div class="axis-title x-axis-title-right">pro-humanity</div>
+  <div class="axis-title y-axis-title">Y Axis</div>
+  <div class="grid-item" style="left: 2%; top: 2%;">
+    <img class="grid-image" src="2020assets/kid_face.png"></img>
+    <div class="specialhover">In a world of infinitely personalizable consumption, what happens when people are listening to 1000 variations of the same Rihanna song? </div>
+    <div class="grid-text">Lack of collective social experiences (TV, fashion, tastes)
+    </div>
+  </div>
+
+  <div class="grid-item" style="left: 80%; top: 2%;">
+    <img class="grid-image" src="2020assets/kid_face.png"></img>
+    <div class="specialhover">In a world of infinitely personalizable consumption, what happens when people are listening to 1000 variations of the same Rihanna song? </div>
+    <div class="grid-text">Lack of collective social experiences (TV, fashion, tastes)
+    </div>
+  </div>
+
+
+  <div class="grid-item" style="left: 2%; top: 70%;">
+    <img class="grid-image" src="2020assets/kid_face.png"></img>
+    <div class="specialhover">In a world of infinitely personalizable consumption, what happens when people are listening to 1000 variations of the same Rihanna song? </div>
+    <div class="grid-text">Lack of collective social experiences (TV, fashion, tastes)
+    </div>
+  </div>
+
+  <div class="grid-item" style="left: 80%; top: 40%;">
+    <img class="grid-image" src="2020assets/kid_face.png"></img>
+    <div class="specialhover">In a world of infinitely personalizable consumption, what happens when people are listening to 1000 variations of the same Rihanna song? </div>
+    <div class="grid-text">Lack of collective social experiences (TV, fashion, tastes)
+    </div>
+  </div>
+
+</div>
+
+
+<!-- LLM STUFF -->
+<!-- LLM STUFF -->
+<!-- LLM STUFF -->
+
+<script>
+  const API_KEY = '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';
+
+// Function to update the text inside .grid-item based on the X-axis position
+async function updateTextOnDrag(position, gridItem) {
+  // Adjust the range of the position to match the desired temperature range
+  const temperature = (position - 0) * (1.0 - 0.2) / (100 - 0) + 0.2;
+
+  // Get the existing text inside .grid-item
+  const gridItem = document.querySelector('.grid-item');
+const specialHoverText = gridItem.querySelector('.specialhover').textContent.trim();
+const gridText = gridItem.querySelector('.grid-text').textContent.trim();
+const existingText = specialHoverText + ' ' + gridText;
+
+
+  // Construct the OpenAI API request
+  const apiUrl = 'https://api.openai.com/v1/chat/completions';
+  const prompt = `You are a philosophy and sociology professor. You are given statements about the impact of AI on society, and are responsible for interpreting them more positively.\nStatement: ${existingText}`;
+  const model = 'gpt-3.5-turbo';
+  const messages = [
+    { 'role': 'system', 'content': 'You are a user dragging a .grid-item div on the X-axis.'},
+    { 'role': 'user', 'content': `Drag position: ${position}` },
+  ];
+  const maxTokens = 10;
+  const response = await fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer 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',
+    },
+    body: JSON.stringify({
+      prompt,
+      model,
+      messages,
+      max_tokens: maxTokens,
+      temperature,
+    }),
+  });
+
+   // Extract the generated text from the API response (same as before)
+   const data = await response.json();
+  const generatedText = data.choices[0].message.content;
+
+  // Update the text inside .grid-item (same as before)
+  const gridText = gridItem.querySelector('.grid-text');
+  gridText.textContent = generatedText;
+}
+
+gridItems.forEach((gridItem) => {
+  let isDragging = false;
+  let startPositionX = 0;
+  let currentPositionX = 0;
+
+  gridItem.addEventListener('mousedown', handleDragStart);
+  gridItem.addEventListener('mousemove', handleDrag);
+  gridItem.addEventListener('mouseup', handleDragEnd);
+  gridItem.addEventListener('mouseleave', handleDragEnd);
+
+  function handleDragStart(event) {
+    isDragging = true;
+    startPositionX = event.clientX;
+    currentPositionX = parseInt(gridItem.style.transform.split('(')[1]);
+  }
+
+  function handleDrag(event) {
+    if (!isDragging) return;
+
+    const dragOffsetX = event.clientX - startPositionX;
+    const newPositionX = currentPositionX + dragOffsetX;
+  // Update the position of the current .grid-item based on drag movement
+  gridItem.style.transform = `translateX(${newPositionX}px)`;
+
+// Update the text based on the new position and temperature for the current .grid-item
+updateTextOnDrag(newPositionX, gridItem);
+}
+
+function handleDragEnd() {
+isDragging = false;
+}
+
+// Example usage
+// If you have an initial position, you can set it here
+const initialPositionX = 75;
+gridItem.style.transform = `translateX(${initialPositionX}px)`;
+updateTextOnDrag(initialPositionX, gridItem);
+});
+
+</script>
+
+
+
+
 
 
 

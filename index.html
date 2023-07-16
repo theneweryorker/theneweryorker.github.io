@@ -441,7 +441,7 @@
 <!-- LLM STUFF -->
 
 <script>
-  const API_KEY = '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';
+const apiKey = process.env.OPENAI_API_KEY;
 
 // Function to update the text inside .grid-item based on the X-axis position
 async function updateTextOnDrag(position, gridItem) {
@@ -468,7 +468,7 @@ const existingText = specialHoverText + ' ' + grid_Text;
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer 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',
+      'Authorization': 'Bearer ${apiKey}',
     },
     body: JSON.stringify({
       prompt,

@@ -409,11 +409,16 @@
 		/* grid-template-columns: repeat(4, 1fr);
 		grid-template-rows: repeat(4, 1fr); */
 		gap: 10px;
-		height: 50em;
+		height: 45em;
 	  }
   
 	  .grid-item {
 		position: absolute;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
 		/* border: 1px solid black; */
 		padding: 0.1em;
 		/* display: flex;
@@ -425,10 +430,13 @@
 	  }
 
 	  .grid-text{
-		max-width: 10em;
+		max-width: 12em;
 		line-height: 1em;
 		font-size: 0.8em;
 		text-align: center;
+		background-color: white;
+		letter-spacing: -0.02rem;
+
 	  }
   
 	  .axis-line {
@@ -452,8 +460,11 @@
   
 	  .axis-title {
 		position: absolute;
-		font-weight: bold;
 		text-align: center;
+		font-family: "century-old-style-std", serif;
+		font-size: 2em;
+		letter-spacing: -0.15rem;
+		color: red;
 	  }
   
 	  .x-axis-title-left {
@@ -468,8 +479,14 @@
 		transform: translateX(50%);
 	  }
   
-	  .y-axis-title {
+	  .y-axis-title-top {
 		top: 0%;
+		left: calc(50% + 10px);
+		transform: translateY(-50%);
+	  }
+
+	  .y-axis-title-bottom {
+		top: 100%;
 		left: calc(50% + 10px);
 		transform: translateY(-50%);
 	  }
@@ -487,14 +504,37 @@
 		border: 1px solid #ccc;
 		border-radius: 4px;
 		padding: 10px;
-		min-width: 10em;
+		min-width: 14em;
 		line-height: 1em;
 		font-size: 0.8em;
 	  }
 
 	  .grid-image{
-	margin: 0em 3em -0.5em 3em;
-		max-height: 2em;
+	/* margin: 0em 1em -0.3em 3em; */
+		max-height: 2.5em;
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 10%;
+	
+	  }
+
+	  .section4container{
+		display: flex;
+	  }
+
+	  .section4notes{
+		z-index: 100;
+		color: #000000;
+		background-color: #FFFF88;
+		border-color: black;
+		width: 5em;
+		height: 3em;
+		top: 2em;
+		left: 2em;
 		
-		
+	  }
+
+	  .section4window{
+		border-width: 3px;
+		border-style: solid;
 	  }

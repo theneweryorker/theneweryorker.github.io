@@ -430,12 +430,13 @@
 	  }
 
 	  .grid-text{
-		max-width: 12em;
+		max-width: 13em;
 		line-height: 1em;
 		font-size: 0.8em;
 		text-align: center;
 		background-color: white;
 		letter-spacing: -0.02rem;
+		/* z-index: 2; */
 
 	  }
   
@@ -507,14 +508,15 @@
 		min-width: 14em;
 		line-height: 1em;
 		font-size: 0.8em;
+		/* z-index: 1000; */
 	  }
 
 	  .grid-image{
 	/* margin: 0em 1em -0.3em 3em; */
-		max-height: 2.5em;
+		max-height: 3em;
 		display: block;
 		margin: 0 auto;
-		margin-bottom: 10%;
+		margin-bottom: 5%;
 	
 	  }
 

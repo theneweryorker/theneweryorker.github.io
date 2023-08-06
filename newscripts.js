@@ -4,9 +4,7 @@ gridItems = document.querySelectorAll('.grid-item');
 let rating = 0;
 const minDragDistance = 50;
 
-
 gridItems.forEach((gridItem) => {
-
     gridItem.addEventListener('mousedown', handleDragStart);
     gridItem.addEventListener('mousemove', handleDrag);
     gridItem.addEventListener('mouseup', handleDragEnd);
@@ -112,8 +110,6 @@ gridItems.forEach((gridItem) => {
 });
 
 async function updateTextOnDrop(positionX, positionY, gridItem, isPositive, isBig) {
-
-
     // Get the existing text inside .grid-item
     const specialHoverText = gridItem.querySelector('.specialhover').textContent.trim();
     const grid_Text = gridItem.querySelector('.grid-text').textContent.trim();
@@ -130,7 +126,6 @@ async function updateTextOnDrop(positionX, positionY, gridItem, isPositive, isBi
     bigMessage = "The statement your students have given you have underestimated the scale of the impact, and that the impact of AI will be much larger than they anticipate."
 
     smallMessage = "The statement your students have given you are far too are exaggerated, and you will convince them that impact is minimal."
-
 
     contentString = "You are a philosophy and sociology professor who is trying to come up with counterpoints to her students' statements. You will be given a statement about the impact of AI on society, and two scores: an intensity score, and a size score. Both scores will range from 1 to 10. Your stance is that " + (isPositive ? positiveMessage : negativeMessage) + "The social intensity score will dictate how enthusiastically you argue this point, where 1 is ambivalently and 10 is very passionately. When it comes to the scale of the impact, your stance is that " + (isBig ? bigMessage : smallMessage) + "The size intensity score you will be given will dictate the size of the impact in your argument, where 1 is a small impact, and 10 is a massive impact. Your response will reflect your stance on AI's positive or negative impact on society, as well as the size of that impact. Your response should have two parts: the first should be your primary argument in under 30 words, and the second part should be explainer text that supports the primary consequence in less than 30 words. Output the two parts of the response as a JSON object. The key of part 1 should be \"headline\" and the key of part 2 should be \"explainer\". Examples: {\"headline\": \"AI can cause emotional damage to young teens\",\"AI image generation can lead to increasing amounts of inappropriate photography\", \"explainer\": \"AI can lead to more seamless ways of communicating with one another\",\"AI can enable more seamless translation, allowing for unprecedented amounts of interlingual communication.\"}"
     
@@ -158,33 +153,13 @@ async function updateTextOnDrop(positionX, positionY, gridItem, isPositive, isBi
         }),
     });
 
-    // Extract the generated text from the API response (same as before)
-    // const data = await response.json();
-    // const generatedText = data.choices[0].message.content;
-    // console.log(generatedText);
-    // const parsed = JSON.parse(generatedText);
-    // console.log(parsed);
-    // const newHeadline = parsed[0];
-    // const newExplanation = parsed[1];
-    // console.log(newExplanation);
-
-
-    // // Update the text inside .grid-item (same as before)
-    // const gridText = gridItem.querySelector('.grid-text');
-    // gridText.textContent = newHeadline;
-
-    // const hoverText = gridItem.querySelector('.specialhover');
-    // hoverText.textContent = newExplanation;
-
     const data = await response.json();
     const generatedText = data.choices[0].message.content;
-    // console.log(generatedText);
 
     const parsedText = JSON.parse(generatedText)
     const newHeadline = parsedText.headline
     const newExplanation = parsedText.explainer
 
-    // console.log(rating);
     console.log('New Headline:', newHeadline);
     console.log('New Explanation:', newExplanation);
 

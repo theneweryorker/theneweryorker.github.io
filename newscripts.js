@@ -122,7 +122,6 @@ gridItems.forEach((gridItem) => {
         console.log(determinePositionRelativeToCenter(event, gridItem))
         updateTextOnDrop(0, 0, gridItem, isPositive, isBig);
     }
-
 });
 
 function determinePositionRelativeToCenter(dragEvent, gridItem) {
@@ -163,7 +162,6 @@ function determinePositionRelativeToCenter(dragEvent, gridItem) {
     const offsetYScaled = Math.round((offsetY / (divHeight/2)) * 10);
 
     // Offset scales will now be 0 to 10 relative to div size
-
     return {
         offsetX: offsetXScaled, 
         offsetY: offsetYScaled,

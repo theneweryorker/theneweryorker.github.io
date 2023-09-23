@@ -48,53 +48,28 @@ gridItems.forEach((gridItem) => {
 
         // console.log(dragOffsetX);
 
-        if (dragOffsetX > 20) {
-            isPositive = true;
-        } else if (dragOffsetX < 20) {
-            isPositive = false;
-        } else {
-            dragDirection = ''; // Reset the direction if there is no drag movement
-        }
+        // if (dragOffsetX > 20) {
+        //     isPositive = true;
+        // } else if (dragOffsetX < 20) {
+        //     isPositive = false;
+        // } else {
+        //     dragDirection = ''; // Reset the direction if there is no drag movement
+        // }
 
-        console.log(`Offset X: ${dragOffsetX}`);
+        // console.log(`Offset X: ${dragOffsetX}`);
 
-        if (dragOffsetY < 20) {
-            isBig = true;
-        } else if (dragOffsetY > 20) {
-            isBig = false;
-        } else {
-            dragDirection = ''; // Reset the direction if there is no drag movement
-        }
+        // if (dragOffsetY < 20) {
+        //     isBig = true;
+        // } else if (dragOffsetY > 20) {
+        //     isBig = false;
+        // } else {
+        //     dragDirection = ''; // Reset the direction if there is no drag movement
+        // }
 
-        console.log(`Offset Y: ${dragOffsetY}`);
-
-        // Update the position of the current .grid-item based on drag movement
-        // gridItem.style.transform = `translateX(${newPositionX}px)`;
-        // gridItem.style.transform = `translateY(${newPositionY}px)`;
-
-        // fixed code 
         gridItem.style.transform = `translate(${newPositionX}px, ${newPositionY}px)`;
 
 
-        const absX = Math.abs(dragOffsetX);
-        console.log(`Abs X: ${absX}`);
-  
-        const absY = Math.abs(dragOffsetY);
-        console.log(`Abs Y: ${absY}`);
-        const windowWidth = window.innerWidth;
-
-
-     if (absX <= 20 && absY >= 20) {
-            ratingY = Math.floor((absY / windowWidth) * 10) + 1; 
-            rating = 0;
-          }
-          else if (absX >= 20 && absY <= 20){ 
-            rating = Math.floor((absX / windowWidth) * 10) + 3;
-            ratingY = 0;
-          }
-        
-        console.log(`ratingY: ${ratingY}`);
-        console.log(`rating: ${rating}`);
+    
     }
 
     function handleDragEnd(event) {
@@ -104,30 +79,104 @@ gridItems.forEach((gridItem) => {
         isDragging = false;
         // gridItem.style.zIndex = 'auto';
         gridItem.style.position = '';
-        updateTextOnDrop(0, 0, gridItem, isPositive, isBig);
+        relativePosition = determinePositionRelativeToCenter(event, gridItem);
+        console.log(relativePosition.offsetX) //or .offsetY, or .quadrant
+        updateTextOnDrop(gridItem, relativePosition);
     }
 
 });
 
-async function updateTextOnDrop(positionX, positionY, gridItem, isPositive, isBig) {
+function determinePositionRelativeToCenter(dragEvent, gridItem) {
+    // Get the center point of the containing div
+    const divRect = gridItem.parentNode.getBoundingClientRect(); 
+    const divCenterX = divRect.left + divRect.width/2;
+    const divCenterY = divRect.top + divRect.height/2;
+    console.log(`divCenterY: ${divCenterY}`)
+    
+    // Get the end point of the drag event
+    const dragEndX = dragEvent.clientX; 
+    const dragEndY = dragEvent.clientY;
+    console.log(`dragEndY: ${dragEndY}`)
+  
+    // Calculate the offset from the center
+    const offsetX = dragEndX - divCenterX;
+    const offsetY = (dragEndY - divCenterY) * -1; //need to flip since the Y axis is "positive" going down the page
+    console.log(`offsetY: ${offsetY}`)
+  
+    // Determine quadrant based on offset signs
+    let quadrant = "";
+    if (offsetX > 0 && offsetY >= 0) {
+      quadrant = "top_right"; 
+    } else if (offsetX <= 0 && offsetY > 0) {
+      quadrant = "top_left";
+    } else if (offsetX < 0 && offsetY <= 0) {
+      quadrant = "bottom_left";
+    } else {
+      quadrant = "bottom_right";
+    }
+  
+    // Get width and height of containing div
+    const divWidth = gridItem.clientWidth;
+    const divHeight = gridItem.clientHeight;
+
+    // Scale offsets to a range of 0 to 10
+    const offsetXScaled = Math.round((offsetX / (divWidth/2)) * 10);
+    const offsetYScaled = Math.round((offsetY / (divHeight/2)) * 10);
+
+    // Offset scales will now be 0 to 10 relative to div size
+    return {
+        offsetX: offsetXScaled, 
+        offsetY: offsetYScaled,
+        quadrant
+    };
+  }
+
+async function updateTextOnDrop(gridItem, relativePosition) {
     // Get the existing text inside .grid-item
     const specialHoverText = gridItem.querySelector('.specialhover').textContent.trim();
     const grid_Text = gridItem.querySelector('.grid-text').textContent.trim();
-    const existingText = specialHoverText + ' ' + grid_Text;
-    console.log(`Is positive: ${isPositive}`);
-    console.log(`Is big: ${isBig}`);
+    const existingText =  grid_Text;
+
+
+    if (relativePosition.offsetX > 0) {
+        stance = "optimistic";
+    } else {
+        stance = "pessimistic";
+    }
+
+    if (relativePosition.offsetY > 0) {
+        rolename = "Isaac Asimov, the sci-fi author";
+  
+        method = "Paint a sci-fi future"
+    } else {
+        rolename = "Confucius, the poet";
+
+        method = "Write a poem"
+    }
+
+    const absY = Math.abs(relativePosition.offsetY);
+    const absX = Math.abs(relativePosition.offsetX);
+
+    if (absY > 30){
+        severityY = "a very intense version of"
+    } else {
+        severityY = "a pretty chill version of"
+    }
+
+    if (absX > 30){
+        severityX = "extremely";
+    } else {
+        severityX = "a little";
+    }
+
+
 
     // return;
 
-    positiveMessage = "You are a fervent supporter of AI, and believes that it can enhance human potential. You want to convince others of the positive potential of AI to help humans."
 
-    negativeMessage = "You believe AI will take over the world, at the cost of human happiness or quality of life. You are confident that it will have detrimental effects for humans and society."
+    contentString = "You are " + severityY + " " + rolename + ". You are" + severityX + " " + stance + "about the effects of AI." + method + " in response to the statement you are given in 20 words or less."
 
-    bigMessage = "The statement your students have given you have underestimated the scale of the impact, and that the impact of AI will be much larger than they anticipate."
-
-    smallMessage = "The statement your students have given you are far too are exaggerated, and you will convince them that impact is minimal."
-
-    contentString = "You are a philosophy and sociology professor who is trying to come up with counterpoints to her students' statements. You will be given a statement about the impact of AI on society, and two scores: an intensity score, and a size score. Both scores will range from 1 to 10. Your stance is that " + (isPositive ? positiveMessage : negativeMessage) + "The social intensity score will dictate how enthusiastically you argue this point, where 1 is ambivalently and 10 is very passionately. When it comes to the scale of the impact, your stance is that " + (isBig ? bigMessage : smallMessage) + "The size intensity score you will be given will dictate the size of the impact in your argument, where 1 is a small impact, and 10 is a massive impact. Your response will reflect your stance on AI's positive or negative impact on society, as well as the size of that impact. Your response should have two parts: the first should be your primary argument in under 30 words, and the second part should be explainer text that supports the primary consequence in less than 30 words. Output the two parts of the response as a JSON object. The key of part 1 should be \"headline\" and the key of part 2 should be \"explainer\". Examples: {\"headline\": \"AI can cause emotional damage to young teens\",\"AI image generation can lead to increasing amounts of inappropriate photography\", \"explainer\": \"AI can lead to more seamless ways of communicating with one another\",\"AI can enable more seamless translation, allowing for unprecedented amounts of interlingual communication.\"}"
+    console.log(contentString);
     
 
     // console.log(isPositive);
@@ -137,7 +186,7 @@ async function updateTextOnDrop(positionX, positionY, gridItem, isPositive, isBi
     // Construct the OpenAI API request
     const messages = [
         { 'role': 'system', 'content': contentString },
-        { 'role': 'user', 'content': `Statement: ${existingText}, social intensity: ${rating}, size intensity:${ratingY}` },
+        { 'role': 'user', 'content': `Statement: ${existingText}`},
     ];
 
     const response = await fetch('https://us-central1-holly-wrappers.cloudfunctions.net/oaiChatWrapper', {
@@ -153,23 +202,25 @@ async function updateTextOnDrop(positionX, positionY, gridItem, isPositive, isBi
         }),
     });
 
+
     const data = await response.json();
     const generatedText = data.choices[0].message.content;
+    console.log(generatedText);
+    console.log(existingText);
+    // const parsedText = JSON.parse(generatedText)
+    // const newHeadline = parsedText.headline
+    // const newExplanation = parsedText.explainer
 
-    const parsedText = JSON.parse(generatedText)
-    const newHeadline = parsedText.headline
-    const newExplanation = parsedText.explainer
-
-    console.log('New Headline:', newHeadline);
-    console.log('New Explanation:', newExplanation);
+    // console.log('New Headline:', newHeadline);
+    // console.log('New Explanation:', newExplanation);
 
     const gridText = gridItem.querySelector('.grid-text');
-    gridText.textContent = newHeadline;
+    gridText.textContent = generatedText;
     gridText.style.color = '#D375FF';
 
     const hoverText = gridItem.querySelector('.specialhover');
-    hoverText.textContent = newExplanation;
-    hoverText.style.color = '#D375FF';
+    hoverText.textContent = "original: " + existingText;
+    hoverText.style.color = '#00000';
 
 
 }

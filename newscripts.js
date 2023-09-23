@@ -26,6 +26,18 @@ gridItems.forEach((gridItem) => {
     gridItem.style.transform = `translateX(${initialPositionX}px)`;
     gridItem.style.transform = `translateY(${initialPositionY}px)`;
 
+    /**
+    * we basically need two systems
+    * one to figure out where to render new stuff
+    * and then math on top of that to figure out where the origin is and what quadrant we're in now
+    *   for this we need:
+    *   a) figure out origin
+    *   b) figure out position relative to origin
+    *   c) figure out quadrants based on that 
+    */
+
+    // Helper functions below ============>
+
     function handleDragStart(event) {
         // console.log("start")
         gridItem.style.position = 'absolute';
@@ -34,6 +46,9 @@ gridItems.forEach((gridItem) => {
         isDragging = true;
         startPositionX = event.clientX;
         startPositionY = event.clientY;
+
+        console.log(`Start X: ${event.clientX}`)
+        console.log(`Start Y: ${event.clientY}`)
 
         // currentPositionX = parseInt(gridItem.style.transform.split('(')[1]);
         // console.log(currentPositionX);
@@ -56,7 +71,7 @@ gridItems.forEach((gridItem) => {
             dragDirection = ''; // Reset the direction if there is no drag movement
         }
 
-        console.log(`Offset X: ${dragOffsetX}`);
+        // console.log(`Offset X: ${dragOffsetX}`);
 
         if (dragOffsetY < 20) {
             isBig = true;
@@ -66,7 +81,7 @@ gridItems.forEach((gridItem) => {
             dragDirection = ''; // Reset the direction if there is no drag movement
         }
 
-        console.log(`Offset Y: ${dragOffsetY}`);
+        // console.log(`Offset Y: ${dragOffsetY}`);
 
         // Update the position of the current .grid-item based on drag movement
         // gridItem.style.transform = `translateX(${newPositionX}px)`;
@@ -77,10 +92,10 @@ gridItems.forEach((gridItem) => {
 
 
         const absX = Math.abs(dragOffsetX);
-        console.log(`Abs X: ${absX}`);
+        // console.log(`Abs X: ${absX}`);
   
         const absY = Math.abs(dragOffsetY);
-        console.log(`Abs Y: ${absY}`);
+        // console.log(`Abs Y: ${absY}`);
         const windowWidth = window.innerWidth;
 
 
@@ -93,29 +108,76 @@ gridItems.forEach((gridItem) => {
             ratingY = 0;
           }
         
-        console.log(`ratingY: ${ratingY}`);
-        console.log(`rating: ${rating}`);
+        // console.log(`ratingY: ${ratingY}`);
+        // console.log(`rating: ${rating}`);
     }
 
     function handleDragEnd(event) {
         if (!isDragging) return;
-        // console.log("end")
-        // console.log(rating);
+        console.log(`End X: ${event.clientX}`)
+        console.log(`End Y: ${event.clientY}`)
         isDragging = false;
         // gridItem.style.zIndex = 'auto';
         gridItem.style.position = '';
+        console.log(determinePositionRelativeToCenter(event, gridItem))
         updateTextOnDrop(0, 0, gridItem, isPositive, isBig);
     }
 
 });
+
+function determinePositionRelativeToCenter(dragEvent, gridItem) {
+    // Get the center point of the containing div
+    const divRect = gridItem.parentNode.getBoundingClientRect(); 
+    const divCenterX = divRect.left + divRect.width/2;
+    const divCenterY = divRect.top + divRect.height/2;
+    console.log(`divCenterY: ${divCenterY}`)
+    
+    // Get the end point of the drag event
+    const dragEndX = dragEvent.clientX; 
+    const dragEndY = dragEvent.clientY;
+    console.log(`dragEndY: ${dragEndY}`)
+  
+    // Calculate the offset from the center
+    const offsetX = dragEndX - divCenterX;
+    const offsetY = (dragEndY - divCenterY) * -1; //need to flip since the Y axis is "positive" going down the page
+    console.log(`offsetY: ${offsetY}`)
+  
+    // Determine quadrant based on offset signs
+    let quadrant = "";
+    if (offsetX > 0 && offsetY >= 0) {
+      quadrant = "top_right"; 
+    } else if (offsetX <= 0 && offsetY > 0) {
+      quadrant = "top_left";
+    } else if (offsetX < 0 && offsetY <= 0) {
+      quadrant = "bottom_left";
+    } else {
+      quadrant = "bottom_right";
+    }
+  
+    // Get width and height of containing div
+    const divWidth = gridItem.clientWidth;
+    const divHeight = gridItem.clientHeight;
+
+    // Scale offsets to a range of 0 to 10
+    const offsetXScaled = Math.round((offsetX / (divWidth/2)) * 10);
+    const offsetYScaled = Math.round((offsetY / (divHeight/2)) * 10);
+
+    // Offset scales will now be 0 to 10 relative to div size
+
+    return {
+        offsetX: offsetXScaled, 
+        offsetY: offsetYScaled,
+        quadrant
+    };
+  }
 
 async function updateTextOnDrop(positionX, positionY, gridItem, isPositive, isBig) {
     // Get the existing text inside .grid-item
     const specialHoverText = gridItem.querySelector('.specialhover').textContent.trim();
     const grid_Text = gridItem.querySelector('.grid-text').textContent.trim();
     const existingText = specialHoverText + ' ' + grid_Text;
-    console.log(`Is positive: ${isPositive}`);
-    console.log(`Is big: ${isBig}`);
+    // console.log(`Is positive: ${isPositive}`);
+    // console.log(`Is big: ${isBig}`);
 
     // return;
 
@@ -177,15 +239,10 @@ async function updateTextOnDrop(positionX, positionY, gridItem, isPositive, isBi
 /**
  * things to talk bout
  * 
- * TODOs:
- * - write a summary, and then onhover show the longer version pls
- * - take off the word statement
- * - can we add a button to reset
- * - adding intensity into the prompt
- * 
- * 
- * Thoughts:
- * - how a http request works
- * - organizing all yoru code
- * - temperature doesn't do what you think it does
+ * Bugs:
+ * - make the currently active image and text always zindex max so its above other images
+ * - images are click and dragabble to save as assets which messes with ability to actually click and drag them, need to turn that off
+ * - enable dragging a component twice, it snaps to starting point back right now 
+ * - refactor js files for the new homepage somehow
+ * - [p2] refactor the overall directory and make a readnme 
  */

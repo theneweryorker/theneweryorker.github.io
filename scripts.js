@@ -13,53 +13,43 @@ gridItems.forEach((gridItem) => {
     let isDragging = false;
 
     let startPositionX = 0;
-    let currentPositionX = 0;
     let startPositionY = 0;
-    let currentPositionY = 0;
-    
-    let isPositive = true;
-    let isBig = true;
-
-    const initialPositionX = 0;
-    const initialPositionY = 0;
-
-    gridItem.style.transform = `translateX(${initialPositionX}px)`;
-    gridItem.style.transform = `translateY(${initialPositionY}px)`;
 
     function handleDragStart(event) {
-        // console.log("start")
-        gridItem.style.position = 'absolute';
-        gridItem.style.zIndex = 1000;
-
-        isDragging = true;
+        // grab position at beginning of drag in coordinates relative to viewport to calculate diff later
         startPositionX = event.clientX;
         startPositionY = event.clientY;
-
-        // currentPositionX = parseInt(gridItem.style.transform.split('(')[1]);
-        // console.log(currentPositionX);
+        console.log(`start viewport coords: ${startPositionX}, ${startPositionY}`)
+        
+        gridItem.style.position = 'absolute';
+        gridItem.style.zIndex = 1000;
+        isDragging = true;
     }
 
     function handleDrag(event) {
         if (!isDragging) return;
-        const dragOffsetX = event.clientX - startPositionX;
-        const dragOffsetY = event.clientY - startPositionY;
-        const newPositionX = currentPositionX + dragOffsetX;
-        const newPositionY = currentPositionY + dragOffsetY;
-        gridItem.style.transform = `translate(${newPositionX}px, ${newPositionY}px)`;
+        gridItem.style.transform = `translate(${event.clientX - startPositionX}px, ${event.clientY - startPositionY}px)`;
     }
 
     function handleDragEnd(event) {
         if (!isDragging) return;
-        // console.log("end")
-        // console.log(rating);
-        isDragging = false;
-        // gridItem.style.zIndex = 'auto';
+
+        // Measure movement from beginning of drag in coordinates relative to viewport
+        offsetX = event.clientX - startPositionX;
+        offsetY = event.clientY - startPositionY;
+
+        // Update element's position in coordinates relative to element's parent
+        gridItem.style.left = `${gridItem.offsetLeft + offsetX}px`; 
+        gridItem.style.top = `${gridItem.offsetTop + offsetY}px`;
+        
+        // Reset transform
+        gridItem.style.transform = '';
         gridItem.style.position = '';
+
+        isDragging = false;
         relativePosition = determinePositionRelativeToCenter(event, gridItem);
-        console.log(relativePosition.offsetX) //or .offsetY, or .quadrant
         updateTextOnDrop(gridItem, relativePosition);
     }
-
 });
 
 function determinePositionRelativeToCenter(dragEvent, gridItem) {
@@ -157,8 +147,8 @@ async function updateTextOnDrop(gridItem, relativePosition) {
 
     const data = await response.json();
     const generatedText = data.choices[0].message.content;
-    console.log(generatedText);
-    console.log(existingText);
+    console.log(`Old: ${existingText}`);
+    console.log(`New: ${generatedText}`);
     
     const gridText = gridItem.querySelector('.grid-text');
     gridText.textContent = generatedText;
@@ -167,6 +157,11 @@ async function updateTextOnDrop(gridItem, relativePosition) {
     const hoverText = gridItem.querySelector('.specialhover');
     hoverText.textContent = "original: " + existingText;
     hoverText.style.color = '#00000';
-
-
 }
+
+/**
+ * todos:
+ * - fix flicker bug
+ * - add waiting symbol
+ * - dont make it clickable again until answer returns
+ */

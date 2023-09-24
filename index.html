@@ -351,7 +351,7 @@
 
       <div id="about" class="window" style=" width: 8em;height: 12em; top: 1em; margin-left: -1em;">
         <h3 style="text-align: left; padding-left: 13px;">NOTES<span class="toggle"></span></h3>
-        <textarea id="textarea" rows="4" cols="50" placeholder="You can write here"></textarea>
+        <textarea class="textarea" id="sticky" rows="4" cols="50" placeholder="You can write here"></textarea>
 
         <!-- <div id="canvasContainer" width="100%;"></div> -->
       </div>
@@ -564,6 +564,15 @@
       </div>
     </div>
 
+<!-- // open text  -->
+    <div class="grid-item-input" style="left: 43%; top: 30%;">
+      <img class="grid-image" src="assets/movie.webp" style="border-radius: 20%; min-width:3em; min-height: 4em;"></img>
+      
+      <textarea class="textarea" id="speculation" rows="2" cols="30" value={response} placeholder="You can write your own here"></textarea>
+      <button id="submit">Submit</button>
+        <!-- // Aspirational TODO - get rid of the submit button -->
+    </div>
+
     <div class="grid-item" style="left: 80%; top: 3%;">
       <img class="grid-image" src="assets/renaissance.png"
         style="border-radius: 7%; min-width:3em; min-height: 4em;"></img>
@@ -654,6 +663,7 @@
   <script src="js/homepage.js"></script>
   <script src="js/p5.js"></script>
   <script src="scripts/section4.js"></script>
+  <script src="scripts/section5.js"></script>
 </body>
 
 </html>

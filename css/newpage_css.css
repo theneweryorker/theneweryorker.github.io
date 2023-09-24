@@ -203,7 +203,7 @@
 		margin-left: 0.9em;
 	  }
 
-	  #textarea{
+	  .textarea{
 		font-family: adobe-caslon-pro, serif;
 		color: black;
 		font-size: 1em;
@@ -427,6 +427,27 @@
 		/* flex-wrap: wrap; */
 		cursor: move;
 		user-select: none;
+	  }
+
+	  .grid-item-input{
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		/* border: 1px solid black; */
+		padding: 0.1em;
+		/* display: flex;
+		align-items: center;
+    	justify-content: center; */
+		/* flex-wrap: wrap; */
+		cursor: move;
+		user-select: none;
+		line-height: 1em;
+		font-size: 0.8em;
+
+
 	  }
 
 	  .grid-text{

@@ -19,7 +19,6 @@ gridItems.forEach((gridItem) => {
         // grab position at beginning of drag in coordinates relative to viewport to calculate diff later
         startPositionX = event.clientX;
         startPositionY = event.clientY;
-        console.log(`start viewport coords: ${startPositionX}, ${startPositionY}`)
         
         gridItem.style.position = 'absolute';
         gridItem.style.zIndex = 1000;
@@ -57,17 +56,14 @@ function determinePositionRelativeToCenter(dragEvent, gridItem) {
     const divRect = gridItem.parentNode.getBoundingClientRect(); 
     const divCenterX = divRect.left + divRect.width/2;
     const divCenterY = divRect.top + divRect.height/2;
-    console.log(`divCenterY: ${divCenterY}`)
     
     // Get the end point of the drag event
     const dragEndX = dragEvent.clientX; 
     const dragEndY = dragEvent.clientY;
-    console.log(`dragEndY: ${dragEndY}`)
   
     // Calculate the offset from the center
     const offsetX = dragEndX - divCenterX;
     const offsetY = (dragEndY - divCenterY) * -1; //need to flip since the Y axis is "positive" going down the page
-    console.log(`offsetY: ${offsetY}`)
   
     // Determine quadrant based on offset signs
     let quadrant = "";
@@ -122,8 +118,6 @@ async function updateTextOnDrop(gridItem, relativePosition) {
     severityX = Math.abs(relativePosition.offsetX) > 30 ? "extremely" : "a little"
 
     contentString = "You are " + severityY + " " + rolename + ". You are" + severityX + " " + stance + "about the effects of AI." + method + " in response to the statement you are given in 20 words or less."
-
-    console.log(contentString);
     
     // Construct the OpenAI API request
     const messages = [
@@ -161,7 +155,6 @@ async function updateTextOnDrop(gridItem, relativePosition) {
 
 /**
  * todos:
- * - fix flicker bug
  * - add waiting symbol
  * - dont make it clickable again until answer returns
  */

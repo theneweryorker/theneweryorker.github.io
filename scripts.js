@@ -45,31 +45,7 @@ gridItems.forEach((gridItem) => {
         const dragOffsetY = event.clientY - startPositionY;
         const newPositionX = currentPositionX + dragOffsetX;
         const newPositionY = currentPositionY + dragOffsetY;
-
-        // console.log(dragOffsetX);
-
-        // if (dragOffsetX > 20) {
-        //     isPositive = true;
-        // } else if (dragOffsetX < 20) {
-        //     isPositive = false;
-        // } else {
-        //     dragDirection = ''; // Reset the direction if there is no drag movement
-        // }
-
-        // console.log(`Offset X: ${dragOffsetX}`);
-
-        // if (dragOffsetY < 20) {
-        //     isBig = true;
-        // } else if (dragOffsetY > 20) {
-        //     isBig = false;
-        // } else {
-        //     dragDirection = ''; // Reset the direction if there is no drag movement
-        // }
-
         gridItem.style.transform = `translate(${newPositionX}px, ${newPositionY}px)`;
-
-
-    
     }
 
     function handleDragEnd(event) {
@@ -146,43 +122,19 @@ async function updateTextOnDrop(gridItem, relativePosition) {
 
     if (relativePosition.offsetY > 0) {
         rolename = "Isaac Asimov, the sci-fi author";
-  
         method = "Paint a sci-fi future"
     } else {
         rolename = "Confucius, the poet";
-
         method = "Write a poem"
     }
 
-    const absY = Math.abs(relativePosition.offsetY);
-    const absX = Math.abs(relativePosition.offsetX);
-
-    if (absY > 30){
-        severityY = "a very intense version of"
-    } else {
-        severityY = "a pretty chill version of"
-    }
-
-    if (absX > 30){
-        severityX = "extremely";
-    } else {
-        severityX = "a little";
-    }
-
-
-
-    // return;
-
+    severityY = Math.abs(relativePosition.offsetY) > 30 ? "a very intense version of" : "a pretty chill version of"
+    severityX = Math.abs(relativePosition.offsetX) > 30 ? "extremely" : "a little"
 
     contentString = "You are " + severityY + " " + rolename + ". You are" + severityX + " " + stance + "about the effects of AI." + method + " in response to the statement you are given in 20 words or less."
 
     console.log(contentString);
     
-
-    // console.log(isPositive);
-    // console.log(contentString);
-
-
     // Construct the OpenAI API request
     const messages = [
         { 'role': 'system', 'content': contentString },
@@ -207,13 +159,7 @@ async function updateTextOnDrop(gridItem, relativePosition) {
     const generatedText = data.choices[0].message.content;
     console.log(generatedText);
     console.log(existingText);
-    // const parsedText = JSON.parse(generatedText)
-    // const newHeadline = parsedText.headline
-    // const newExplanation = parsedText.explainer
-
-    // console.log('New Headline:', newHeadline);
-    // console.log('New Explanation:', newExplanation);
-
+    
     const gridText = gridItem.querySelector('.grid-text');
     gridText.textContent = generatedText;
     gridText.style.color = '#D375FF';
@@ -224,19 +170,3 @@ async function updateTextOnDrop(gridItem, relativePosition) {
 
 
 }
-
-/**
- * things to talk bout
- * 
- * TODOs:
- * - write a summary, and then onhover show the longer version pls
- * - take off the word statement
- * - can we add a button to reset
- * - adding intensity into the prompt
- * 
- * 
- * Thoughts:
- * - how a http request works
- * - organizing all yoru code
- * - temperature doesn't do what you think it does
- */

@@ -65,6 +65,8 @@ function handleSubmitClick(event){
 
     // Copy text from textarea 
     const userText = document.querySelector('#speculation').value;
+    document.querySelector('#speculation').style.color = 'red';
+
 
     // Create new grid text div
     const newTextDiv = document.createElement('div');
@@ -166,7 +168,7 @@ async function updateTextOnDrop(gridItem, relativePosition) {
     // Construct the OpenAI API request
     const messages = [
         { 'role': 'system', 'content': contentString },
-        { 'role': 'user', 'content': `Statement: ${existingText}`},
+        { 'role': 'user', 'content': `Statement: ${grid_Text}`},
     ];
 
     const response = await fetch('https://us-central1-holly-wrappers.cloudfunctions.net/oaiChatWrapper', {
@@ -189,7 +191,7 @@ async function updateTextOnDrop(gridItem, relativePosition) {
 
     const data = await response.json();
     const generatedText = data.choices[0].message.content;
-    console.log(`Old: ${existingText}`);
+    console.log(`Old: ${grid_Text}`);
     console.log(`New: ${generatedText}`);
     
     const gridText = gridItem.querySelector('.grid-text');
@@ -197,7 +199,7 @@ async function updateTextOnDrop(gridItem, relativePosition) {
     gridText.style.color = '#D375FF';
 
     const hoverText = gridItem.querySelector('.specialhover');
-    hoverText.textContent = "original: " + existingText;
+    hoverText.textContent = "original: " + grid_Text;
     hoverText.style.color = '#00000';
 }
 

@@ -1,103 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>XY Grid Example</title>
-  <style>
-    .grid-container {
-      position: relative;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(4, 1fr);
-      gap: 10px;
-      height: 400px;
-    }
-
-    .grid-item {
-      position: absolute;
-      border: 1px solid black;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: move;
-      user-select: none;
-    }
-
-    .axis-line {
-      position: absolute;
-      background-color: black;
-    }
-
-    .x-axis {
-      top: 50%;
-      left: 0;
-      width: 100%;
-      height: 1px;
-    }
-
-    .y-axis {
-      top: 0;
-      left: 50%;
-      width: 1px;
-      height: 100%;
-    }
-
-    .axis-title {
-      position: absolute;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .x-axis-title {
-      top: calc(50% + 10px);
-      left: 5%;
-      transform: translateX(-50%);
-    }
-
-    .y-axis-title {
-      top: 0%;
-      left: calc(50% + 10px);
-      transform: translateY(-50%);
-    }
-
-    .grid-item:hover .tooltip {
-      display: block;
-    }
-
-    .tooltip {
-      display: none;
-      position: absolute;
-      top: -60px;
-      left: 80px;
-      background-color: #f9f9f9;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding: 10px;
-    }
-  </style>
+  <title>Calculator Test </title> 
 </head>
 <body>
-  <div class="grid-container">
-    <div class="axis-line x-axis"></div>
-    <div class="axis-line y-axis"></div>
-    <div class="axis-title x-axis-title">X Axis</div>
-    <div class="axis-title y-axis-title">Y Axis</div>
-    <div class="grid-item" style="left: 10%; top: 20%;">
-      <div class="tooltip">Explainer text for Quadrant 1</div>
-      Quadrant 1
-    </div>
-    <div class="grid-item" style="left: 60%; top: 20%;">
-      <div class="tooltip">Explainer text for Quadrant 2</div>
-      Quadrant 2
-    </div>
-    <div class="grid-item" style="left: 10%; top: 60%;">
-      <div class="tooltip">Explainer text for Quadrant 3</div>
-      Quadrant 3
-    </div>
-    <div class="grid-item" style="left: 60%; top: 60%;">
-      <div class="tooltip">Explainer text for Quadrant 4</div>
-      Quadrant 4
-    </div>
+  <div class="grid-item-input" style="left: 67%; top: 55%;">
+    <img class="grid-image" src="assets/spiral-notepad.png" style="border-radius: 20%; min-width:3em; min-height: 4em;"></img>
+
+    <textarea class="textarea" id="speculation" rows="1" cols="30" value={response} placeholder="Write your own here. Click submit before dragging."></textarea>
+    <button id="submit">Submit</button>
+      <!-- // Aspirational TODO - get rid of the submit button -->
   </div>
 </body>
+<script src="js/p5.min.js"></script>
+
+
 </html>

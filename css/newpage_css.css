@@ -561,3 +561,8 @@
 		border-width: 3px;
 		border-style: solid;
 	  }
+
+
+#p5canvas > canvas {
+	outline: black 3px solid;
+}

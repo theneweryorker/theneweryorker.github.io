@@ -13,7 +13,7 @@ function setup() {
     
     // Add initial boxes
     for (let i = 0; i < 4; i++) {
-        boxes.push(new Box(100, 50, 150 + i*150, canvasHeight - 150));
+        boxes.push(new Box(200, 90, 100 + i*260, canvasHeight - 150));
     }
 }
 
@@ -39,6 +39,10 @@ function mouseReleased() {
     boxes.forEach(box => box.boxReleased()) //every time the release happens, " "
 }
 
+function keyPressed(){
+    boxes.forEach(box => box.boxKeyPressed())
+}
+
 // Text box class
 class Box {
     constructor(width, height, x, y) {
@@ -46,19 +50,16 @@ class Box {
         this.height = height;
         this.x = x
         this.y = y
-        this.isBeingDragged = false;
-        
+        this.isBeingDragged = false; // can probably remove this
+
+        this.text = "";
+        this.isTextField = false;
+
+        // create input field
         this.input = createInput('');
         this.input.parent("#p5canvas")
         this.input.position(this.x + myCanvasX, this.y + myCanvasY); 
         this.input.size(this.width, this.height);
-        
-        this.input.input(foo => {
-            console.log(foo)
-            console.log(this.input.value())
-
-            // if(foo == )
-        });
     }
 
 
@@ -66,46 +67,40 @@ class Box {
         // Check if the mouse cursor is over the box
         if (mouseX > this.x && mouseX < this.x + this.width && mouseY > this.y && mouseY < this.y + this.height) {
           // Set the isDragging variable to true
-        //   this.dragDistance = 0;
-        //   this.dragDistance += Math.abs(mouseY - this.y);
-        //   console.log(this.dragDistance);
-        //   this.dragDistance = 0;
           this.isBeingDragged = true;
-        //   this.isBeingDragged = true;
           this.offsetY = this.y - mouseY;
-        } else {
-            this.isBeingDragged = false;
-            console.log("huh?")
         }
       }
 
     boxReleased() {
         if (this.isBeingDragged) {
+            if (this.isTextField){
+                console.log("only trigger on releasing drag of txt fields")
+                var scaledScore = (Math.round(((this.y / 400)*10) + 1))*10
+                console.log(scaledScore);
+                this.updateTextOnDrop(scaledScore, this.text)
+            }
             this.isBeingDragged = false;
-        } else {
-            // If the box was not being dragged, it was just clicked
-            console.log("Just a click");
-            console.log(this.isBeingDragged);
         }
     }
-    
-    
-//somewhere here, isBeingDragged flips from false to true 
 
     boxDraw() {
-        // if we are dragging
-        if (!this.isBeingDragged){
-            return; 
+        if (this.isTextField){
+            if(this.isBeingDragged) {
+                this.y = mouseY + this.offsetY;
+                this.input.position(this.x + myCanvasX, this.y + myCanvasY);
+            }
+            // Display the text as a text field
+            fill(255);
+            rect(this.x, this.y, this.width, this.height);
+            fill(0);
+            text(this.text, this.x + (this.width*0.05) , this.y + (this.height * 0.1), this.width *0.9, this.height*0.9);
+            
         }
 
-        if(this.isBeingDragged) {
-    
-            // this.x = mouseX + this.offsetX;
+        if(this.isBeingDragged) { // if its a text field then drag around the text field and not the input lol rip
             this.y = mouseY + this.offsetY;
             this.input.position(this.x + myCanvasX, this.y + myCanvasY);
-            console.log(this.y);
-            let ease = Math.round(((this.y / 400)*10) + 1);
-            console.log(ease);
         }
     }
 
@@ -113,66 +108,75 @@ class Box {
         return (mouseX > this.x && mouseY > this.y && mouseX < this.x + this.width && mouseY < this.y + this.height);
     }
 
-}
+    boxKeyPressed() {
+        if (keyCode === ENTER && this.isFocused()) {
+            this.text = this.input.value();
 
+            // let textDiv = createDiv(this.text);
+            // textDiv.parent("#p5canvas");
+            // textDiv.position(this.x + 5, this.y + 5);
+            // textDiv.size(this.width - 10, this.height - 10);
+            // textDiv.style("overflow", "auto");
 
-async function updateTextOnDrop(boxes, ease) {
-    // Get the existing text inside .grid-item
-    // const specialHoverText = gridItem.querySelector('.specialhover').textContent.trim(); 
-
-    const existingText = boxes[0].input.value();
-    console.log(existingText);
-   
-
-
-    contentString = "You are given a statement from the user about something they want to accomplish today. They will also give you an energy level score, reflecting their capacity to be able to accomplish the goal in their statement. In addition, here is some information about the user: She is a 20-something young professional who lives at home with her partner. She is training for a marathon in October and applying to grad school. She's very anxious about both. She is juggling a lot. Given the user's statement, in bullet points, give me an Objective: what you think their larger objective is, a Task: Given that objective, what a smaller, scoped task would be that is in-line with their goal, but more reflective of the energy the user has. Example: Statement: I want to run 10 miles today. Energy level score: 30%. Objective: The user is probably trying to increase their cardiovascular fitness ahead of their marathon. Task: Hip flexor strength is just as important for long runs as cardiovascular endurance! If you don't have time or energy for 10 miles today, you could do a session of targeted leg workouts like squats or high knees to strengthen crucial leg muscles. Example: Statement: I need to write a three-page essay. Energy level score: 20%. Objective: The user is likely trying to write essays to apply to grad school and is stressed. Task: If you don't have enough capacity today, you could start with just generating a one-page outline — headlines of paragraphs and supporting bullet points, as well as finding the right articles to read and source. Example: Statement: I need to plan a birthday party for Austin in SF. Energy level score: 40%. Objective: The user is likely trying to plan an entire party, complete with invites, theme, location, and timing. Task: To start, you could identify a few fun locations with availability, and jot down the guest list. Interpret the statement, if the user has an energy level score of " + ease + "%."
+            this.isTextField = true; // Switch to text field mode
+            this.input.remove(); // Remove the input element
 
     
 
-    // Construct the OpenAI API request
-    const messages = [
-        { 'role': 'system', 'content': contentString },
-        { 'role': 'user', 'content': `Statement: ${existingText}`},
-    ];
 
-    const response = await fetch('https://us-central1-holly-wrappers.cloudfunctions.net/oaiChatWrapper', {
-        method: 'POST',
-        headers: {
-            // 'Authorization': `Bearer ${API_KEY}`,
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            model: 'gpt-3.5-turbo',
-            messages: messages,
-            temperature: 1,
-        }),
-    
         
-    });
+        }
+    }
 
-
-
-
-    const data = await response.json();
-
-    // need to UPDATE DOWN HERE
-    const generatedText = data.choices[0].message.content;
-    // console.log(`Old: ${existingText}`);
-    // console.log(`New: ${generatedText}`);
+    isFocused() {
+        return this.input.elt === document.activeElement;
+    }
     
-    // const newText = boxes[0].input.value();
-    // newText.textContent = generatedText;
+    async updateTextOnDrop(scaledScore, existingText) {
+        console.log(existingText);
+       
+        var contentString = `You are an uplifting life coach. Your client will tell you a task they want to accomplish today as well as an energy level score, reflecting their capacity to be able to accomplish the goal in their statement. You believe that any progress is good progress, and just want to encourage them to take action, if it's a small thing.
 
+        Given the user's statement and energy score, consider what their larger objective is and respond with a action that the user can take that would still help them work towards their objective, but is more reflective of the energy the user has. Do not mention the energy level. All responses should start with 'you could' Output only what you would tell the user to do as their life coach. All responses should be under 20 words.
 
-    // const gridText = gridItem.querySelector('.grid-text');
-    // gridText.textContent = generatedText;
-    // gridText.style.color = '#D375FF';
-
-    // const hoverText = gridItem.querySelector('.specialhover');
-    // hoverText.textContent = "original: " + existingText;
-    // hoverText.style.color = '#00000';
-
-    // on enter turn into a text field
-    // on drag turn into something real
+        Here is some information about your client: She is a 20-something young professional who lives at home with her partner. She is training for a marathon in October and applying to grad school. 
+        
+        Here are some examples:
+        
+        Statement: I want to run 10 miles today. 
+        Energy level score: 30%. 
+        Action: You could do a session of targeted leg workouts like squats or high knees to strengthen crucial leg muscles. 
+        
+        Statement: I need to write a three-page essay. 
+        Energy level score: 20%. 
+        Action: You could start by just generating a one-page outline — headlines of paragraphs and supporting bullet points, as well as finding the right articles to read and source. `
+    
+        // Construct the OpenAI API request
+        const messages = [
+            { 'role': 'system', 'content': contentString },
+            { 'role': 'user', 'content': 
+               `Statement: ${existingText}
+                Energy level score: ${scaledScore}`
+            },
+        ];
+    
+        const response = await fetch('https://us-central1-holly-wrappers.cloudfunctions.net/oaiChatWrapper', {
+            method: 'POST',
+            headers: {
+                // 'Authorization': `Bearer ${API_KEY}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                model: 'gpt-3.5-turbo',
+                messages: messages,
+                temperature: 1,
+            }),
+        
+            
+        });
+    
+        const data = await response.json();
+        this.text = data.choices[0].message.content; 
+    }
 }
 

@@ -566,3 +566,7 @@
 #p5canvas > canvas {
 	outline: black 3px solid;
 }
+
+.canvas-container{
+	overflow:auto;
+}

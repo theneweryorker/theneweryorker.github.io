@@ -16,6 +16,12 @@ import formulas1 from '../assets/formulas1.png';
 import formulas2 from '../assets/formulas2.png';
 
 function FrontPage() {
+
+const fullScreenStyles = {
+  height: '100vh',
+  width: '100vw',
+};
+
   useEffect(() => {
     var hoverTriggers = document.querySelectorAll(".hover-trigger");
 
@@ -82,7 +88,7 @@ function FrontPage() {
   }, [])
 
   return (
-    <div>
+    <div style={fullScreenStyles}>
       <div id="content">
         <div className="flex-child left" style={{ color: 'black' }}>
           <span className="line1 invisible">Hello. Just a grown-up kid </span>

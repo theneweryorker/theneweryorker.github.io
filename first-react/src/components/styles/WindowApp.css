@@ -1,0 +1,72 @@
+.window {
+    /* width: 100% !important;
+    height: 57px !important; */
+    border: none !important;
+    position: absolute;
+    background-color: blue;
+}
+
+
+.windowbutton {
+    width: 5px;
+    height: 10px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 50%;
+    /* Text color */
+    font-size: 12px;
+    /* Adjust the font size as needed */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    top: 5%;
+    left: 95%;
+}
+
+.windowbody{
+    height: 95%;
+    width: 95%;
+    position: absolute;
+    top: 2.5%;
+    left: 2.5%;
+}
+
+@font-face {
+    font-family: 'glacial_indifferenceregular';
+    src: url('../../assets/glacialindifference-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.window-icon {
+    font-weight: bold;
+    text-align: center;
+    user-select: none;
+    font-family: 'glacial_indifferenceregular';
+    /* Prevent text selection */
+
+}
+
+.window.focus {
+    height: auto !important;
+    padding-bottom: 20px;
+}
+
+.window.focus .content {
+    display: block;
+    height: 100% !important;
+    overflow: auto !important;
+}
+
+.window h3 {
+    border: none;
+    padding: 20px 20px 22px 20px;
+}
+
+.window.focus h3 {
+    border-width: 0px 0px 2px 0px;
+    border-style: solid;
+}
